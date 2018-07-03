@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TheChamaApp.Application\TheChamaApp.Application.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Domain\TheChamaApp.Domain.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting\TheChamaApp.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
+</Project>

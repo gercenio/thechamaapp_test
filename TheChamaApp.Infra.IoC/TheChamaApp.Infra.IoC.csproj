@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SimpleInjector" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TheChamaApp.Application\TheChamaApp.Application.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Domain\TheChamaApp.Domain.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Infra.Data\TheChamaApp.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
