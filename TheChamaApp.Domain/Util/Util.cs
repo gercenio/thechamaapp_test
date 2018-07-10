@@ -23,7 +23,7 @@ namespace TheChamaApp.Domain.Util
     /// COMPANY = EMPRESA CLIENTE DA HGM CONSULTORES
     /// PEOPLE = USUARIO FINAL QUE REALIZA PESQUISA NA PLATAFORMA
     /// </summary>
-    public enum UserType {
+    public enum LoginType {
         System,
         Admin,
         Owner,

@@ -5,13 +5,13 @@ using System.Text;
 
 namespace TheChamaApp.Domain.Entities
 {
-    public class User
+    public class State
     {
         [Key]
-        public int UserId { get; set; }
-        public string UserCode { get; set; }
-        public string AccessKey { get; set; }
+        public int StateId { get; set; }
+        public string Description { get; set; }
+        public string Name { get; set; }
+        public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
-        public DateTime UpdateAt { get; set; }
     }
 }

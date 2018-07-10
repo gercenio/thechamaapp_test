@@ -6,18 +6,20 @@ using System.Text;
 
 namespace TheChamaApp.Domain.Entities
 {
-    public class CompanyContact
+    public class Login
     {
         [Key]
-        public int CompanyContactId { get; set; }
-        public int CompanyId { get; set; }
-        public string ContactName { get; set; }
+        public int LoginId { get; set; }
+        public int? CompanyUnityId { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
         public string Email { get; set; }
-        public string ContactType { get; set; }
+        public Util.LoginType Type { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 
-        [ForeignKey("CompanyId")]
-        public virtual Company Company { get; set; }
+        [ForeignKey("CompanyUnityId")]
+        public virtual CompanyUnity Unity { get; set; }
+
     }
 }

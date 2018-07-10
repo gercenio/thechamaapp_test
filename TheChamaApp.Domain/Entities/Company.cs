@@ -14,9 +14,11 @@ namespace TheChamaApp.Domain.Entities
         public string Document { get; set; }
         public string StateDocument { get; set; }
         public string WebSite { get; set; }
-        public DateTime UpdateAt { get; set; }
+        public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 
+        public virtual CompanyAddress Address { get; set; }
         public ICollection<CompanyContact> Contacts { get; set; }
+        public ICollection<CompanyUnity> Unitys { get; set; }
     }
 }
