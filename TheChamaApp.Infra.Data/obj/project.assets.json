@@ -5154,8 +5154,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gerce\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\Xavier\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -5164,20 +5163,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Developer\\2018\\TheChamaApp\\src\\TheChamaApp\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj",
+      "projectUniqueName": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj",
       "projectName": "TheChamaApp.Infra.Data",
-      "projectPath": "D:\\Developer\\2018\\TheChamaApp\\src\\TheChamaApp\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj",
-      "packagesPath": "C:\\Users\\gerce\\.nuget\\packages\\",
-      "outputPath": "D:\\Developer\\2018\\TheChamaApp\\src\\TheChamaApp\\TheChamaApp.Infra.Data\\obj\\",
+      "projectPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj",
+      "packagesPath": "C:\\Users\\Xavier\\.nuget\\packages\\",
+      "outputPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gerce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Xavier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -5189,8 +5186,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\Developer\\2018\\TheChamaApp\\src\\TheChamaApp\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj": {
-              "projectPath": "D:\\Developer\\2018\\TheChamaApp\\src\\TheChamaApp\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj"
+            "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj"
             }
           }
         }
@@ -5248,7 +5245,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'DapperExtensions 1.6.3' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'DapperExtensions 1.6.3' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "DapperExtensions",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
