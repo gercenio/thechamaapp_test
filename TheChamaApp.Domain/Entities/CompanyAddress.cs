@@ -16,6 +16,8 @@ namespace TheChamaApp.Domain.Entities
         public string Number { get; set; }
         public string Complent { get; set; }
         public string City { get; set; }
+        public string Cep { get; set; }
+        public string Ibge { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 
