@@ -11,6 +11,7 @@ namespace TheChamaApp.Domain.Entities
         [Key]
         public int EvaluatedId { get; set; }
         public int CompanyUnityId { get; set; }
+        public int LevelEvaluatedId { get; set; }
         public string Description { get; set; }
         public string KeyNumber { get; set; }
         public string Document { get; set; }
@@ -19,5 +20,8 @@ namespace TheChamaApp.Domain.Entities
 
         [ForeignKey("CompanyUnityId")]
         public virtual CompanyUnity Unity { get; set; }
+
+        [ForeignKey("LevelEvaluatedId")]
+        public virtual LevelEvaluated Level { get; set; }
     }
 }
