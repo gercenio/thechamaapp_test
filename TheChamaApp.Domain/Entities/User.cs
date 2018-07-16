@@ -12,6 +12,6 @@ namespace TheChamaApp.Domain.Entities
         public string UserCode { get; set; }
         public string AccessKey { get; set; }
         public DateTime InsertAt { get; set; }
-        public DateTime UpdateAt { get; set; }
+        public DateTime? UpdateAt { get; set; }
     }
 }

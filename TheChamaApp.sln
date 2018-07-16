@@ -29,9 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheChamaApp.Infra.CrossCutt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheChamaApp.Application", "TheChamaApp.Application\TheChamaApp.Application.csproj", "{F4CEEDFF-B9F1-412B-BA41-BD1852267F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheChamaApp.Service", "TheChamaApp.Service\TheChamaApp.Service.csproj", "{966746B9-2E07-4720-A22A-3D03C69C97C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheChamaApp.Service", "TheChamaApp.Service\TheChamaApp.Service.csproj", "{966746B9-2E07-4720-A22A-3D03C69C97C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheChamaApp.Presentation.WebApi", "TheChamaApp.Presentation.WebApi\TheChamaApp.Presentation.WebApi.csproj", "{DEF3E950-3026-4F2E-8E45-4449B88578AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheChamaApp.Presentation.WebApi", "TheChamaApp.Presentation.WebApi\TheChamaApp.Presentation.WebApi.csproj", "{DEF3E950-3026-4F2E-8E45-4449B88578AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.0 - WebApi", "0.0 - WebApi", "{DEB59AB2-5C32-47B7-B0A6-41BB73AD95FD}"
 EndProject
