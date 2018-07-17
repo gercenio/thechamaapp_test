@@ -10,7 +10,7 @@ namespace TheChamaApp.Domain.Entities
         [Key]
         public int CompanyId { get; set; }
         public string Name { get; set; }
-        public string DescriptionName { get; set; }
+        public string Description { get; set; }
         public string Document { get; set; }
         public string StateDocument { get; set; }
         public string WebSite { get; set; }

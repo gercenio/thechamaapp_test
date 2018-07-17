@@ -1,0 +1,9 @@
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.deps.json
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\obj\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.csprojResolveAssemblyReference.cache
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\obj\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\obj\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.AssemblyInfoInputs.cache
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\obj\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.AssemblyInfo.cs
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\obj\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
+D:\Developer\2018\TheChamaApp\Source\TheChamaApp.Infra.CrossCutting\obj\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb

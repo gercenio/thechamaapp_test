@@ -22,6 +22,11 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IUserApplication, UserApplication>(Lifestyle.Scoped);
             container.Register<IUserService, UserService>(Lifestyle.Scoped);
             container.Register<IUserRepository, UserRepository>(Lifestyle.Scoped);
+            //Company
+            container.Register<ICompanyApplication, CompanyApplication>(Lifestyle.Scoped);
+            container.Register<ICompanyService, CompanyService>(Lifestyle.Scoped);
+            container.Register<ICompanyRepository, CompanyRepository>(Lifestyle.Scoped);
+
             //Student
             container.Register<IStudentApplication, StudentApplication>(Lifestyle.Scoped);
             container.Register<IStudentService, StudentService>(Lifestyle.Scoped);
