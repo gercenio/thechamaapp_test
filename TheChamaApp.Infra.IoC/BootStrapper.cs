@@ -29,6 +29,9 @@ namespace TheChamaApp.Infra.IoC
             container.Register<ICompanyAddressApplication, CompanyAddressApplication>(Lifestyle.Scoped);
             container.Register<ICompanyAddressService, CompanyAddressService>(Lifestyle.Scoped);
             container.Register<ICompanyAddressRepository, CompanyAddressRepository>(Lifestyle.Scoped);
+            //container.Register<ICompanyContactApplication, CompanyContactApplication>(Lifestyle.Scoped);
+            //container.Register<ICompanyContactService, CompanyAddressService>(Lifestyle.Scoped);
+            //container.Register<ICompanyContactRepository, CompanyAddressRepository>(Lifestyle.Scoped);
 
 
             //Student
