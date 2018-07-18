@@ -19,9 +19,6 @@ namespace TheChamaApp.Presentation.WebApi
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseKestrel()
-            .UseUrls("http://*:80")
-            .UseContentRoot(Directory.GetCurrentDirectory())
             .UseStartup<Startup>()
             .UseKestrel(o => {
                 o.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(30);

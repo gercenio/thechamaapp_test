@@ -6,6 +6,6 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>D:\Developer\2018\TheChamaApp\Publish</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Developer\2018\HGM\Publish\</_PublishTargetUrl>
   </PropertyGroup>
 </Project>
