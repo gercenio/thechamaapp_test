@@ -9,8 +9,9 @@ using TheChamaApp.Application.IApplication;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Company")]
+
+
+    [Route("api/[controller]")]
     public class CompanyController : Controller
     {
         #region # Propriedades
@@ -32,11 +33,19 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         [HttpGet]
         [Authorize("Bearer")]
-        public IEnumerable<Domain.Entities.Company> GetAll()
+        public IActionResult Get()
         {
-            return _ICompanyApplication.GetAll();
+            var List = _ICompanyApplication.GetAll();
+            return Ok(List);
         }
 
+        // POST api/<controller>
+        [HttpPost]
+        [Authorize("Bearer")]
+        public IActionResult Post([FromBody]Domain.Entities.Company Entity)
+        {
+            return Ok();
+        }
         #endregion
 
     }

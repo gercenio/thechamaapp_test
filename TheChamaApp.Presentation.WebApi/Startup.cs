@@ -17,6 +17,8 @@ using SimpleInjector.Lifestyles;
 using TheChamaApp.Domain.Entities;
 using TheChamaApp.Infra.IoC;
 
+
+
 namespace TheChamaApp.Presentation.WebApi
 {
     public class Startup
@@ -80,6 +82,8 @@ namespace TheChamaApp.Presentation.WebApi
             });
 
             services.AddMvc();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -97,6 +101,9 @@ namespace TheChamaApp.Presentation.WebApi
             InitializeContainer(container);
 
             container.Verify();
+
+
+
             /*
             //Adding Model class to OData
             var builder = new ODataConventionModelBuilder(app.ApplicationServices);
