@@ -10,7 +10,7 @@ namespace TheChamaApp.Domain.Entities
     {
         [Key]
         public int CompanyAddressId { get; set; }
-        public int Company { get; set; }
+        public int CompanyId { get; set; }
         public int StateId { get; set; }
         public string Address { get; set; }
         public string Number { get; set; }
@@ -23,5 +23,8 @@ namespace TheChamaApp.Domain.Entities
 
         [ForeignKey("StateId")]
         public virtual State State { get; set; }
+
+        [ForeignKey("CompanyId")]
+        public virtual Company Company { get; set; }
     }
 }

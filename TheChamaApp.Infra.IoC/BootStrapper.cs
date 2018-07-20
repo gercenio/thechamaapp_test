@@ -29,31 +29,14 @@ namespace TheChamaApp.Infra.IoC
             container.Register<ICompanyAddressApplication, CompanyAddressApplication>(Lifestyle.Scoped);
             container.Register<ICompanyAddressService, CompanyAddressService>(Lifestyle.Scoped);
             container.Register<ICompanyAddressRepository, CompanyAddressRepository>(Lifestyle.Scoped);
-            //container.Register<ICompanyContactApplication, CompanyContactApplication>(Lifestyle.Scoped);
-            //container.Register<ICompanyContactService, CompanyAddressService>(Lifestyle.Scoped);
-            //container.Register<ICompanyContactRepository, CompanyAddressRepository>(Lifestyle.Scoped);
+            container.Register<ICompanyContactApplication, CompanyContactApplication>(Lifestyle.Scoped);
+            container.Register<ICompanyContactService, CompanyContactService>(Lifestyle.Scoped);
+            container.Register<ICompanyContactRepository, CompanyContactRepository>(Lifestyle.Scoped);
+            //state
+            container.Register<IStateApplication, StateApplication>(Lifestyle.Scoped);
+            container.Register<IStateService, StateService>(Lifestyle.Scoped);
+            container.Register<IStateRepository, StateRepository>(Lifestyle.Scoped);
 
-
-            //Student
-            //container.Register<IStudentApplication, StudentApplication>(Lifestyle.Scoped);
-            //container.Register<IStudentService, StudentService>(Lifestyle.Scoped);
-            //container.Register<IStudentRepository, StudentRepository>(Lifestyle.Scoped);
-            ////Course
-            //container.Register<ICourseApplication, CourseApplication>(Lifestyle.Scoped);
-            //container.Register<ICourseService, CourseService>(Lifestyle.Scoped);
-            //container.Register<ICourseRepository, CourseRepository>(Lifestyle.Scoped);
-            ////Teacher
-            //container.Register<ITeacherApplication, TeacherApplication>(Lifestyle.Scoped);
-            //container.Register<ITeacherService, TeacherService>(Lifestyle.Scoped);
-            //container.Register<ITeacherRepository, TeacherRepository>(Lifestyle.Scoped);
-            ////RellationshipCourseTeacher
-            //container.Register<IRellationshipCourseTeacherApplication, RellationshipCourseTeacherApplication>(Lifestyle.Scoped);
-            //container.Register<IRellationshipCourseTeacherService, RellationshipCourseTeacherService>(Lifestyle.Scoped);
-            //container.Register<IRellationshipCourseTeacherRepository, RellationshipCourseTeacherRepository>(Lifestyle.Scoped);
-            ////RellationshipStudentCourse
-            //container.Register<IRellationshipStudentCourseApplication, RellationshipStudentCourseApplication>(Lifestyle.Scoped);
-            //container.Register<IRellationshipStudentCourseService, RellationshipStudentCourseService>(Lifestyle.Scoped);
-            //container.Register<IRellationshipStudentCourseRepository, RellationshipStudentCourseRepository>(Lifestyle.Scoped);
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);

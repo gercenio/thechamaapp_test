@@ -13,12 +13,22 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     [Route("api/Company")]
     public class CompanyController : Controller
     {
+        #region # Propriedades
+
         private readonly ICompanyApplication _ICompanyApplication;
+
+        #endregion
+
+        #region # Constructor
 
         public CompanyController(ICompanyApplication companyApplication)
         {
             _ICompanyApplication = companyApplication;
         }
+
+        #endregion
+
+        #region # Actions
 
         [HttpGet]
         [Authorize("Bearer")]
@@ -26,6 +36,8 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             return _ICompanyApplication.GetAll();
         }
+
+        #endregion
 
     }
 }
