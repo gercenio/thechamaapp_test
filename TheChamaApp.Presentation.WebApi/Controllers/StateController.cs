@@ -11,10 +11,8 @@ using TheChamaApp.Application.IApplication;
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
 
-
-    [Produces("application/json")]
     [Route("api/[controller]")]
-    public class UtilController : Controller
+    public class StateController : Controller
     {
         #region # Propriedades
 
@@ -24,7 +22,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         #region # Constructor
 
-        public UtilController(IStateApplication stateApplication)
+        public StateController(IStateApplication stateApplication)
         {
             _IStateApplication = stateApplication;
         }
@@ -35,7 +33,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         [HttpGet]
         [Authorize("Bearer")]
-        public IActionResult GetAllState() {
+        public IActionResult Get() {
 
             var ListState = _IStateApplication.GetAll();
             return Ok(ListState);

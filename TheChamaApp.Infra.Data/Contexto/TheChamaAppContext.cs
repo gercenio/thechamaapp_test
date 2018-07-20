@@ -57,14 +57,10 @@ namespace TheChamaApp.Infra.Data.Contexto
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            //modelBuilder.Entity<Course>().ToTable("course", "thechamaapp_hmg");
-            //modelBuilder.Entity<Student>().ToTable("student", "thechamaapp_hmg");
-            //modelBuilder.Entity<Teacher>().ToTable("teacher", "thechamaapp_hmg");
+            
             modelBuilder.Entity<User>().ToTable("user", "hgm");
             modelBuilder.Entity<Company>().ToTable("company", "hgm");
-            //modelBuilder.Entity<RellationshipCourseTeacher>().ToTable("rellationshipcourseteacher", "thechamaapp_hmg");
-            //modelBuilder.Entity<RellationshipStudentCourse>().ToTable("rellationshipstudentcourse", "thechamaapp_hmg");
-
+            modelBuilder.Entity<State>().ToTable("state", "hgm");
             base.OnModelCreating(modelBuilder);
         }
 
@@ -74,6 +70,7 @@ namespace TheChamaApp.Infra.Data.Contexto
 
         public DbSet<User> User { get; set; }
         public DbSet<Company> Company { get; set; }
+        public DbSet<State> State { get; set; }
 
         ///public DbSet<RellationshipStudentCourse> RellationshipStudentCourse { get; set; }
         //public DbSet<RellationshipCourseTeacher> RellationshipCourseTeacher { get; set; }
