@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -10,10 +11,12 @@ using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
 using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using SimpleInjector.Lifestyles;
+using Swashbuckle.AspNetCore.Swagger;
 using TheChamaApp.Domain.Entities;
 using TheChamaApp.Infra.IoC;
 
@@ -83,6 +86,32 @@ namespace TheChamaApp.Presentation.WebApi
 
             services.AddMvc();
 
+            // Configurando o serviço de documentação do Swagger
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new Info
+                    {
+                        Title = "CMS - HGM CONSULTORES",
+                        Version = "v1",
+                        Description = "HGM CONSULTORES API REST criada com o ASP.NET Core",
+                        Contact = new Contact
+                        {
+                            Name = "Gercenio Xavier",
+                            Url = "https://github.com/gercenio"
+                        }
+                    });
+
+                string caminhoAplicacao =
+                    PlatformServices.Default.Application.ApplicationBasePath;
+                string nomeAplicacao =
+                    PlatformServices.Default.Application.ApplicationName;
+                string caminhoXmlDoc =
+                    Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
+
+                c.IncludeXmlComments(caminhoXmlDoc);
+            });
+
 
         }
 
@@ -102,53 +131,13 @@ namespace TheChamaApp.Presentation.WebApi
 
             container.Verify();
 
-
-
-            /*
-            //Adding Model class to OData
-            var builder = new ODataConventionModelBuilder(app.ApplicationServices);
-            builder.EntitySet<Domain.Entities.Stock>(nameof(Stock));
-            builder.EntitySet<Domain.Entities.CreditManager>(nameof(CreditManager));
-            builder.EntitySet<Domain.Entities.InvoiceHeader>(nameof(InvoiceHeader));
-            builder.EntitySet<Domain.Entities.InvoiceItensBody>(nameof(InvoiceItensBody));
-            #region # CUSTOM ROUTER
-
-            // New code:
-            builder.Function("GetInvoiceHeaderEcommerceByCustomerId")
-                .Returns<Domain.Entities.InvoiceHeader>()
-                .Parameter<string>("ParId");
-
-            // New code:
-            builder.Function("GetInvoiceHeaderTelemarketingByCustomerId")
-                .Returns<Domain.Entities.InvoiceHeader>()
-                .Parameter<string>("ParId");
-
-            // New code:
-            builder.Function("GetInvoiceHeaderStoreByCustomerId")
-                .Returns<Domain.Entities.InvoiceHeader>()
-                .Parameter<string>("ParId");
-
-            #endregion
-
-
-            //Enabling OData routing.
-            /*app.UseMvc(routebuilder =>
-            {
-                routebuilder.MapODataServiceRoute("ODataRoute", "odata", builder.GetEdmModel());
-                routebuilder.EnableDependencyInjection();
-                routebuilder.GetDefaultODataOptions();
-                routebuilder.GetDefaultQuerySettings();
-
-            });
-
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            // Ativando middlewares para uso do Swagger
             app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tenda Atacado WebApi V1");
-            });*/
+                c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                    "CMS - HGM Consultores");
+            });
         }
 
         private void IntegrateSimpleInjector(IServiceCollection services)

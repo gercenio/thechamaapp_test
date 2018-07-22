@@ -14,7 +14,16 @@ namespace TheChamaApp.Domain.Entities
         public int StateId { get; set; }
         public string Description { get; set; }
         public string ContactName { get; set; }
+        public string Document { get; set; }
+        public string StateDocument { get; set; }
+        public string CodePhoneArea { get; set; }    
         public string PhoneNumber { get; set; }
+        public string Cep { get; set; }
+        public string Address { get; set; }
+        public string Number { get; set; }
+        public string Complement { get; set; }
+        public string Ibge { get; set; }
+        public string City { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 

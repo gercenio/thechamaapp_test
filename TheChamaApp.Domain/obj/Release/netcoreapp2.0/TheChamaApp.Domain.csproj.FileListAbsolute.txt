@@ -16,3 +16,12 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.csprojResolveAssemblyReference.cache
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\bin\Release\netcoreapp2.0\TheChamaApp.Domain.deps.json
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\bin\Release\netcoreapp2.0\TheChamaApp.Domain.dll
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\bin\Release\netcoreapp2.0\TheChamaApp.Domain.pdb
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.csprojResolveAssemblyReference.cache
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.csproj.CoreCompileInputs.cache
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.AssemblyInfoInputs.cache
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.AssemblyInfo.cs
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.dll
+D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Domain\obj\Release\netcoreapp2.0\TheChamaApp.Domain.pdb

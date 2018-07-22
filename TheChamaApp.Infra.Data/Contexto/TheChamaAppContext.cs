@@ -61,6 +61,10 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<User>().ToTable("user", "hgm");
             modelBuilder.Entity<Company>().ToTable("company", "hgm");
             modelBuilder.Entity<State>().ToTable("state", "hgm");
+            modelBuilder.Entity<CompanyContact>().ToTable("companycontact", "hgm");
+            modelBuilder.Entity<CompanyAddress>().ToTable("companyaddress", "hgm");
+            modelBuilder.Entity<CompanyUnity>().ToTable("companyunity", "hgm");
+
             base.OnModelCreating(modelBuilder);
         }
 
@@ -71,12 +75,8 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<User> User { get; set; }
         public DbSet<Company> Company { get; set; }
         public DbSet<State> State { get; set; }
-
-        ///public DbSet<RellationshipStudentCourse> RellationshipStudentCourse { get; set; }
-        //public DbSet<RellationshipCourseTeacher> RellationshipCourseTeacher { get; set; }
-        //public DbSet<Student> Student { get; set; }
-        //public DbSet<Course> Course { get; set; }
-        //public DbSet<Teacher> Teacher { get; set; }
+        public DbSet<CompanyAddress> CompanyAddress { get; set; }
+        public DbSet<CompanyContact> CompanyContact { get; set; }
 
         #endregion
     }

@@ -32,6 +32,11 @@ namespace TheChamaApp.Infra.IoC
             container.Register<ICompanyContactApplication, CompanyContactApplication>(Lifestyle.Scoped);
             container.Register<ICompanyContactService, CompanyContactService>(Lifestyle.Scoped);
             container.Register<ICompanyContactRepository, CompanyContactRepository>(Lifestyle.Scoped);
+            container.Register<ICompanyUnityApplication, CompanyUnityApplication>(Lifestyle.Scoped);
+            container.Register<ICompanyUnityService, CompanyUnityService>(Lifestyle.Scoped);
+            container.Register<ICompanyUnityRepository, CompanyUnityRepository>(Lifestyle.Scoped);
+
+
             //state
             container.Register<IStateApplication, StateApplication>(Lifestyle.Scoped);
             container.Register<IStateService, StateService>(Lifestyle.Scoped);

@@ -14,6 +14,8 @@ namespace TheChamaApp.Domain.Entities
         public string ContactName { get; set; }
         public string Email { get; set; }
         public string ContactType { get; set; }
+        public string PhoneNumber { get; set; }
+        public string CodePhoneArea { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 
