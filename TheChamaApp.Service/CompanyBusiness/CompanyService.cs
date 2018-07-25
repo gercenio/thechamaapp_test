@@ -14,6 +14,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         private readonly ICompanyAddressApplication _ICompanyAddressApplication;
         private readonly ICompanyContactApplication _ICompanyContactApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
+        private readonly IStateApplication _IStateApplication;
 
         #endregion
 
@@ -22,12 +23,14 @@ namespace TheChamaApp.Service.CompanyBusiness
         public CompanyService(ICompanyApplication company
             , ICompanyAddressApplication companyAddress
             , ICompanyContactApplication companyContact
-            , ICompanyUnityApplication companyUnityApplication)
+            , ICompanyUnityApplication companyUnityApplication
+            , IStateApplication stateApplication)
         {
             _ICompanyApplication = company;
             _ICompanyAddressApplication = companyAddress;
             _ICompanyContactApplication = companyContact;
             _ICompanyUnityApplication = companyUnityApplication;
+            _IStateApplication = stateApplication;
         }
 
         #endregion
@@ -41,7 +44,6 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// <returns></returns>
         public Domain.Entities.Company Incluir(Domain.Entities.Company Entity,out string Mensagem)
         {
-
             Mensagem = string.Empty;
             try
             {
@@ -49,9 +51,6 @@ namespace TheChamaApp.Service.CompanyBusiness
                 if (ListCompany.Count == 0)
                 {
                     _ICompanyApplication.Add(Entity);
-                    //Adiciona o endereço
-                    Entity.Address.CompanyId = Entity.CompanyId;
-                    _ICompanyAddressApplication.Add(Entity.Address);
                     Mensagem = "Done";
                 }
             }
@@ -59,7 +58,6 @@ namespace TheChamaApp.Service.CompanyBusiness
             {
                 Mensagem = string.Format("Erro:{0}",Ex.Message);
             }
-
             return Entity;
 
         }

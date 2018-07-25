@@ -13,5 +13,7 @@ namespace TheChamaApp.Domain.Entities
         public string Name { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
+
+        
     }
 }

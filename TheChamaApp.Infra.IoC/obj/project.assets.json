@@ -457,6 +457,19 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "1.1.4",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
         "type": "package",
         "dependencies": {
@@ -1020,6 +1033,21 @@
         },
         "runtime": {
           "lib/netstandard2.0/MySql.Data.EntityFrameworkCore.dll": {}
+        }
+      },
+      "MySql.Data.EntityFrameworkCore.Design/8.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.4",
+          "MySql.Data": "8.0.11",
+          "MySql.Data.EntityFrameworkCore": "8.0.11",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/MySql.Data.EntityFrameworkCore.Design.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/MySql.Data.EntityFrameworkCore.Design.dll": {}
         }
       },
       "NETStandard.Library/2.0.0": {
@@ -1713,6 +1741,7 @@
           "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.Extensions.Configuration": "2.1.1",
           "MySql.Data.EntityFrameworkCore": "8.0.11",
+          "MySql.Data.EntityFrameworkCore.Design": "8.0.11",
           "TheChamaApp.Domain": "1.0.0"
         },
         "compile": {
@@ -2144,6 +2173,19 @@
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.xml",
         "microsoft.entityframeworkcore.relational.2.0.1.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.4": {
+      "sha512": "mYfwte6F3/+U8+HHwz1Ijjwm1aXQtNzIIShAer7U+svjXLRst32tBh4lbVWVT8nm+jJyla78vJ96CJYC16pVzA==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.relational.design/1.1.4",
+      "files": [
+        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.dll",
+        "lib/net451/Microsoft.EntityFrameworkCore.Relational.Design.xml",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll",
+        "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.xml",
+        "microsoft.entityframeworkcore.relational.design.1.1.4.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.design.nuspec"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
@@ -2872,6 +2914,19 @@
         "lib/netstandard2.0/MySql.Data.EntityFrameworkCore.xml",
         "mysql.data.entityframeworkcore.8.0.11.nupkg.sha512",
         "mysql.data.entityframeworkcore.nuspec"
+      ]
+    },
+    "MySql.Data.EntityFrameworkCore.Design/8.0.11": {
+      "sha512": "D1wyNI1gPtXgQ7YW1p8u9CfevS1atpADfpapKqjCyvJwu+fKg5pFHWxoMycm7BVTZGHxG6mJ65cJ5J2V27butQ==",
+      "type": "package",
+      "path": "mysql.data.entityframeworkcore.design/8.0.11",
+      "files": [
+        "lib/net452/MySql.Data.EntityFrameworkCore.Design.dll",
+        "lib/net452/MySql.Data.EntityFrameworkCore.Design.xml",
+        "lib/netstandard1.6/MySql.Data.EntityFrameworkCore.Design.dll",
+        "lib/netstandard1.6/MySql.Data.EntityFrameworkCore.Design.xml",
+        "mysql.data.entityframeworkcore.design.8.0.11.nupkg.sha512",
+        "mysql.data.entityframeworkcore.design.nuspec"
       ]
     },
     "NETStandard.Library/2.0.0": {

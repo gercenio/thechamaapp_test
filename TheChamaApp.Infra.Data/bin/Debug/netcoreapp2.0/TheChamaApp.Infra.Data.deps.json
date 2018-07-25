@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "9adafe982235f1551ce686ad905883dbb120bc82"
+    "signature": "74841817c3782a42bf083fa64837f1e8644a9d18"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,6 +13,7 @@
           "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.Extensions.Configuration": "2.1.1",
           "MySql.Data.EntityFrameworkCore": "8.0.11",
+          "MySql.Data.EntityFrameworkCore.Design": "8.0.11",
           "TheChamaApp.Domain": "1.0.0"
         },
         "runtime": {
@@ -347,6 +348,14 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.4": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "2.1.1"
@@ -599,6 +608,16 @@
         },
         "runtime": {
           "lib/netstandard2.0/MySql.Data.EntityFrameworkCore.dll": {}
+        }
+      },
+      "MySql.Data.EntityFrameworkCore.Design/8.0.11": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.4",
+          "MySql.Data": "8.0.11",
+          "MySql.Data.EntityFrameworkCore": "8.0.11"
+        },
+        "runtime": {
+          "lib/netstandard1.6/MySql.Data.EntityFrameworkCore.Design.dll": {}
         }
       },
       "Newtonsoft.Json/11.0.2": {
@@ -1199,6 +1218,13 @@
       "path": "microsoft.entityframeworkcore.relational/2.0.1",
       "hashPath": "microsoft.entityframeworkcore.relational.2.0.1.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mYfwte6F3/+U8+HHwz1Ijjwm1aXQtNzIIShAer7U+svjXLRst32tBh4lbVWVT8nm+jJyla78vJ96CJYC16pVzA==",
+      "path": "microsoft.entityframeworkcore.relational.design/1.1.4",
+      "hashPath": "microsoft.entityframeworkcore.relational.design.1.1.4.nupkg.sha512"
+    },
     "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1408,6 +1434,13 @@
       "sha512": "sha512-5YHuc4dli0/D8glw9M+IXZpeEBpnybYLkz6JNxzsVFGJKfuhWlOwa4E7SWQs0lhmyheVGEpx02BgGYVBFaXs2A==",
       "path": "mysql.data.entityframeworkcore/8.0.11",
       "hashPath": "mysql.data.entityframeworkcore.8.0.11.nupkg.sha512"
+    },
+    "MySql.Data.EntityFrameworkCore.Design/8.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D1wyNI1gPtXgQ7YW1p8u9CfevS1atpADfpapKqjCyvJwu+fKg5pFHWxoMycm7BVTZGHxG6mJ65cJ5J2V27butQ==",
+      "path": "mysql.data.entityframeworkcore.design/8.0.11",
+      "hashPath": "mysql.data.entityframeworkcore.design.8.0.11.nupkg.sha512"
     },
     "Newtonsoft.Json/11.0.2": {
       "type": "package",

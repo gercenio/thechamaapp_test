@@ -20,6 +20,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly ICompanyAddressApplication _ICompanyAddressApplication;
         private readonly ICompanyContactApplication _ICompanyContactApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
+        private readonly IStateApplication _IStateApplication;
 
         #endregion
 
@@ -28,12 +29,14 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         public CompanyController(ICompanyApplication companyApplication
             , ICompanyAddressApplication companyAddressApplication
             , ICompanyContactApplication companyContactApplication
-            , ICompanyUnityApplication companyUnityApplication)
+            , ICompanyUnityApplication companyUnityApplication
+            , IStateApplication stateApplication)
         {
             _ICompanyApplication = companyApplication;
             _ICompanyAddressApplication = companyAddressApplication;
             _ICompanyContactApplication = companyContactApplication;
             _ICompanyUnityApplication = companyUnityApplication;
+            _IStateApplication = stateApplication;
         }
 
         #endregion
@@ -65,10 +68,18 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             //string Mensagem = string.Empty;
             if (ModelState.IsValid)
             {
-                using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication,_ICompanyAddressApplication,_ICompanyContactApplication,_ICompanyUnityApplication))
+                try
                 {
-                    var Result = CompanyBO.Incluir(Entity,out Mensagem);
+                    using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+                    {
+                        var Result = CompanyBO.Incluir(Entity, out Mensagem);
+                    }
                 }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+
             }
             return Ok(Mensagem);
         }
