@@ -72,7 +72,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                 {
                     using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
                     {
-                        var Result = CompanyBO.Incluir(Entity, out Mensagem);
+                        var Result = CompanyBO.IncluirOuAlterar(Entity, out Mensagem);
                     }
                 }
                 catch (Exception Ex)
@@ -84,8 +84,21 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             return Ok(Mensagem);
         }
 
-        
-        
+        /// <summary>
+        /// Deleta uma empresa
+        /// </summary>
+        /// <param name="CompanyUnityId"></param>
+        // DELETE api/CompanyUnity/5
+        [HttpDelete("{CompanyId}")]
+        [Authorize("Bearer")]
+        public void Delete(int CompanyId)
+        {
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            {
+                CompanyBO.Excluir(CompanyId, out Mensagem);
+            }
+        }
+
         #endregion
 
     }

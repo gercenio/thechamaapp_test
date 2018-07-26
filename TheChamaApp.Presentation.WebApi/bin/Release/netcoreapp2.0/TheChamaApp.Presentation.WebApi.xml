@@ -30,6 +30,12 @@
             <param name="Entity"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyController.Delete(System.Int32)">
+            <summary>
+            Deleta uma empresa
+            </summary>
+            <param name="CompanyUnityId"></param>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyUnityController.Post(TheChamaApp.Domain.Entities.CompanyUnity)">
             <summary>
             Cadastra uma unidade por empresa
@@ -49,6 +55,19 @@
             Deleta uma unidades
             </summary>
             <param name="CompanyUnityId"></param>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Post(TheChamaApp.Domain.Entities.Questions)">
+            <summary>
+            Realiza o cadastro de uma pergunta
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Get">
+            <summary>
+            Obtem uma lista de perguntas
+            </summary>
+            <returns></returns>
         </member>
     </members>
 </doc>

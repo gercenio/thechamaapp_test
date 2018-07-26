@@ -64,20 +64,11 @@ namespace TheChamaApp.Infra.Data.Contexto
                 .HasForeignKey<CompanyAddress>(e => e.CompanyId);
             modelBuilder.Entity<Company>().ToTable("company", "hgm")
                 .Property(m => m.Name).HasMaxLength(255);
-            //modelBuilder.Entity<State>()
-            //    .HasOne(a => a.CompanyAddress).WithOne(b => b.State)
-            //    .HasForeignKey<CompanyAddress>(e => e.StateId);
+            modelBuilder.Entity<Questions>().ToTable("questions", "hgm");
             modelBuilder.Entity<State>().ToTable("state", "hgm");
             modelBuilder.Entity<CompanyContact>().ToTable("companycontact", "hgm");
             modelBuilder.Entity<CompanyAddress>().ToTable("companyaddress", "hgm")
                 .Property(f => f.CompanyAddressId).ValueGeneratedOnAdd();
-            //    .HasOne(p => p..BlogImage)
-            //.WithOne(i => i.Blog)
-            //.HasForeignKey<BlogImage>(b => b.BlogForeignKey);
-            //;
-
-            //.HasOne(m => m.Company)
-            //.WithMany(b => b.Address);
             modelBuilder.Entity<CompanyUnity>().ToTable("companyunity", "hgm");
 
             base.OnModelCreating(modelBuilder);
@@ -92,6 +83,8 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<State> State { get; set; }
         public DbSet<CompanyAddress> CompanyAddress { get; set; }
         public DbSet<CompanyContact> CompanyContact { get; set; }
+        public DbSet<CompanyUnity> CompanyUnity { get; set; }
+        public DbSet<Questions> Questions { get; set; }
 
         #endregion
     }

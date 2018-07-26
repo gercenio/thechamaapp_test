@@ -35,13 +35,18 @@ namespace TheChamaApp.Infra.IoC
             container.Register<ICompanyUnityApplication, CompanyUnityApplication>(Lifestyle.Scoped);
             container.Register<ICompanyUnityService, CompanyUnityService>(Lifestyle.Scoped);
             container.Register<ICompanyUnityRepository, CompanyUnityRepository>(Lifestyle.Scoped);
-
-
             //state
             container.Register<IStateApplication, StateApplication>(Lifestyle.Scoped);
             container.Register<IStateService, StateService>(Lifestyle.Scoped);
             container.Register<IStateRepository, StateRepository>(Lifestyle.Scoped);
-
+            //questions
+            container.Register<IQuestionsApplication, QuestionsApplication>(Lifestyle.Scoped);
+            container.Register<IQuestionsService, QuestionsService>(Lifestyle.Scoped);
+            container.Register<IQuestionsRepository, QuestionsRepository>(Lifestyle.Scoped);
+            //ask
+            container.Register<IAskApplication, AskApplication>(Lifestyle.Scoped);
+            container.Register<IAskService, AskService>(Lifestyle.Scoped);
+            container.Register<IAskRepository, AskRepository>(Lifestyle.Scoped);
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);

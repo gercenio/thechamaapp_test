@@ -42,7 +42,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// </summary>
         /// <param name="Entity"></param>
         /// <returns></returns>
-        public Domain.Entities.Company Incluir(Domain.Entities.Company Entity,out string Mensagem)
+        public Domain.Entities.Company IncluirOuAlterar(Domain.Entities.Company Entity,out string Mensagem)
         {
             Mensagem = string.Empty;
             try
@@ -52,6 +52,13 @@ namespace TheChamaApp.Service.CompanyBusiness
                 {
                     _ICompanyApplication.Add(Entity);
                     Mensagem = "Done";
+                }
+                else {
+                    if(Entity.CompanyId > 0)
+                    {
+                        _ICompanyApplication.Update(Entity);
+                        Mensagem = "Done";
+                    }
                 }
             }
             catch (Exception Ex)
@@ -183,6 +190,49 @@ namespace TheChamaApp.Service.CompanyBusiness
             catch (Exception Ex)
             {
                 Mensagem = string.Format("Erro:{0}", Ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Realiza a exclusão de uma empresa
+        /// </summary>
+        /// <param name="CompanyId"></param>
+        /// <param name="Mensagem"></param>
+        public void Excluir(int CompanyId, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var CompanyEntity = _ICompanyApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
+                if (CompanyEntity.CompanyId > 0) {
+
+                    #region - Excluindo contatos
+                    foreach (var Contato in _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
+                    {
+                        this.ExcluirContato(Contato.CompanyContactId, out Mensagem);
+                    }
+                    #endregion
+
+                    #region - Excluir Unidade
+                    foreach (var Unidade in _ICompanyUnityApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
+                    {
+                        this.ExcluirUnidade(Unidade.CompanyUnityId, out Mensagem);
+                    }
+                    #endregion
+
+                    #region - Excluir Endereço
+                    var CompanyAddressEntity = _ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
+                    _ICompanyAddressApplication.Remove(CompanyAddressEntity);
+                    #endregion
+
+                    _ICompanyApplication.Remove(CompanyEntity);
+                    Mensagem = "Done";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}",Ex.Message);
             }
         }
 
