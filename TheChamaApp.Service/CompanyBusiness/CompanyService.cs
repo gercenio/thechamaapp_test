@@ -236,6 +236,35 @@ namespace TheChamaApp.Service.CompanyBusiness
             }
         }
 
+        /// <summary>
+        /// Busca uma empresa
+        /// </summary>
+        /// <param name="CompanyId"></param>
+        /// <returns></returns>
+        public Domain.Entities.Company ObterEmpresa(int CompanyId)
+        {
+            var CompanyEntity = _ICompanyApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
+            try
+            {
+                if (CompanyEntity.CompanyId > 0)
+                {
+                    foreach (var Contato in _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
+                    {
+                        CompanyEntity.Contacts.Add(Contato);
+                    }
+                    foreach (var Unidade in _ICompanyUnityApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
+                    {
+                        CompanyEntity.Unitys.Add(Unidade);
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception(Ex.Message);
+            }
+            return CompanyEntity;
+        }
+
         #endregion
     }
 }

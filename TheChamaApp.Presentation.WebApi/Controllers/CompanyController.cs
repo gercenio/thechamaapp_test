@@ -65,23 +65,32 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Post([FromBody]Domain.Entities.Company Entity)
         {
-            //string Mensagem = string.Empty;
-            if (ModelState.IsValid)
+            
+
+            try
             {
-                try
+
+                if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+                    using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
                     {
                         var Result = CompanyBO.IncluirOuAlterar(Entity, out Mensagem);
+                        return Ok(Result);
                     }
+
                 }
-                catch (Exception Ex)
-                {
-                    return BadRequest(Ex);
+                else {
+                    Mensagem = "invalid data !!!";
+                    return Ok(Mensagem);
                 }
 
             }
-            return Ok(Mensagem);
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+
+
         }
 
         /// <summary>
@@ -96,6 +105,21 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
             {
                 CompanyBO.Excluir(CompanyId, out Mensagem);
+            }
+        }
+
+        /// <summary>
+        /// Obtem uma empresa
+        /// </summary>
+        /// <param name="CompanyId"></param>
+        /// <returns></returns>
+        [HttpGet("{CompanyId}")]
+        [Authorize("Bearer")]
+        public IActionResult Get(int CompanyId)
+        {
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            {
+                return Ok(CompanyBO.ObterEmpresa(CompanyId));
             }
         }
 

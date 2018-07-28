@@ -57,7 +57,6 @@ namespace TheChamaApp.Infra.Data.Contexto
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            
             modelBuilder.Entity<User>().ToTable("user", "hgm");
             modelBuilder.Entity<Company>()
                 .HasOne(a => a.Address).WithOne(b => b.Company)
@@ -70,6 +69,9 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<CompanyAddress>().ToTable("companyaddress", "hgm")
                 .Property(f => f.CompanyAddressId).ValueGeneratedOnAdd();
             modelBuilder.Entity<CompanyUnity>().ToTable("companyunity", "hgm");
+            modelBuilder.Entity<Ask>().ToTable("ask", "hgm");
+            modelBuilder.Entity<RellationshipQuestionsToAsk>().ToTable("rellationshipquestionstoask", "hgm");
+            
 
             base.OnModelCreating(modelBuilder);
         }
@@ -85,6 +87,7 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<CompanyContact> CompanyContact { get; set; }
         public DbSet<CompanyUnity> CompanyUnity { get; set; }
         public DbSet<Questions> Questions { get; set; }
+        public DbSet<Ask> Ask { get; set; }
 
         #endregion
     }

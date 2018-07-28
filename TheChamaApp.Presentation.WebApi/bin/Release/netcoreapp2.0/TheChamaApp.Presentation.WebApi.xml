@@ -4,6 +4,26 @@
         <name>TheChamaApp.Presentation.WebApi</name>
     </assembly>
     <members>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Post(TheChamaApp.Domain.Entities.Ask)">
+            <summary>
+            Realiza a inclusão ou a alteração de uma resposta
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Get">
+            <summary>
+            Obtem uma lista de respostas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Get(System.Int32)">
+            <summary>
+            Obtem uma resposta
+            </summary>
+            <param name="AskId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyContactController.Get(System.Int32)">
             <summary>
             Obtem uma lista de contatos
@@ -36,6 +56,13 @@
             </summary>
             <param name="CompanyUnityId"></param>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyController.Get(System.Int32)">
+            <summary>
+            Obtem uma empresa
+            </summary>
+            <param name="CompanyId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyUnityController.Post(TheChamaApp.Domain.Entities.CompanyUnity)">
             <summary>
             Cadastra uma unidade por empresa
@@ -67,6 +94,20 @@
             <summary>
             Obtem uma lista de perguntas
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Delete(System.Int32)">
+            <summary>
+            Detela uma pergunta
+            </summary>
+            <param name="QuestionsId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Get(System.Int32)">
+            <summary>
+            Obtem uma pergunta
+            </summary>
+            <param name="QuestionsId"></param>
             <returns></returns>
         </member>
     </members>

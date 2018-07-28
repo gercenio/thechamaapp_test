@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -84,7 +85,16 @@ namespace TheChamaApp.Presentation.WebApi
                     .RequireAuthenticatedUser().Build());
             });
 
-            services.AddMvc();
+            //services.AddMvc();
+            services.AddMvc(config =>
+            {
+                config.RespectBrowserAcceptHeader = true;
+                //config.InputFormatters.Add(new JsonInputFormatter(,));
+                //config.ReturnHttpNotAcceptable = true;
+                //config.InputFormatters.Add(new XmlSerializerInputFormatter());
+                //config.OutputFormatters.Add(new XmlSerializerOutputFormatter());
+            });
+            services.AddCors();
 
             // Configurando o serviço de documentação do Swagger
             services.AddSwaggerGen(c =>
@@ -123,6 +133,11 @@ namespace TheChamaApp.Presentation.WebApi
                 app.UseDeveloperExceptionPage();
 
             }
+            app.UseCors(builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials());
 
             app.UseMvc();
 
