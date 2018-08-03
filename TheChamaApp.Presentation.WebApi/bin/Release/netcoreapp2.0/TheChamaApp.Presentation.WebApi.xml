@@ -37,6 +37,14 @@
             </summary>
             <param name="CompanyContactId"></param>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyContactController.Put(System.Int32,TheChamaApp.Domain.Entities.CompanyContact)">
+            <summary>
+            Realiza a alteracao de um contato
+            </summary>
+            <param name="CompanyContactId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyController.Get">
             <summary>
             Obtem uma lista de empresas
@@ -63,6 +71,28 @@
             <param name="CompanyId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyController.Put(System.Int32,TheChamaApp.Domain.Entities.Company)">
+            <summary>
+            Realiza uma alteração de uma empresa
+            </summary>
+            <param name="CompanyId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyController.CreatePagedResults``2(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Creates a paged set of results.
+            </summary>
+            <typeparam name="T">The type of the source IQueryable.</typeparam>
+            <typeparam name="TReturn">The type of the returned paged results.</typeparam>
+            <param name="queryable">The source IQueryable.</param>
+            <param name="page">The page number you want to retrieve.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="orderBy">The field or property to order by.</param>
+            <param name="ascending">Indicates whether or not 
+            the order should be ascending (true) or descending (false.)</param>
+            <returns>Returns a paged set of results.</returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyUnityController.Post(TheChamaApp.Domain.Entities.CompanyUnity)">
             <summary>
             Cadastra uma unidade por empresa
@@ -82,6 +112,28 @@
             Deleta uma unidades
             </summary>
             <param name="CompanyUnityId"></param>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyUnityController.Put(System.Int32,TheChamaApp.Domain.Entities.CompanyUnity)">
+            <summary>
+            Altera uma Unidade
+            </summary>
+            <param name="CompanyUnityId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyUtilController.CreatePagedResults``2(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Creates a paged set of results.
+            </summary>
+            <typeparam name="T">The type of the source IQueryable.</typeparam>
+            <typeparam name="TReturn">The type of the returned paged results.</typeparam>
+            <param name="queryable">The source IQueryable.</param>
+            <param name="page">The page number you want to retrieve.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="orderBy">The field or property to order by.</param>
+            <param name="ascending">Indicates whether or not 
+            the order should be ascending (true) or descending (false.)</param>
+            <returns>Returns a paged set of results.</returns>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Post(TheChamaApp.Domain.Entities.Questions)">
             <summary>
@@ -109,6 +161,48 @@
             </summary>
             <param name="QuestionsId"></param>
             <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Extension.Extensions.OrderByPropertyOrField``1(System.Linq.IQueryable{``0},System.String,System.Boolean)">
+            <summary>
+            Order the IQueryable by the given property or field.
+            </summary>
+            <typeparam name="T">The type of the IQueryable being ordered.</typeparam>
+            <param name="queryable">The IQueryable being ordered.</param>
+            <param name="propertyOrFieldName">
+            The name of the property or field to order by.</param>
+            <param name="ascending">Indicates whether or not 
+            the order should be ascending (true) or descending (false.)</param>
+            <returns>Returns an IQueryable ordered by the specified field.</returns>
+        </member>
+        <member name="P:TheChamaApp.Presentation.WebApi.Extension.PagedResults`1.PageNumber">
+            <summary>
+            The page number this page represents.
+            </summary>
+        </member>
+        <member name="P:TheChamaApp.Presentation.WebApi.Extension.PagedResults`1.PageSize">
+            <summary>
+            The size of this page.
+            </summary>
+        </member>
+        <member name="P:TheChamaApp.Presentation.WebApi.Extension.PagedResults`1.TotalNumberOfPages">
+            <summary>
+            The total number of pages available.
+            </summary>
+        </member>
+        <member name="P:TheChamaApp.Presentation.WebApi.Extension.PagedResults`1.TotalNumberOfRecords">
+            <summary>
+            The total number of records available.
+            </summary>
+        </member>
+        <member name="P:TheChamaApp.Presentation.WebApi.Extension.PagedResults`1.NextPageUrl">
+            <summary>
+            The URL to the next page - if null, there are no more pages.
+            </summary>
+        </member>
+        <member name="P:TheChamaApp.Presentation.WebApi.Extension.PagedResults`1.Results">
+            <summary>
+            The records this page represents.
+            </summary>
         </member>
     </members>
 </doc>

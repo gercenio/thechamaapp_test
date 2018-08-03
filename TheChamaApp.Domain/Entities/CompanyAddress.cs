@@ -21,6 +21,8 @@ namespace TheChamaApp.Domain.Entities
         public DateTime? UpdateAt { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime InsertAt { get; set; }
+        
+        public string Neighborhood { get; set; }
 
         public int StateId { get; set; }
         

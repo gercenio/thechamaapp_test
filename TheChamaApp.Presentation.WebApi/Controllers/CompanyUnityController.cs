@@ -89,6 +89,30 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Altera uma Unidade
+        /// </summary>
+        /// <param name="CompanyUnityId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{CompanyId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int CompanyUnityId, [FromBody]Domain.Entities.CompanyUnity Entity)
+        {
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            {
+                try
+                {
+                    CompanyBO.AlterarUnidade(CompanyUnityId,Entity,out Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+                return Ok(Mensagem);
+            }
+        }
+
         #endregion
 
     }

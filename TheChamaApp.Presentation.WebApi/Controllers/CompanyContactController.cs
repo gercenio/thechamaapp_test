@@ -83,6 +83,30 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Realiza a alteracao de um contato
+        /// </summary>
+        /// <param name="CompanyContactId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{CompanyContactId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int CompanyContactId, [FromBody]Domain.Entities.CompanyContact Entity)
+        {
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            {
+                try
+                {
+                    CompanyBO.AlterarContato(CompanyContactId, Entity, out Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+                return Ok(Mensagem);
+            }
+        }
+
         #endregion
     }
 }

@@ -51,13 +51,13 @@ namespace TheChamaApp.Service.CompanyBusiness
                 if (ListCompany.Count == 0)
                 {
                     _ICompanyApplication.Add(Entity);
-                    Mensagem = "Done";
+                    Mensagem = Entity.CompanyId.ToString();
                 }
                 else {
                     if(Entity.CompanyId > 0)
                     {
                         _ICompanyApplication.Update(Entity);
-                        Mensagem = "Done";
+                        Mensagem = Entity.CompanyId.ToString();
                     }
                 }
             }
@@ -67,6 +67,33 @@ namespace TheChamaApp.Service.CompanyBusiness
             }
             return Entity;
 
+        }
+
+        /// <summary>
+        /// Atualiza a empresa
+        /// </summary>
+        /// <param name="CompanyId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public Domain.Entities.Company IncluirOuAlterar(int CompanyId,Domain.Entities.Company Entity, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var CompanyEntity = _ICompanyApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
+                if (CompanyEntity.CompanyId > 0)
+                {
+                    Entity.CompanyId = CompanyId;
+                    return this.IncluirOuAlterar(Entity, out Mensagem);
+                }
+                
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Erro:{0}", Ex.Message);
+            }
+            return Entity;
         }
 
         /// <summary>
@@ -93,6 +120,34 @@ namespace TheChamaApp.Service.CompanyBusiness
             {
 
                 Mensagem = string.Format("Erro:{0}",Ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Altera uma Unidade
+        /// </summary>
+        /// <param name="CompanyUnityId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        public void AlterarUnidade(int CompanyUnityId, Domain.Entities.CompanyUnity Entity,out string Mensagem)
+        {
+            try
+            {
+                var UnityOriginal = _ICompanyUnityApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId).Single();
+                if (UnityOriginal.CompanyUnityId > 0 || UnityOriginal != null)
+                {
+                    Entity.CompanyUnityId = CompanyUnityId;
+                    Entity.CompanyId = UnityOriginal.CompanyId;
+                    _ICompanyUnityApplication.Update(Entity);
+                    Mensagem = "Done";
+                }
+                else {
+                    Mensagem = "Dados não localizados, por favor verifique!!";
+                }
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Erro:{0}", Ex.Message);
             }
         }
 
@@ -131,6 +186,36 @@ namespace TheChamaApp.Service.CompanyBusiness
                 Mensagem = string.Format("Erro:{0}", Ex.Message);
             }
         }
+
+        /// <summary>
+        /// Realiza a alteração de um contato
+        /// </summary>
+        /// <param name="CompanyContactId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        public void AlterarContato(int CompanyContactId, Domain.Entities.CompanyContact Entity, out string Mensagem)
+        {
+            try
+            {
+                var ContatoOriginal = _ICompanyContactApplication.GetAll().Where(m => m.CompanyContactId == CompanyContactId).Single();
+                if (ContatoOriginal.CompanyContactId > 0 || ContatoOriginal != null)
+                {
+                    Entity.CompanyContactId = CompanyContactId;
+                    Entity.CompanyId = ContatoOriginal.CompanyId;
+                    _ICompanyContactApplication.Update(Entity);
+                    Mensagem = "Done";
+                }
+                else {
+                    Mensagem = "Dados não localizados, por favor verifique!!";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Erro:{0}", Ex.Message);
+            }
+        }
+
 
         /// <summary>
         /// Obtem uma lista de contatos por empresa
@@ -241,13 +326,17 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        public Domain.Entities.Company ObterEmpresa(int CompanyId)
+        public Domain.Entities.Company Obter(int CompanyId)
         {
             var CompanyEntity = _ICompanyApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
             try
             {
                 if (CompanyEntity.CompanyId > 0)
                 {
+                    //Obtendo o endereço
+                    CompanyEntity.Unitys = new List<Domain.Entities.CompanyUnity>();
+                    CompanyEntity.Contacts = new List<Domain.Entities.CompanyContact>();
+                    CompanyEntity.Address = _ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
                     foreach (var Contato in _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
                     {
                         CompanyEntity.Contacts.Add(Contato);

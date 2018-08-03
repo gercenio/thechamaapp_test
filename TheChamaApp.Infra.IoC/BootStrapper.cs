@@ -47,6 +47,11 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IAskApplication, AskApplication>(Lifestyle.Scoped);
             container.Register<IAskService, AskService>(Lifestyle.Scoped);
             container.Register<IAskRepository, AskRepository>(Lifestyle.Scoped);
+            //rellationship questions to ask
+            container.Register<IRellationshipQuestionsToAskApplication, RellationshipQuestionsToAskApplication>(Lifestyle.Scoped);
+            container.Register<IRellationshipQuestionsToAskService, RellationshipQuestionsToAskService>(Lifestyle.Scoped);
+            container.Register<IRellationshipQuestionsToAskRepository, RellationshipQuestionsToAskRepository>(Lifestyle.Scoped);
+
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
