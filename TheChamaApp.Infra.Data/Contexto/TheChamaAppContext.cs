@@ -71,7 +71,8 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<CompanyUnity>().ToTable("companyunity", "hgm");
             modelBuilder.Entity<Ask>().ToTable("ask", "hgm");
             modelBuilder.Entity<RellationshipQuestionsToAsk>().ToTable("rellationshipquestionstoask", "hgm");
-            
+            modelBuilder.Entity<CompanyType>().ToTable("companytype", "hgm");
+
 
             base.OnModelCreating(modelBuilder);
         }

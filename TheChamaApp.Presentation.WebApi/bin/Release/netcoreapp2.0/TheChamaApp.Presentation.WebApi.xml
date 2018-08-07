@@ -93,6 +93,12 @@
             the order should be ascending (true) or descending (false.)</param>
             <returns>Returns a paged set of results.</returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Get">
+            <summary>
+            Retorna uma lista de tipos de empresa
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyUnityController.Post(TheChamaApp.Domain.Entities.CompanyUnity)">
             <summary>
             Cadastra uma unidade por empresa
@@ -160,6 +166,21 @@
             Obtem uma pergunta
             </summary>
             <param name="QuestionsId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipQuestionsToAskController.Post(TheChamaApp.Domain.Entities.RellationshipQuestionsToAsk)">
+            <summary>
+            Realiza a inclusão de uma relacionamento entre perguntas e respostas
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipQuestionsToAskController.Put(System.Int32,TheChamaApp.Domain.Entities.RellationshipQuestionsToAsk)">
+            <summary>
+            Realiza a alteração no relacionamento entre Perguntas e respostas
+            </summary>
+            <param name="RellationshipQuestionsToAskId"></param>
+            <param name="Entity"></param>
             <returns></returns>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Extension.Extensions.OrderByPropertyOrField``1(System.Linq.IQueryable{``0},System.String,System.Boolean)">

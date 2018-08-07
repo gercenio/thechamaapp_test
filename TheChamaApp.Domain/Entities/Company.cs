@@ -18,6 +18,10 @@ namespace TheChamaApp.Domain.Entities
         public DateTime? UpdateAt { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime InsertAt { get; set; }
+        public int QuantityCollaborator { get; set; }
+        public int CompanyTypeId { get; set; }
+        public DateTime DateBase { get; set; }
+
 
         public virtual CompanyAddress Address { get; set; }
         public ICollection<CompanyContact> Contacts { get; set; }
