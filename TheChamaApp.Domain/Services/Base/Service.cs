@@ -8,7 +8,7 @@ using TheChamaApp.Domain.Interfaces.Service.Base;
 
 namespace TheChamaApp.Domain.Services.Base
 {
-    
+
     public class Service<TEnity> : IDisposable, IRepository<TEnity> where TEnity : class
     {
 

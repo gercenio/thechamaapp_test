@@ -8,7 +8,7 @@ namespace TheChamaApp.Domain.Entities
     public class CompanyType
     {
         [Key]
-        public int CompanyId { get; set; }
+        public int CompanyTypeId { get; set; }
         public string Description { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }

@@ -7,13 +7,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using TheChamaApp.Application.IApplication;
-using TheChamaApp.Presentation.WebApi.Extension;
+using TheChamaApp.Infra.CrossCutting.Util;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/CompanyUtil")]
+    
+    [Route("api/[controller]")]
     public class CompanyUtilController : Controller
     {
         #region # Propriedades
@@ -45,74 +46,58 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         #region # Actions
 
-        
-        [HttpGet("{page}")]
-        [Authorize("Bearer")]
-        public async Task<IActionResult> Get(int? page = null,
-int pageSize = 10, string orderBy = nameof(Domain.Entities.Company.CompanyId), bool ascending = true)
-        {
-            if (page == null)
-                return Ok(_ICompanyApplication.GetAll());
-
-            var employees = await CreatePagedResults<Domain.Entities.Company, Domain.Entities.Company>
-                (_ICompanyApplication.GetAll().AsQueryable(), page.Value, pageSize, orderBy, ascending);
-            return Ok(employees);
-        }
-
         /// <summary>
-        /// Creates a paged set of results.
+        /// Realiza a busca pagina de empresas
         /// </summary>
-        /// <typeparam name="T">The type of the source IQueryable.</typeparam>
-        /// <typeparam name="TReturn">The type of the returned paged results.</typeparam>
-        /// <param name="queryable">The source IQueryable.</param>
-        /// <param name="page">The page number you want to retrieve.</param>
-        /// <param name="pageSize">The size of the page.</param>
-        /// <param name="orderBy">The field or property to order by.</param>
-        /// <param name="ascending">Indicates whether or not 
-        /// the order should be ascending (true) or descending (false.)</param>
-        /// <returns>Returns a paged set of results.</returns>
-        protected async Task<PagedResults<TReturn>> CreatePagedResults<T, TReturn>(
-            IQueryable<T> queryable,
-            int page,
-            int pageSize,
-            string orderBy,
-            bool ascending)
+        /// <param name="pagingparametermodel"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize("Bearer")]
+        public IEnumerable<Domain.Entities.Company> Get([FromQuery]PagingParameterModel pagingparametermodel)
         {
-            var skipAmount = pageSize * (page - 1);
+            
+            var source = _ICompanyApplication.GetAll().OrderBy(a => a.CompanyId).AsQueryable();
 
-            var projection = queryable
-                .OrderByPropertyOrField(orderBy, ascending)
-                .Skip(skipAmount)
-                .Take(pageSize).ProjectTo<TReturn>();
+            // Get's No of Rows Count   
+            int count = source.Count();
 
-            var totalNumberOfRecords = await queryable.CountAsync();
-            var results = await projection.ToListAsync();
+            // Parameter is passed from Query string if it is null then it default Value will be pageNumber:1  
+            int CurrentPage = pagingparametermodel.pageNumber;
 
-            var mod = totalNumberOfRecords % pageSize;
-            var totalPageCount = (totalNumberOfRecords / pageSize) + (mod == 0 ? 0 : 1);
+            // Parameter is passed from Query string if it is null then it default Value will be pageSize:20  
+            int PageSize = pagingparametermodel.pageSize;
 
-            var nextPageUrl =
-            page == totalPageCount
-                ? null
-                : Url?.Link("DefaultApi", new
-                {
-                    page = page + 1,
-                    pageSize,
-                    orderBy,
-                    ascending
-                });
+            // Display TotalCount to Records to User  
+            int TotalCount = count;
 
-            return new PagedResults<TReturn>
+            // Calculating Totalpage by Dividing (No of Records / Pagesize)  
+            int TotalPages = (int)Math.Ceiling(count / (double)PageSize);
+
+            // Returns List of Customer after applying Paging   
+            var items = source.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+
+            // if CurrentPage is greater than 1 means it has previousPage  
+            var previousPage = CurrentPage > 1 ? "Yes" : "No";
+
+            // if TotalPages is greater than CurrentPage means it has nextPage  
+            var nextPage = CurrentPage < TotalPages ? "Yes" : "No";
+
+            // Object which we are going to send in header   
+            var paginationMetadata = new
             {
-                Results = results,
-                PageNumber = page,
-                PageSize = results.Count,
-                TotalNumberOfPages = totalPageCount,
-                TotalNumberOfRecords = totalNumberOfRecords,
-                NextPageUrl = nextPageUrl
+                totalCount = TotalCount,
+                pageSize = PageSize,
+                currentPage = CurrentPage,
+                totalPages = TotalPages,
+                previousPage,
+                nextPage
             };
-        }
 
+            // Setting Header  
+            HttpContext.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(paginationMetadata));
+            // Returing List of Customers Collections  
+            return items;
+        }
 
         #endregion
 

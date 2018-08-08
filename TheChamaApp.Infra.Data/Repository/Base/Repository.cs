@@ -94,7 +94,7 @@ namespace TheChamaApp.Infra.Data.Repository.Base
         #endregion
 
         #region # IDisponsable
-        
+
         private Component component = new Component();
         private bool disposed = false;
 

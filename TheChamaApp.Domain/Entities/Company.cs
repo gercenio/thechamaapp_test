@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace TheChamaApp.Domain.Entities
@@ -18,11 +19,12 @@ namespace TheChamaApp.Domain.Entities
         public DateTime? UpdateAt { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime InsertAt { get; set; }
-        public int QuantityCollaborator { get; set; }
-        public int CompanyTypeId { get; set; }
-        public DateTime DateBase { get; set; }
+        public int? QuantyCollaborator { get; set; }
+        public int? CompanyTypeId { get; set; }
+        public DateTime? DateBase { get; set; }
 
-
+        [ForeignKey("CompanyTypeId")]
+        public virtual CompanyType Type { get; set; }
         public virtual CompanyAddress Address { get; set; }
         public ICollection<CompanyContact> Contacts { get; set; }
         public ICollection<CompanyUnity> Unitys { get; set; }
