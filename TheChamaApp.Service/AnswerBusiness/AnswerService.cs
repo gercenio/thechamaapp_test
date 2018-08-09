@@ -32,7 +32,7 @@ namespace TheChamaApp.Service.AnswerBusiness
             try
             {
                 _IAnswerService.Add(Entity);
-                Mensagem = "Done";
+                Mensagem = Entity.AnswerId.ToString();
             }
             catch (Exception Ex)
             {
@@ -47,12 +47,18 @@ namespace TheChamaApp.Service.AnswerBusiness
         /// <param name="Entity"></param>
         /// <param name="Mensagem"></param>
         /// <returns></returns>
-        public Domain.Entities.Answer Alterar(Domain.Entities.Answer Entity, out string Mensagem)
+        public Domain.Entities.Answer Alterar(int AnswerId,Domain.Entities.Answer Entity, out string Mensagem)
         {
+            Mensagem = string.Empty;
             try
             {
-                _IAnswerService.Update(Entity);
-                Mensagem = "Done";
+                var Original = _IAnswerService.GetAll().Where(m => m.AnswerId == AnswerId).ToList();
+                if (Original.Count > 0)
+                {
+                    _IAnswerService.Update(Entity);
+                    Mensagem = "Done";
+                }
+                
             }
             catch (Exception Ex)
             {
@@ -75,6 +81,41 @@ namespace TheChamaApp.Service.AnswerBusiness
             catch (Exception Ex)
             {
                 Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Obtem uma Respsta
+        /// </summary>
+        /// <param name="AnswerId"></param>
+        /// <returns></returns>
+        public Domain.Entities.Answer Obter(int AnswerId)
+        {
+            var Entity = new Domain.Entities.Answer();
+            try
+            {
+                Entity = _IAnswerService.GetAll().Where(m => m.AnswerId == AnswerId).Single();
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception(Ex.Message);
+            }
+            return Entity;
+        }
+
+        /// <summary>
+        /// Obter todas as respostas
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Domain.Entities.Answer> ObterTodos()
+        {
+            try
+            {
+                return _IAnswerService.GetAll();
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception(Ex.Message);
             }
         }
 

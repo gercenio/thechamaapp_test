@@ -11,6 +11,28 @@
             <param name="Entity"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AnswerController.Put(System.Int32,TheChamaApp.Domain.Entities.Answer)">
+            <summary>
+            Atualiza uma resposta
+            </summary>
+            <param name="AnswerId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AnswerController.Delete(System.Int32)">
+            <summary>
+            Deleta uma resposta
+            </summary>
+            <param name="AnswerId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AnswerController.Get(System.Int32)">
+            <summary>
+            Obtem uma resposta
+            </summary>
+            <param name="AnswerId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Post(TheChamaApp.Domain.Entities.Ask)">
             <summary>
             Realiza a inclusão ou a alteração de uma resposta
