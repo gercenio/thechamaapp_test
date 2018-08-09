@@ -60,6 +60,13 @@ namespace TheChamaApp.Service.CompanyBusiness
                     if(Entity.CompanyId > 0)
                     {
                         _ICompanyApplication.Update(Entity);
+                        var OriginalAddress = _ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == Entity.CompanyId).ToList();
+                        if (OriginalAddress.Count > 0) {
+                            Entity.Address.CompanyAddressId = OriginalAddress.First().CompanyAddressId;
+                            Entity.Address.CompanyId = Entity.CompanyId;
+                            _ICompanyAddressApplication.Update(Entity.Address);
+                        }
+
                         Mensagem = Entity.CompanyId.ToString();
                     }
                 }
