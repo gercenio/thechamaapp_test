@@ -9,8 +9,8 @@ using TheChamaApp.Application.IApplication;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/CompanyContact")]
+    
+    [Route("api/[controller]")]
     public class CompanyContactController : BaseController
     {
         #region # Propriedades
@@ -61,7 +61,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{CompanyContactId}")]
         [Authorize("Bearer")]
         public IActionResult Get(int CompanyContactId)
         {

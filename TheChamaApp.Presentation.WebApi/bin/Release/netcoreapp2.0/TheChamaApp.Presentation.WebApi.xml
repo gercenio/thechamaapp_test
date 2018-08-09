@@ -4,6 +4,13 @@
         <name>TheChamaApp.Presentation.WebApi</name>
     </assembly>
     <members>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AnswerController.Post(TheChamaApp.Domain.Entities.Answer)">
+            <summary>
+            Realiza a inclusão de uma resposta
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Post(TheChamaApp.Domain.Entities.Ask)">
             <summary>
             Realiza a inclusão ou a alteração de uma resposta

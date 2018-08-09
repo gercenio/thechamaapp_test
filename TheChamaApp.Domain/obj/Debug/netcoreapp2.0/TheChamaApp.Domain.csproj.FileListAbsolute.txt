@@ -33,3 +33,4 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Debug\netcoreapp2.
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Debug\netcoreapp2.0\TheChamaApp.Domain.AssemblyInfo.cs
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Debug\netcoreapp2.0\TheChamaApp.Domain.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Debug\netcoreapp2.0\TheChamaApp.Domain.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Domain\obj\Debug\netcoreapp2.0\TheChamaApp.Domain.csprojResolveAssemblyReference.cache

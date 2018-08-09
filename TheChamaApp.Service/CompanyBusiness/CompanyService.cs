@@ -116,7 +116,7 @@ namespace TheChamaApp.Service.CompanyBusiness
                 else
                 {
                     _ICompanyUnityApplication.Add(Entity);
-                    Mensagem = "Done";
+                    Mensagem = Entity.CompanyUnityId.ToString();
                 }
             }
             catch (Exception Ex)
@@ -161,7 +161,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// <returns></returns>
         public Domain.Entities.CompanyUnity ObterUnidades(int CompanyUnityId)
         {
-            return _ICompanyUnityApplication.GetAll().Where(m => m.CompanyId == CompanyUnityId).Single();
+            return _ICompanyUnityApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId).Single();
         }
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace TheChamaApp.Service.CompanyBusiness
                 else
                 {
                     _ICompanyContactApplication.Add(Entity);
-                    Mensagem = "Done";
+                    Mensagem = Entity.CompanyContactId.ToString();
                 }
             }
             catch (Exception Ex)
@@ -227,7 +227,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// <returns></returns>
         public Domain.Entities.CompanyContact ObterContatos(int CompanyContactId)
         {
-            return _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyContactId).Single();
+            return _ICompanyContactApplication.GetAll().Where(m => m.CompanyContactId == CompanyContactId).Single();
         }
 
         /// <summary>
@@ -342,7 +342,9 @@ namespace TheChamaApp.Service.CompanyBusiness
                     if (CompanyEntity.CompanyTypeId.HasValue) {
                         CompanyEntity.Type = _ICompanyTypeApplication.GetAll().Where(m => m.CompanyTypeId == CompanyEntity.CompanyTypeId).Single();
                     }
-                    CompanyEntity.Address = _ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
+                    if (_ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyEntity.CompanyId).Count() > 0) {
+                        CompanyEntity.Address = _ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
+                    }
                     foreach (var Contato in _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
                     {
                         CompanyEntity.Contacts.Add(Contato);

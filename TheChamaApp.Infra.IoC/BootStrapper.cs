@@ -55,7 +55,10 @@ namespace TheChamaApp.Infra.IoC
             container.Register<ICompanyTypeApplication, CompanyTypeApplication>(Lifestyle.Scoped);
             container.Register<ICompanyTypeService, CompanyTypeService>(Lifestyle.Scoped);
             container.Register<ICompanyTypeRepository, CompanyTypeRepository>(Lifestyle.Scoped);
-
+            //answer
+            container.Register<IAnswerApplication, AnswerApplication>(Lifestyle.Scoped);
+            container.Register<IAnswerService, AnswerService>(Lifestyle.Scoped);
+            container.Register<IAnswerRepository, AnswerRepository>(Lifestyle.Scoped);
 
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);

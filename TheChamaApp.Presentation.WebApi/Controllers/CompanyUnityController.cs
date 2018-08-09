@@ -66,7 +66,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        [HttpGet("{CompanyId}")]
+        [HttpGet("{CompanyUnityId}")]
         [Authorize("Bearer")]
         public IActionResult Get(int CompanyUnityId)
         {
