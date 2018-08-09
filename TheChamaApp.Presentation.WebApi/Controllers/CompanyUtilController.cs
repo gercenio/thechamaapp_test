@@ -24,6 +24,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly ICompanyContactApplication _ICompanyContactApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
         private readonly IStateApplication _IStateApplication;
+        private readonly ICompanyTypeApplication _ICompanyTypeApplication;
 
         #endregion
 
@@ -33,13 +34,15 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             , ICompanyAddressApplication companyAddressApplication
             , ICompanyContactApplication companyContactApplication
             , ICompanyUnityApplication companyUnityApplication
-            , IStateApplication stateApplication)
+            , IStateApplication stateApplication
+            , ICompanyTypeApplication companyTypeApplication)
         {
             _ICompanyApplication = companyApplication;
             _ICompanyAddressApplication = companyAddressApplication;
             _ICompanyContactApplication = companyContactApplication;
             _ICompanyUnityApplication = companyUnityApplication;
             _IStateApplication = stateApplication;
+            _ICompanyTypeApplication = companyTypeApplication;
         }
 
         #endregion
@@ -55,48 +58,52 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IEnumerable<Domain.Entities.Company> Get([FromQuery]PagingParameterModel pagingparametermodel)
         {
-            
-            var source = _ICompanyApplication.GetAll().OrderBy(a => a.CompanyId).AsQueryable();
 
-            // Get's No of Rows Count   
-            int count = source.Count();
-
-            // Parameter is passed from Query string if it is null then it default Value will be pageNumber:1  
-            int CurrentPage = pagingparametermodel.pageNumber;
-
-            // Parameter is passed from Query string if it is null then it default Value will be pageSize:20  
-            int PageSize = pagingparametermodel.pageSize;
-
-            // Display TotalCount to Records to User  
-            int TotalCount = count;
-
-            // Calculating Totalpage by Dividing (No of Records / Pagesize)  
-            int TotalPages = (int)Math.Ceiling(count / (double)PageSize);
-
-            // Returns List of Customer after applying Paging   
-            var items = source.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
-
-            // if CurrentPage is greater than 1 means it has previousPage  
-            var previousPage = CurrentPage > 1 ? "Yes" : "No";
-
-            // if TotalPages is greater than CurrentPage means it has nextPage  
-            var nextPage = CurrentPage < TotalPages ? "Yes" : "No";
-
-            // Object which we are going to send in header   
-            var paginationMetadata = new
+            using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication, _ICompanyTypeApplication))
             {
-                totalCount = TotalCount,
-                pageSize = PageSize,
-                currentPage = CurrentPage,
-                totalPages = TotalPages,
-                previousPage,
-                nextPage
-            };
+                var source = CompanyBO.ObterTodas().AsQueryable();
 
-            // Setting Header  
-            HttpContext.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(paginationMetadata));
-            // Returing List of Customers Collections  
-            return items;
+                // Get's No of Rows Count   
+                int count = source.Count();
+
+                // Parameter is passed from Query string if it is null then it default Value will be pageNumber:1  
+                int CurrentPage = pagingparametermodel.pageNumber;
+
+                // Parameter is passed from Query string if it is null then it default Value will be pageSize:20  
+                int PageSize = pagingparametermodel.pageSize;
+
+                // Display TotalCount to Records to User  
+                int TotalCount = count;
+
+                // Calculating Totalpage by Dividing (No of Records / Pagesize)  
+                int TotalPages = (int)Math.Ceiling(count / (double)PageSize);
+
+                // Returns List of Customer after applying Paging   
+                var items = source.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+
+                // if CurrentPage is greater than 1 means it has previousPage  
+                var previousPage = CurrentPage > 1 ? "Yes" : "No";
+
+                // if TotalPages is greater than CurrentPage means it has nextPage  
+                var nextPage = CurrentPage < TotalPages ? "Yes" : "No";
+
+                // Object which we are going to send in header   
+                var paginationMetadata = new
+                {
+                    totalCount = TotalCount,
+                    pageSize = PageSize,
+                    currentPage = CurrentPage,
+                    totalPages = TotalPages,
+                    previousPage,
+                    nextPage
+                };
+
+                // Setting Header  
+                HttpContext.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(paginationMetadata));
+                // Returing List of Customers Collections  
+                return items;
+            }
+    
         }
 
         #endregion

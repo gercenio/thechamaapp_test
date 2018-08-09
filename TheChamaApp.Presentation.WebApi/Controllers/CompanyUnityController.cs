@@ -9,8 +9,7 @@ using TheChamaApp.Application.IApplication;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
-    //[Produces("application/json")]
-    //[Route("api/CompanyUnity")]
+    
     [Route("api/[controller]")]
     public class CompanyUnityController : BaseController
     {
@@ -21,6 +20,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly ICompanyAddressApplication _ICompanyAddressApplication;
         private readonly ICompanyContactApplication _ICompanyContactApplication;
         private readonly IStateApplication _IStateApplication;
+        private readonly ICompanyTypeApplication _ICompanyTypeApplication;
 
         #endregion
 
@@ -30,13 +30,15 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             , ICompanyApplication companyApplication
             , ICompanyAddressApplication companyAddressApplication
             , ICompanyContactApplication companyContactApplication
-            , IStateApplication stateApplication)
+            , IStateApplication stateApplication
+            , ICompanyTypeApplication companyTypeApplication)
         {
             _ICompanyUnityApplication = companyUnityApplication;
             _ICompanyApplication = companyApplication;
             _ICompanyAddressApplication = companyAddressApplication;
             _ICompanyContactApplication = companyContactApplication;
             _IStateApplication = stateApplication;
+            _ICompanyTypeApplication = companyTypeApplication;
         }
 
         #endregion
@@ -52,7 +54,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Post([FromBody]Domain.Entities.CompanyUnity Entity)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication,_ICompanyTypeApplication))
             {
                 CompanyBO.IncluirUnidade(Entity, out Mensagem);
             }
@@ -66,11 +68,11 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <returns></returns>
         [HttpGet("{CompanyId}")]
         [Authorize("Bearer")]
-        public IActionResult Get(int CompanyId)
+        public IActionResult Get(int CompanyUnityId)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication,_ICompanyTypeApplication))
             {
-                return Ok(CompanyBO.ObterUnidades(CompanyId));
+                return Ok(CompanyBO.ObterUnidades(CompanyUnityId));
             }
         }
 
@@ -83,7 +85,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public void Delete(int CompanyUnityId)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication,_ICompanyTypeApplication))
             {
                 CompanyBO.ExcluirUnidade(CompanyUnityId, out Mensagem);
             }
@@ -99,7 +101,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Put(int CompanyUnityId, [FromBody]Domain.Entities.CompanyUnity Entity)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication,_ICompanyTypeApplication))
             {
                 try
                 {

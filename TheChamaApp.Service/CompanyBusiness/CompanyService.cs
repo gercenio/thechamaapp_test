@@ -15,6 +15,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         private readonly ICompanyContactApplication _ICompanyContactApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
         private readonly IStateApplication _IStateApplication;
+        private readonly ICompanyTypeApplication _ICompanyTypeApplication;
 
         #endregion
 
@@ -24,13 +25,15 @@ namespace TheChamaApp.Service.CompanyBusiness
             , ICompanyAddressApplication companyAddress
             , ICompanyContactApplication companyContact
             , ICompanyUnityApplication companyUnityApplication
-            , IStateApplication stateApplication)
+            , IStateApplication stateApplication
+            , ICompanyTypeApplication companyTypeApplication)
         {
             _ICompanyApplication = company;
             _ICompanyAddressApplication = companyAddress;
             _ICompanyContactApplication = companyContact;
             _ICompanyUnityApplication = companyUnityApplication;
             _IStateApplication = stateApplication;
+            _ICompanyTypeApplication = companyTypeApplication;
         }
 
         #endregion
@@ -156,9 +159,9 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        public IEnumerable<Domain.Entities.CompanyUnity> ObterUnidades(int CompanyId)
+        public Domain.Entities.CompanyUnity ObterUnidades(int CompanyUnityId)
         {
-            return _ICompanyUnityApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList();
+            return _ICompanyUnityApplication.GetAll().Where(m => m.CompanyId == CompanyUnityId).Single();
         }
 
         /// <summary>
@@ -222,9 +225,9 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        public IEnumerable<Domain.Entities.CompanyContact> ObterContatos(int CompanyId)
+        public Domain.Entities.CompanyContact ObterContatos(int CompanyContactId)
         {
-            return _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList();
+            return _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyContactId).Single();
         }
 
         /// <summary>
@@ -336,6 +339,9 @@ namespace TheChamaApp.Service.CompanyBusiness
                     //Obtendo o endereço
                     CompanyEntity.Unitys = new List<Domain.Entities.CompanyUnity>();
                     CompanyEntity.Contacts = new List<Domain.Entities.CompanyContact>();
+                    if (CompanyEntity.CompanyTypeId.HasValue) {
+                        CompanyEntity.Type = _ICompanyTypeApplication.GetAll().Where(m => m.CompanyTypeId == CompanyEntity.CompanyTypeId).Single();
+                    }
                     CompanyEntity.Address = _ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
                     foreach (var Contato in _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
                     {
@@ -352,6 +358,20 @@ namespace TheChamaApp.Service.CompanyBusiness
                 throw new Exception(Ex.Message);
             }
             return CompanyEntity;
+        }
+
+        /// <summary>
+        /// Obtem uma lista de empresas
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Domain.Entities.Company> ObterTodas()
+        {
+            List<Domain.Entities.Company> lista = new List<Domain.Entities.Company>();
+            foreach (var company in _ICompanyApplication.GetAll())
+            {
+                lista.Add(this.Obter(company.CompanyId));
+            }
+            return lista;
         }
 
         #endregion

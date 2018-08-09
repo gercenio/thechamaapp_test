@@ -25,6 +25,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly ICompanyContactApplication _ICompanyContactApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
         private readonly IStateApplication _IStateApplication;
+        private readonly ICompanyTypeApplication _ICompanyTypeApplication;
 
         #endregion
 
@@ -34,13 +35,15 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             , ICompanyAddressApplication companyAddressApplication
             , ICompanyContactApplication companyContactApplication
             , ICompanyUnityApplication companyUnityApplication
-            , IStateApplication stateApplication)
+            , IStateApplication stateApplication
+            , ICompanyTypeApplication companyTypeApplication)
         {
             _ICompanyApplication = companyApplication;
             _ICompanyAddressApplication = companyAddressApplication;
             _ICompanyContactApplication = companyContactApplication;
             _ICompanyUnityApplication = companyUnityApplication;
             _IStateApplication = stateApplication;
+            _ICompanyTypeApplication = companyTypeApplication;
         }
 
         #endregion
@@ -55,8 +58,18 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get()
         {
-            var List = _ICompanyApplication.GetAll();
-            return Ok(List);
+            try
+            {
+                using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication,_ICompanyTypeApplication))
+                {
+                    return Ok(CompanyBO.ObterTodas());
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+            
         }
 
         /// <summary>
@@ -76,7 +89,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+                    using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication,_ICompanyTypeApplication))
                     {
                         var Result = CompanyBO.IncluirOuAlterar(Entity, out Mensagem);
                         return Ok(Mensagem);
@@ -106,7 +119,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public void Delete(int CompanyId)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication,_ICompanyTypeApplication))
             {
                 CompanyBO.Excluir(CompanyId, out Mensagem);
             }
@@ -121,7 +134,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get(int CompanyId)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication,_ICompanyTypeApplication))
             {
                 return Ok(CompanyBO.Obter(CompanyId));
             }
@@ -141,7 +154,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+                    using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication,_ICompanyTypeApplication))
                     {
                         var Result = CompanyBO.IncluirOuAlterar(CompanyId,Entity, out Mensagem);
                         return Ok(Mensagem);

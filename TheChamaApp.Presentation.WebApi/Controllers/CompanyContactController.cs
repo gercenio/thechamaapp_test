@@ -20,6 +20,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly ICompanyContactApplication _ICompanyContactApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
         private readonly IStateApplication _IStateApplication;
+        private readonly ICompanyTypeApplication _ICompanyTypeApplication;
 
         #endregion
 
@@ -29,13 +30,15 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             , ICompanyAddressApplication companyAddressApplication
             , ICompanyContactApplication companyContactApplication
             , ICompanyUnityApplication companyUnityApplication
-            , IStateApplication stateApplication)
+            , IStateApplication stateApplication
+            , ICompanyTypeApplication companyTypeApplication)
         {
             _ICompanyApplication = companyApplication;
             _ICompanyAddressApplication = companyAddressApplication;
             _ICompanyContactApplication = companyContactApplication;
             _ICompanyUnityApplication = companyUnityApplication;
             _IStateApplication = stateApplication;
+            _ICompanyTypeApplication = companyTypeApplication;
         }
 
         #endregion
@@ -46,7 +49,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Post([FromBody]Domain.Entities.CompanyContact Entity)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication,_ICompanyTypeApplication))
             {
                 CompanyBO.IncluirContato(Entity, out Mensagem);
             }
@@ -60,11 +63,11 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <returns></returns>
         [HttpGet]
         [Authorize("Bearer")]
-        public IActionResult Get(int CompanyId)
+        public IActionResult Get(int CompanyContactId)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication,_ICompanyTypeApplication))
             {
-                return Ok(CompanyBO.ObterContatos(CompanyId));
+                return Ok(CompanyBO.ObterContatos(CompanyContactId));
             }
         }
 
@@ -77,7 +80,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public void Delete(int CompanyContactId)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication,_IStateApplication,_ICompanyTypeApplication))
             {
                 CompanyBO.ExcluirContato(CompanyContactId, out Mensagem);
             }
@@ -93,7 +96,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Put(int CompanyContactId, [FromBody]Domain.Entities.CompanyContact Entity)
         {
-            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication))
+            using (Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication,_ICompanyTypeApplication))
             {
                 try
                 {
