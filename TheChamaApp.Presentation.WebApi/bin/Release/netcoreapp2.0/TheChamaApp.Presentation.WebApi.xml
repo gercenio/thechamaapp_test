@@ -149,6 +149,20 @@
             <param name="pagingparametermodel"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.Post(TheChamaApp.Domain.Entities.Evaluated)">
+            <summary>
+            Realiza o cadastro de um novo avaliado
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.Get(System.Int32)">
+            <summary>
+            Obtem um avaliado
+            </summary>
+            <param name="EvaluatedId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Post(TheChamaApp.Domain.Entities.Questions)">
             <summary>
             Realiza o cadastro de uma pergunta

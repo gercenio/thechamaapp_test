@@ -24,6 +24,8 @@ namespace TheChamaApp.Domain.Entities
         public string Complement { get; set; }
         public string Ibge { get; set; }
         public string City { get; set; }
+        public string Neighborhood { get; set; }
+        public int? QuantyCollaborator { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 

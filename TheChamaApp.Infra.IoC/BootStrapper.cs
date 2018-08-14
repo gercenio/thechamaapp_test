@@ -59,6 +59,16 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IAnswerApplication, AnswerApplication>(Lifestyle.Scoped);
             container.Register<IAnswerService, AnswerService>(Lifestyle.Scoped);
             container.Register<IAnswerRepository, AnswerRepository>(Lifestyle.Scoped);
+            //evaluated
+            container.Register<IEvaluatedApplication, EvaluatedApplication>(Lifestyle.Scoped);
+            container.Register<IEvaluatedService, EvaluatedService>(Lifestyle.Scoped);
+            container.Register<IEvaluatedRepository, EvaluatedRepository>(Lifestyle.Scoped);
+
+            //rellationshipasktoanswer
+            container.Register<IRellationshipAskToAnswerApplication, RellationshipAskToAnswerApplication>(Lifestyle.Scoped);
+            container.Register<IRellationshipAskToAnswerService, RellationshipAskToAnswerService>(Lifestyle.Scoped);
+            container.Register<IRellationshipAskToAnswerRepository, RellationshipAskToAnswerRepository>(Lifestyle.Scoped);
+
 
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
