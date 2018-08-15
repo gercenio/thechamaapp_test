@@ -163,6 +163,20 @@
             <param name="EvaluatedId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.Put(System.Int32,TheChamaApp.Domain.Entities.Evaluated)">
+            <summary>
+            Atualiza um avaliado
+            </summary>
+            <param name="EvaluatedId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.Delete(System.Int32)">
+            <summary>
+            Deleta um avaliado
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Post(TheChamaApp.Domain.Entities.Questions)">
             <summary>
             Realiza o cadastro de uma pergunta
@@ -189,6 +203,18 @@
             </summary>
             <param name="QuestionsId"></param>
             <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipAskToAnswerController.Post(TheChamaApp.Domain.Entities.RellationshipAskToAnswer)">
+            <summary>
+            Realiza a inclusão de um relacionamento
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipAskToAnswerController.Delete(System.Int32)">
+            <summary>
+            Realiza a exclusão de um registro
+            </summary>
+            <param name="RellationshipAskToAnswerId"></param>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipQuestionsToAskController.Post(TheChamaApp.Domain.Entities.RellationshipQuestionsToAsk)">
             <summary>

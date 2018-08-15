@@ -42,8 +42,7 @@ namespace TheChamaApp.Service.AskBusiness
             }
             catch (Exception Ex)
             {
-
-                throw;
+                Mensagem = string.Format("Error:{0}", Ex.Message);
             }
             return Entity;
         }

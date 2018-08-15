@@ -68,6 +68,10 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IRellationshipAskToAnswerApplication, RellationshipAskToAnswerApplication>(Lifestyle.Scoped);
             container.Register<IRellationshipAskToAnswerService, RellationshipAskToAnswerService>(Lifestyle.Scoped);
             container.Register<IRellationshipAskToAnswerRepository, RellationshipAskToAnswerRepository>(Lifestyle.Scoped);
+            //company image
+            container.Register<ICompanyImageApplication, CompanyImageApplication>(Lifestyle.Scoped);
+            container.Register<ICompanyImageService, CompanyImageService>(Lifestyle.Scoped);
+            container.Register<ICompanyImageRepository, CompanyImageRepository>(Lifestyle.Scoped);
 
 
 

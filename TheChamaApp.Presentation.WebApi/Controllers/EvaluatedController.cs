@@ -84,6 +84,46 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Atualiza um avaliado
+        /// </summary>
+        /// <param name="EvaluatedId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Authorize("Bearer")]
+        public IActionResult Put(int EvaluatedId, [FromBody]Domain.Entities.Evaluated Entity)
+        {
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            {
+                try
+                {
+                    EvaluetedBO.Alterar(Entity, out Mensagem);
+                    return Ok(Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Deleta um avaliado
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        [Authorize("Bearer")]
+        public void Delete(int EvaluatedId)
+        {
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            {
+                EvaluetedBO.Excluir(EvaluatedId, out Mensagem);
+            }
+
+        }
+
         #endregion
 
     }
