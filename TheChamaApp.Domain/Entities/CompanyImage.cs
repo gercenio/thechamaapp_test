@@ -10,7 +10,7 @@ namespace TheChamaApp.Domain.Entities
         [Key]
         public int CompanyImageId { get; set; }
         public int CompanyId { get; set; }
-        public byte[] Image { get; set; }
+        public string Image { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
     }
