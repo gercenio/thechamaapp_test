@@ -108,6 +108,20 @@
             <param name="Entity"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyImageController.Post(TheChamaApp.Domain.Entities.CompanyImage)">
+            <summary>
+            Realiza a inclusão de uma image por empresa
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyImageController.Get(System.Int32)">
+            <summary>
+            Obtem uma image passando a empresa
+            </summary>
+            <param name="CompanyId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Get">
             <summary>
             Retorna uma lista de tipos de empresa
@@ -174,6 +188,33 @@
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.Delete(System.Int32)">
             <summary>
             Deleta um avaliado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.LevelEvaluatedController.Post(TheChamaApp.Domain.Entities.LevelEvaluated)">
+            <summary>
+            Realiza o cadastro de um tipo de avaliado(departamento/setor)
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.LevelEvaluatedController.Put(System.Int32,TheChamaApp.Domain.Entities.LevelEvaluated)">
+            <summary>
+            Realiza a atualização de um departamento / setor
+            </summary>
+            <param name="LevelEvaluatedId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.LevelEvaluatedController.Delete(System.Int32)">
+            <summary>
+            Exclui um registro
+            </summary>
+            <param name="LevelEvaluatedId"></param>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.LevelEvaluatedController.Get">
+            <summary>
+            Obtem uma lista de departamentos / setor
             </summary>
             <returns></returns>
         </member>

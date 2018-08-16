@@ -75,6 +75,7 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<Answer>().ToTable("answer", "hgm");
             modelBuilder.Entity<RellationshipAskToAnswer>().ToTable("rellationshipAsktoanswer", "hgm");
             modelBuilder.Entity<CompanyImage>().ToTable("companyimage", "hgm");
+            modelBuilder.Entity<LevelEvaluated>().ToTable("levelevaluated", "hgm");
 
 
 
@@ -97,6 +98,7 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<Answer> Answer { get; set; }
         public DbSet<RellationshipAskToAnswer> RellationshipAskToAnswer { get; set; }
         public DbSet<CompanyImage> CompanyImage { get; set; }
+        public DbSet<LevelEvaluated> LevelEvaluated { get; set; }
 
 
         #endregion

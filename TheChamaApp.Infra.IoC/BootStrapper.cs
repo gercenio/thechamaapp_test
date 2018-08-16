@@ -72,6 +72,10 @@ namespace TheChamaApp.Infra.IoC
             container.Register<ICompanyImageApplication, CompanyImageApplication>(Lifestyle.Scoped);
             container.Register<ICompanyImageService, CompanyImageService>(Lifestyle.Scoped);
             container.Register<ICompanyImageRepository, CompanyImageRepository>(Lifestyle.Scoped);
+            // level evaluated
+            container.Register<ILevelEvaluatedApplication, LevelEvaluatedApplication>(Lifestyle.Scoped);
+            container.Register<ILevelEvaluatedService, LevelEvaluatedService>(Lifestyle.Scoped);
+            container.Register<ILevelEvaluatedRepository, LevelEvaluatedRepository>(Lifestyle.Scoped);
 
 
 
