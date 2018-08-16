@@ -122,11 +122,32 @@
             <param name="CompanyId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Post(TheChamaApp.Domain.Entities.CompanyType)">
+            <summary>
+            Cadastra um novo tipo de empresa
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Put(System.Int32,TheChamaApp.Domain.Entities.CompanyType)">
+            <summary>
+            Atualiza os dados
+            </summary>
+            <param name="CompanyTypeId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Get">
             <summary>
             Retorna uma lista de tipos de empresa
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Delete(System.Int32)">
+            <summary>
+            Exclui um registro
+            </summary>
+            <param name="CompanyTypeId"></param>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyUnityController.Post(TheChamaApp.Domain.Entities.CompanyUnity)">
             <summary>

@@ -11,7 +11,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 {
     
     [Route("api/[controller]")]
-    public class CompanyTypeController : Controller
+    public class CompanyTypeController : BaseController
     {
         #region # Propriedades
         private readonly ICompanyTypeApplication _ICompanyTypeApplication;
@@ -27,6 +27,60 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         #region # Actions
 
         /// <summary>
+        /// Cadastra um novo tipo de empresa
+        /// </summary>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize("Bearer")]
+        public IActionResult Post([FromBody]Domain.Entities.CompanyType Entity)
+        {
+            using (TheChamaApp.Service.CompanyBusiness.CompanyTypeService CompanyTypeBO = new Service.CompanyBusiness.CompanyTypeService(_ICompanyTypeApplication))
+            {
+                try
+                {
+                    if (ModelState.IsValid)
+                    {
+                        CompanyTypeBO.Incluir(Entity, out Mensagem);
+                        return Ok(Mensagem);
+                    }
+                    else {
+                        Mensagem = "invalid data !!!";
+                        return Ok(Mensagem);
+                    }
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Atualiza os dados
+        /// </summary>
+        /// <param name="CompanyTypeId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Authorize("Bearer")]
+        public IActionResult Put(int CompanyTypeId, [FromBody]Domain.Entities.CompanyType Entity)
+        {
+            using (TheChamaApp.Service.CompanyBusiness.CompanyTypeService CompanyTypeBO = new Service.CompanyBusiness.CompanyTypeService(_ICompanyTypeApplication))
+            {
+                try
+                {
+                    CompanyTypeBO.Alterar(CompanyTypeId, Entity, out Mensagem);
+                    return Ok(Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+            }
+        }
+
+        /// <summary>
         /// Retorna uma lista de tipos de empresa
         /// </summary>
         /// <returns></returns>
@@ -34,7 +88,25 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get()
         {
-            return Ok(_ICompanyTypeApplication.GetAll());
+            using (TheChamaApp.Service.CompanyBusiness.CompanyTypeService CompanyTypeBO = new Service.CompanyBusiness.CompanyTypeService(_ICompanyTypeApplication))
+            {
+                return Ok(CompanyTypeBO.ObterTodos());
+            }
+                
+        }
+
+        /// <summary>
+        /// Exclui um registro
+        /// </summary>
+        /// <param name="CompanyTypeId"></param>
+        [HttpDelete]
+        [Authorize("Bearer")]
+        public void Delete(int CompanyTypeId)
+        {
+            using (TheChamaApp.Service.CompanyBusiness.CompanyTypeService CompanyTypeBO = new Service.CompanyBusiness.CompanyTypeService(_ICompanyTypeApplication))
+            {
+                CompanyTypeBO.Excluir(CompanyTypeId);
+            }
         }
 
         #endregion
