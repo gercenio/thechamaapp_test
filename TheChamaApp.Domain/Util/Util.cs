@@ -8,13 +8,6 @@ namespace TheChamaApp.Domain.Util
     {
     }
 
-    public enum TeacherType {
-
-        Teacher,
-        Speaker
-
-    }
-
     /// <summary>
     /// Tipos de usuarios do sistema
     /// SYSTEM = API QUE ACESSA E SOLICITA TOKEN
