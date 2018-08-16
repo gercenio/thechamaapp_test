@@ -5,7 +5,7 @@ using TheChamaApp.Domain.Entities;
 
 namespace TheChamaApp.Application.IApplication
 {
-    public interface ICourseApplication : Base.IAppServiceBase<Course>
+    public interface ILoginApplication : Base.IAppServiceBase<Login>
     {
     }
 }

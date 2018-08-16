@@ -7,14 +7,13 @@ using TheChamaApp.Domain.Interfaces.Service;
 
 namespace TheChamaApp.Application.Application
 {
-    public class TeacherApplication : Base.AppServiceBase<Teacher>, ITeacherApplication
+    public class LoginApplication : Base.AppServiceBase<Login>, ILoginApplication
     {
-        private readonly ITeacherService _Service;
+        private readonly ILoginService _Service;
 
-        public TeacherApplication(ITeacherService service) : base(service)
+        public LoginApplication(ILoginService service) : base(service)
         {
             _Service = service;
         }
-        
     }
 }

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using TheChamaApp.Domain.Entities;
-using TheChamaApp.Domain.Interfaces.Service.Base;
 
 namespace TheChamaApp.Domain.Interfaces.Service
 {
-    public interface IRellationshipCourseTeacherService : IService<RellationshipCourseTeacher>
+    public interface ILoginService : Base.IService<Login>
     {
     }
 }

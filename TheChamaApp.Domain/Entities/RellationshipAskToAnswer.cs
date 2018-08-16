@@ -13,7 +13,7 @@ namespace TheChamaApp.Domain.Entities
         public int AnswerId { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
-
+        public int Point { get; set; }
 
     }
 }
