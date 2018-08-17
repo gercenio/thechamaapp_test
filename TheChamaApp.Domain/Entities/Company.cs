@@ -26,6 +26,7 @@ namespace TheChamaApp.Domain.Entities
         [ForeignKey("CompanyTypeId")]
         public virtual CompanyType Type { get; set; }
         public virtual CompanyAddress Address { get; set; }
+        public virtual CompanyImage CompanyImage { get; set; }
         public ICollection<CompanyContact> Contacts { get; set; }
         public ICollection<CompanyUnity> Unitys { get; set; }
     }

@@ -16,6 +16,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
         private readonly IStateApplication _IStateApplication;
         private readonly ICompanyTypeApplication _ICompanyTypeApplication;
+        private readonly ICompanyImageApplication _ICompanyImageApplication;
 
         #endregion
 
@@ -26,7 +27,8 @@ namespace TheChamaApp.Service.CompanyBusiness
             , ICompanyContactApplication companyContact
             , ICompanyUnityApplication companyUnityApplication
             , IStateApplication stateApplication
-            , ICompanyTypeApplication companyTypeApplication)
+            , ICompanyTypeApplication companyTypeApplication
+            , ICompanyImageApplication companyImageApplication)
         {
             _ICompanyApplication = company;
             _ICompanyAddressApplication = companyAddress;
@@ -34,6 +36,7 @@ namespace TheChamaApp.Service.CompanyBusiness
             _ICompanyUnityApplication = companyUnityApplication;
             _IStateApplication = stateApplication;
             _ICompanyTypeApplication = companyTypeApplication;
+            _ICompanyImageApplication = companyImageApplication;
         }
 
         #endregion
@@ -351,6 +354,10 @@ namespace TheChamaApp.Service.CompanyBusiness
                     }
                     if (_ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyEntity.CompanyId).Count() > 0) {
                         CompanyEntity.Address = _ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
+                    }
+                    if (_ICompanyImageApplication.GetAll().Where(m => m.CompanyId == CompanyEntity.CompanyId).Count() > 0)
+                    {
+                        CompanyEntity.CompanyImage = _ICompanyImageApplication.GetAll().Where(m => m.CompanyId == CompanyEntity.CompanyId).Single();
                     }
                     foreach (var Contato in _ICompanyContactApplication.GetAll().Where(m => m.CompanyId == CompanyId).ToList())
                     {
