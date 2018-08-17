@@ -53,6 +53,12 @@
             <param name="AskId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Delete(System.Int32)">
+            <summary>
+            Realiza a exclusão de uma pergunta
+            </summary>
+            <param name="AskId"></param>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyContactController.Get(System.Int32)">
             <summary>
             Obtem uma lista de contatos
@@ -277,6 +283,34 @@
             Realiza a exclusão de um registro
             </summary>
             <param name="RellationshipAskToAnswerId"></param>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipCompanyUnityToQuestionsController.Post(TheChamaApp.Domain.Entities.RellationshipCompanyUnityToQuestions)">
+            <summary>
+            Realiza o relacionamento entre unidade e questionario
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipCompanyUnityToQuestionsController.Put(System.Int32,TheChamaApp.Domain.Entities.RellationshipCompanyUnityToQuestions)">
+            <summary>
+            Atualiza os dados de um relacionamento
+            </summary>
+            <param name="RellationshipCompanyUnityToQuestionsId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipCompanyUnityToQuestionsController.Get(System.Int32)">
+            <summary>
+            Obtem uma relacionamento
+            </summary>
+            <param name="RellationshipCompanyUnityToQuestionsId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipCompanyUnityToQuestionsController.Delete(System.Int32)">
+            <summary>
+            Deleta um relacionamento
+            </summary>
+            <param name="RellationshipCompanyUnityToQuestionsId"></param>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipQuestionsToAskController.Post(TheChamaApp.Domain.Entities.RellationshipQuestionsToAsk)">
             <summary>

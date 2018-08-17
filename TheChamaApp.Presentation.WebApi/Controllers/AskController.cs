@@ -16,13 +16,19 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     {
         #region Propriedades
         private readonly IAskApplication _IAskApplication;
+        private readonly IRellationshipAskToAnswerApplication _IRellationshipAskToAnswerApplication;
+        private readonly IAnswerApplication _IAnswerApplication;
         #endregion
 
         #region # Constructor
 
-        public AskController(IAskApplication askApplication)
+        public AskController(IAskApplication askApplication
+            , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication
+            , IAnswerApplication answerApplication)
         {
             _IAskApplication = askApplication;
+            _IRellationshipAskToAnswerApplication = rellationshipAskToAnswerApplication;
+            _IAnswerApplication = answerApplication;
         }
         #endregion
 
@@ -37,7 +43,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Post([FromBody]Domain.Entities.Ask Entity)
         {
-            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication))
+            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication,_IRellationshipAskToAnswerApplication,_IAnswerApplication))
             {
                 try
                 {
@@ -65,7 +71,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get()
         {
-            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication))
+            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication,_IRellationshipAskToAnswerApplication,_IAnswerApplication))
             {
                 try
                 {
@@ -87,7 +93,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get(int AskId)
         {
-            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication))
+            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication,_IRellationshipAskToAnswerApplication,_IAnswerApplication))
             {
                 try
                 {
@@ -100,11 +106,15 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Realiza a exclusão de uma pergunta
+        /// </summary>
+        /// <param name="AskId"></param>
         [HttpDelete("{AskId}")]
         [Authorize("Bearer")]
         public void Delete(int AskId)
         {
-            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication))
+            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication,_IRellationshipAskToAnswerApplication,_IAnswerApplication))
             {
                 AskBO.Excluir(AskId, out Mensagem);       
             }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace TheChamaApp.Domain.Entities
@@ -15,5 +16,7 @@ namespace TheChamaApp.Domain.Entities
         public DateTime InsertAt { get; set; }
         public int Point { get; set; }
 
+        [ForeignKey("AnswerId")]
+        public virtual Answer Answer { get; set; }
     }
 }

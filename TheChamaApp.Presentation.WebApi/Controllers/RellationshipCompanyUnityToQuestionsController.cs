@@ -26,19 +26,84 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         #region # Actions
 
+        /// <summary>
+        /// Realiza o relacionamento entre unidade e questionario
+        /// </summary>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPost]
         [Authorize("Bearer")]
-        public IActionResult Post([FromBody]Domain.Entities.Questions Entity)
+        public IActionResult Post([FromBody]Domain.Entities.RellationshipCompanyUnityToQuestions Entity)
         {
-            try
+            using (TheChamaApp.Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService UnityToQuestionsBO = new Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService(_IRellationshipCompanyUnityToQuestionsApplication))
             {
-
-            }
-            catch (Exception Ex)
-            {
-                return BadRequest(Ex);
+                try
+                {
+                    UnityToQuestionsBO.Incluir(Entity, out Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
             }
             return Ok(Mensagem);
         }
+
+        /// <summary>
+        /// Atualiza os dados de um relacionamento
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuestionsId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Authorize("Bearer")]
+        public IActionResult Put(int RellationshipCompanyUnityToQuestionsId
+            ,[FromBody]Domain.Entities.RellationshipCompanyUnityToQuestions Entity)
+        {
+            using (TheChamaApp.Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService UnityToQuestionsBO = new Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService(_IRellationshipCompanyUnityToQuestionsApplication))
+            {
+                try
+                {
+                    UnityToQuestionsBO.Alterar(RellationshipCompanyUnityToQuestionsId, Entity, out Mensagem);
+                }
+                catch (Exception Ex)
+                {
+
+                    return BadRequest(Ex);
+                }
+                return Ok(Mensagem);
+            }
+        }
+
+        /// <summary>
+        /// Obtem uma relacionamento
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuestionsId"></param>
+        /// <returns></returns>
+        [HttpGet("{RellationshipCompanyUnityToQuestionsId}")]
+        [Authorize("Bearer")]
+        public IActionResult Get(int RellationshipCompanyUnityToQuestionsId)
+        {
+            using (TheChamaApp.Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService UnityToQuestionsBO = new Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService(_IRellationshipCompanyUnityToQuestionsApplication))
+            {
+                return Ok(UnityToQuestionsBO.Obter(RellationshipCompanyUnityToQuestionsId));
+            }
+        }
+
+        /// <summary>
+        /// Deleta um relacionamento
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuestionsId"></param>
+        [HttpDelete("RellationshipCompanyUnityToQuestionsId")]
+        [Authorize("Bearer")]
+        public void Delete(int RellationshipCompanyUnityToQuestionsId)
+        {
+            using (TheChamaApp.Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService UnityToQuestionsBO = new Service.QuestionsBusiness.RellationshipCompanyUnityToQuestionsService(_IRellationshipCompanyUnityToQuestionsApplication))
+            {
+                UnityToQuestionsBO.Excluir(RellationshipCompanyUnityToQuestionsId);
+            }
+        }
+
         #endregion
 
     }

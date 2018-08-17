@@ -10,12 +10,18 @@ namespace TheChamaApp.Service.AskBusiness
     {
         #region # Propriedades
         private readonly IAskApplication _IAskApplication;
+        private readonly IRellationshipAskToAnswerApplication _IRellationshipAskToAnswerApplication;
+        private readonly IAnswerApplication _IAnswerApplication;
         #endregion
 
         #region # Constructor
-        public AskService(IAskApplication askApplication)
+        public AskService(IAskApplication askApplication
+            , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication
+            , IAnswerApplication answerApplication)
         {
             _IAskApplication = askApplication;
+            _IRellationshipAskToAnswerApplication = rellationshipAskToAnswerApplication;
+            _IAnswerApplication = answerApplication;
         }
         #endregion
 
@@ -74,7 +80,17 @@ namespace TheChamaApp.Service.AskBusiness
         /// <returns></returns>
         public Domain.Entities.Ask Obter(int AskId)
         {
-            return _IAskApplication.GetAll().Where(m => m.AskId == AskId).Single();
+            var Entity = _IAskApplication.GetAll().Where(m => m.AskId == AskId).Single();
+            if (Entity != null)
+            {
+                foreach (var Rellation in _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.AskId == Entity.AskId).ToList())
+                {
+                    Rellation.Answer = _IAnswerApplication.GetAll().Where(m => m.AnswerId == Rellation.AnswerId).Single();
+                    Entity.RellationshipAskToAnswer.Add(Rellation);
+                }
+                
+            }
+            return Entity;
         }
 
         #endregion
