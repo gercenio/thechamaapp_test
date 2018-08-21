@@ -29,10 +29,16 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// <returns></returns>
         public Domain.Entities.CompanyImage Incluir(Domain.Entities.CompanyImage Entity, out string Mensagem)
         {
+            Mensagem = string.Empty;
             try
             {
-                _ICompanyImageApplication.Add(Entity);
-                Mensagem = Entity.CompanyImageId.ToString();
+                var ImageList = _ICompanyImageApplication.GetAll().Where(m => m.CompanyId == Entity.CompanyId).ToList();
+                if (ImageList.Count == 0)
+                {
+                    _ICompanyImageApplication.Add(Entity);
+                    Mensagem = Entity.CompanyImageId.ToString();
+                }
+                
             }
             catch (Exception Ex)
             {
@@ -41,12 +47,25 @@ namespace TheChamaApp.Service.CompanyBusiness
             return Entity;
         }
 
-        public Domain.Entities.CompanyImage Alterar(int dd, Domain.Entities.CompanyImage Entity, out string Mensagem)
+        /// <summary>
+        /// Atualiza a imagem de um produto
+        /// </summary>
+        /// <param name="CompanyImageId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public Domain.Entities.CompanyImage Alterar(int CompanyImageId, Domain.Entities.CompanyImage Entity, out string Mensagem)
         {
             Mensagem = string.Empty;
             try
             {
-
+                var ImageList = _ICompanyImageApplication.GetAll().Where(m => m.CompanyImageId == CompanyImageId).ToList();
+                if (ImageList.Count > 0)
+                {
+                    Entity.CompanyImageId = CompanyImageId;
+                    _ICompanyImageApplication.Update(Entity);
+                    Mensagem = "Done";
+                }
             }
             catch (Exception Ex)
             {
