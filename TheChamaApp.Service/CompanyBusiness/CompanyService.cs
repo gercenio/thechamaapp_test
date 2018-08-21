@@ -396,9 +396,14 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// </summary>
         /// <param name="Description"></param>
         /// <returns></returns>
-        public IEnumerable<Domain.Entities.Company> ObterTodos(string Description)
+        public IEnumerable<Domain.Entities.Company> ObterTodas(string Description)
         {
-            return _ICompanyApplication.GetAll().Where(m => m.Description.Contains(Description)).ToList().AsQueryable();
+            List<Domain.Entities.Company> lista = new List<Domain.Entities.Company>();
+            foreach (var Company in _ICompanyApplication.GetAll().Where(m => m.Description.Contains(Description)).ToList().AsQueryable())
+            {
+                lista.Add(this.Obter(Company.CompanyId));
+            }
+            return lista.AsQueryable();
         }
 
         #endregion

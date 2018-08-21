@@ -188,7 +188,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication, _ICompanyTypeApplication, _ICompanyImageApplication))
             {
-                return CompanyBO.ObterTodos(Description).AsQueryable();
+                return CompanyBO.ObterTodas(Description).AsQueryable();
             }
                 
         }
