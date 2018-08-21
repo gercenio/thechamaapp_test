@@ -33,6 +33,12 @@
             <param name="AnswerId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AnswerController.Get">
+            <summary>
+            Obtem uma lista de todos as repostas
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Post(TheChamaApp.Domain.Entities.Ask)">
             <summary>
             Realiza a inclusão ou a alteração de uma resposta

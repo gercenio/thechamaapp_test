@@ -75,7 +75,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 try
                 {
-                    return Ok(_IAskApplication.GetAll());
+                    return Ok(AskBO.ObterTodos());
                 }
                 catch (Exception Ex)
                 {

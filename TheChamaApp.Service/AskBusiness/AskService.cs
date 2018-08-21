@@ -93,6 +93,20 @@ namespace TheChamaApp.Service.AskBusiness
             return Entity;
         }
 
+        /// <summary>
+        /// Obtem uma lista de perguntas
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<Domain.Entities.Ask> ObterTodos()
+        {
+            List<Domain.Entities.Ask> lista = new List<Domain.Entities.Ask>();
+            foreach (var ask in _IAskApplication.GetAll())
+            {
+                lista.Add(this.Obter(ask.AskId));
+            }
+            return lista;
+        }
+
         #endregion
     }
 }

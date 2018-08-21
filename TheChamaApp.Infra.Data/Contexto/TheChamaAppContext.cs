@@ -73,19 +73,13 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<RellationshipQuestionsToAsk>().ToTable("rellationshipquestionstoask", "hgm");
             modelBuilder.Entity<CompanyType>().ToTable("companytype", "hgm");
             modelBuilder.Entity<Answer>().ToTable("answer", "hgm");
-            modelBuilder.Entity<RellationshipAskToAnswer>().ToTable("rellationshipAsktoanswer", "hgm");
+            modelBuilder.Entity<RellationshipAskToAnswer>().ToTable("rellationshipasktoanswer", "hgm");
             modelBuilder.Entity<CompanyImage>().ToTable("companyimage", "hgm");
             modelBuilder.Entity<LevelEvaluated>().ToTable("levelevaluated", "hgm");
             modelBuilder.Entity<Login>().ToTable("login", "hgm");
             modelBuilder.Entity<RellationshipCompanyUnityToQuestions>().ToTable("rellationshipcompanyUnitytoquestions", "hgm");
             modelBuilder.Entity<ResultQuestions>().ToTable("resultquestions", "hgm");
             
-
-
-
-
-
-
             base.OnModelCreating(modelBuilder);
         }
 

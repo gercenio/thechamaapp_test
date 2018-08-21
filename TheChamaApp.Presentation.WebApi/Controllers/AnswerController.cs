@@ -117,6 +117,27 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Obtem uma lista de todos as repostas
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize("Bearer")]
+        public IActionResult Get()
+        {
+            using (TheChamaApp.Service.AnswerBusiness.AnswerService AnswerBO = new Service.AnswerBusiness.AnswerService(_IAnswerApplication))
+            {
+                try
+                {
+                    return Ok(AnswerBO.ObterTodos());
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+            }
+        }
+
         #endregion
 
     }

@@ -7,6 +7,10 @@ namespace TheChamaApp.Domain.Entities
 {
     public class Ask
     {
+        public Ask() {
+            RellationshipAskToAnswer = new HashSet<Domain.Entities.RellationshipAskToAnswer>();
+        }
+
         #region # Fields
         [Key]
         public int AskId { get; set; }

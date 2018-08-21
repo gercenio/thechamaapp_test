@@ -41,6 +41,20 @@ namespace TheChamaApp.Service.CompanyBusiness
             return Entity;
         }
 
+        public Domain.Entities.CompanyImage Alterar(int dd, Domain.Entities.CompanyImage Entity, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+            return Entity;
+        }
+
         /// <summary>
         /// Obtem uma imagem passando a empresa
         /// </summary>
