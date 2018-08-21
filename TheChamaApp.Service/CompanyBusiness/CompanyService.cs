@@ -349,7 +349,8 @@ namespace TheChamaApp.Service.CompanyBusiness
                     //Obtendo o endereço
                     CompanyEntity.Unitys = new List<Domain.Entities.CompanyUnity>();
                     CompanyEntity.Contacts = new List<Domain.Entities.CompanyContact>();
-                    if (CompanyEntity.CompanyTypeId.HasValue) {
+                    if (CompanyEntity.CompanyTypeId.HasValue && CompanyEntity.CompanyTypeId.Value > 0)
+                    {
                         CompanyEntity.Type = _ICompanyTypeApplication.GetAll().Where(m => m.CompanyTypeId == CompanyEntity.CompanyTypeId).Single();
                     }
                     if (_ICompanyAddressApplication.GetAll().Where(m => m.CompanyId == CompanyEntity.CompanyId).Count() > 0) {
