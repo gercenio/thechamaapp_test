@@ -120,6 +120,13 @@
             <param name="Entity"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyController.GetByDescription(System.String)">
+            <summary>
+            Localiza uma empresa passando a descrição da mesma
+            </summary>
+            <param name="Description"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyImageController.Post(TheChamaApp.Domain.Entities.CompanyImage)">
             <summary>
             Realiza a inclusão de uma image por empresa

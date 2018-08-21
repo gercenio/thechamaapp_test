@@ -391,6 +391,16 @@ namespace TheChamaApp.Service.CompanyBusiness
             return lista;
         }
 
+        /// <summary>
+        /// Obter uma empresa por descrição
+        /// </summary>
+        /// <param name="Description"></param>
+        /// <returns></returns>
+        public IEnumerable<Domain.Entities.Company> ObterTodos(string Description)
+        {
+            return _ICompanyApplication.GetAll().Where(m => m.Description.Contains(Description)).ToList().AsQueryable();
+        }
+
         #endregion
     }
 }

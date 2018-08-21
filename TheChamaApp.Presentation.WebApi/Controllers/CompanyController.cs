@@ -176,6 +176,23 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Localiza uma empresa passando a descrição da mesma
+        /// </summary>
+        /// <param name="Description"></param>
+        /// <returns></returns>
+        [Route("Description/{Description}")]
+        [HttpGet]
+        [Authorize("Bearer")]
+        public IQueryable<Domain.Entities.Company> GetByDescription(string Description)
+        {
+            using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication, _ICompanyTypeApplication, _ICompanyImageApplication))
+            {
+                return CompanyBO.ObterTodos(Description).AsQueryable();
+            }
+                
+        }
+
         #endregion
 
     }
