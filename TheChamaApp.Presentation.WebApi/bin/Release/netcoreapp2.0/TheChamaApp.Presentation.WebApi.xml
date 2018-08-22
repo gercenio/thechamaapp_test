@@ -141,6 +141,14 @@
             <param name="CompanyId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyImageController.Put(System.Int32,TheChamaApp.Domain.Entities.CompanyImage)">
+            <summary>
+            Realiza a alteração de uma imagem
+            </summary>
+            <param name="CompanyImageId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Post(TheChamaApp.Domain.Entities.CompanyType)">
             <summary>
             Cadastra um novo tipo de empresa
@@ -229,6 +237,13 @@
             <summary>
             Deleta um avaliado
             </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.Import(System.Collections.Generic.List{TheChamaApp.Domain.Entities.Evaluated})">
+            <summary>
+            Realiza importação de um arquivo com os colaboradores
+            </summary>
+            <param name="value"></param>
             <returns></returns>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.LevelEvaluatedController.Post(TheChamaApp.Domain.Entities.LevelEvaluated)">

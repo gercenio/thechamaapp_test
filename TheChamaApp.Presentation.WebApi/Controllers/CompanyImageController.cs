@@ -69,6 +69,30 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Realiza a alteração de uma imagem
+        /// </summary>
+        /// <param name="CompanyImageId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut]
+        [Authorize("Bearer")]
+        public IActionResult Put(int CompanyImageId, [FromBody]Domain.Entities.CompanyImage Entity)
+        {
+            try
+            {
+                using (TheChamaApp.Service.CompanyBusiness.CompanyImageService CompanyImageBO = new Service.CompanyBusiness.CompanyImageService(_ICompanyImageApplication))
+                {
+                    CompanyImageBO.Alterar(CompanyImageId, Entity, out Mensagem);
+                    return Ok(Mensagem);
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+        }
+
         #endregion
     }
 }

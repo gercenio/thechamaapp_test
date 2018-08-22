@@ -108,7 +108,6 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
-
         /// <summary>
         /// Deleta um avaliado
         /// </summary>
@@ -122,6 +121,59 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                 EvaluetedBO.Excluir(EvaluatedId, out Mensagem);
             }
 
+        }
+
+        /// <summary>
+        /// Realiza importação de um arquivo com os colaboradores
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        // POST api/csvtest/import
+        [HttpPost]
+        [Route("import")]
+        [Authorize("Bearer")]
+        public async Task<IActionResult> Import([FromBody]List<Domain.Entities.Evaluated> value)
+        {
+            
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+                else
+                {
+                    using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+                    {
+                        List<Domain.Entities.Evaluated> data = value;
+                        var t1 = Task.Run(() => EvaluetedBO.Importa(data,out Mensagem));
+                        await Task.WhenAll(t1);
+                        return Ok(Mensagem);
+                    }
+                   
+                    
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+        }
+
+        /// <summary>
+        /// Localiza um Avaliado passando a descrição
+        /// </summary>
+        /// <param name="Description"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("Description /{Description}")]
+        [Authorize("Bearer")]
+        public IQueryable<Domain.Entities.Evaluated> GetByDescription(string Description)
+        {
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            {
+                return EvaluetedBO.ObterByDescription(Description).AsQueryable();
+            }
         }
 
         #endregion
