@@ -246,6 +246,13 @@
             <param name="value"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.GetByDescription(System.String)">
+            <summary>
+            Localiza um Avaliado passando a descrição
+            </summary>
+            <param name="Description"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.LevelEvaluatedController.Post(TheChamaApp.Domain.Entities.LevelEvaluated)">
             <summary>
             Realiza o cadastro de um tipo de avaliado(departamento/setor)
@@ -353,6 +360,68 @@
             </summary>
             <param name="RellationshipQuestionsToAskId"></param>
             <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.ResultQuestionsController.Post(TheChamaApp.Domain.Entities.ResultQuestions)">
+            <summary>
+            Grava um resultado de avaliação
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.ResultQuestionsController.Put(System.Int32,TheChamaApp.Domain.Entities.ResultQuestions)">
+            <summary>
+            Realiza a alteração de um questionario de respostas
+            </summary>
+            <param name="ResultQuestionsId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.ResultQuestionsController.Get(System.Int32)">
+            <summary>
+            Obtem uma resultado passando o ID
+            </summary>
+            <param name="ResultQuestionsId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.UserController.Post(TheChamaApp.Domain.Entities.Login)">
+            <summary>
+            Cria um novo login na plataforma
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.UserController.Put(System.Int32,TheChamaApp.Domain.Entities.Login)">
+            <summary>
+            Realiza a alteração de um login
+            </summary>
+            <param name="LoginId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Deleta um login
+            </summary>
+            <param name="LoginId"></param>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            Obtem um login
+            </summary>
+            <param name="LoginId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.UserController.Get">
+            <summary>
+            Retorna um lista
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.UserTypeController.Get">
+            <summary>
+            Obtem uma lista de Tipos de Usuario
+            </summary>
             <returns></returns>
         </member>
     </members>

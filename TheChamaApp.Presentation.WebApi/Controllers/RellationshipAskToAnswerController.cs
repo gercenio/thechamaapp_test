@@ -54,7 +54,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// Realiza a exclusão de um registro
         /// </summary>
         /// <param name="RellationshipAskToAnswerId"></param>
-        [HttpDelete]
+        [HttpDelete("{RellationshipAskToAnswerId}")]
         [Authorize("Bearer")]
         public IActionResult Delete(int RellationshipAskToAnswerId)
         {

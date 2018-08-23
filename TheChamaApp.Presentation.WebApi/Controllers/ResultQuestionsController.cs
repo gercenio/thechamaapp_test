@@ -14,13 +14,24 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     public class ResultQuestionsController : BaseController
     {
         #region # Propriedades
+
         private readonly IResultQuestionsApplication _IResultQuestionsApplication;
+        private readonly IAskApplication _IAskApplication;
+        private readonly IAnswerApplication _IAnswerApplication;
+        private readonly IQuestionsApplication _IQuestionsApplication;
+
         #endregion
 
         #region # Constructor
-        public ResultQuestionsController(IResultQuestionsApplication resultQuestionsApplication)
+        public ResultQuestionsController(IResultQuestionsApplication resultQuestionsApplication
+            , IAskApplication askApplication
+            , IAnswerApplication answerApplication
+            , IQuestionsApplication questionsApplication)
         {
             _IResultQuestionsApplication = resultQuestionsApplication;
+            _IAskApplication = askApplication;
+            _IAnswerApplication = answerApplication;
+            _IQuestionsApplication = questionsApplication;
         }
         #endregion
 
@@ -36,7 +47,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         public IActionResult Post([FromBody]Domain.Entities.ResultQuestions Entity)
         {
 
-            using (TheChamaApp.Service.QuestionsBusiness.ResultQuestionsService ResultBO = new Service.QuestionsBusiness.ResultQuestionsService(_IResultQuestionsApplication))
+            using (TheChamaApp.Service.QuestionsBusiness.ResultQuestionsService ResultBO = new Service.QuestionsBusiness.ResultQuestionsService(_IResultQuestionsApplication,_IAskApplication,_IAnswerApplication,_IQuestionsApplication))
             {
                 try
                 {
@@ -69,12 +80,34 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Put(int ResultQuestionsId, [FromBody]Domain.Entities.ResultQuestions Entity)
         {
-            using (TheChamaApp.Service.QuestionsBusiness.ResultQuestionsService ResultBO = new Service.QuestionsBusiness.ResultQuestionsService(_IResultQuestionsApplication))
+            using (TheChamaApp.Service.QuestionsBusiness.ResultQuestionsService ResultBO = new Service.QuestionsBusiness.ResultQuestionsService(_IResultQuestionsApplication, _IAskApplication, _IAnswerApplication, _IQuestionsApplication))
             {
                 try
                 {
                     ResultBO.Alterar(ResultQuestionsId, Entity, out Mensagem);
                     return Ok(Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Obtem uma resultado passando o ID
+        /// </summary>
+        /// <param name="ResultQuestionsId"></param>
+        /// <returns></returns>
+        [HttpGet("{ResultQuestionsId}")]
+        [Authorize("Bearer")]
+        public IActionResult Get(int ResultQuestionsId)
+        {
+            using (TheChamaApp.Service.QuestionsBusiness.ResultQuestionsService ResultBO = new Service.QuestionsBusiness.ResultQuestionsService(_IResultQuestionsApplication, _IAskApplication, _IAnswerApplication, _IQuestionsApplication))
+            {
+                try
+                {
+                    return Ok(ResultBO.Obter(ResultQuestionsId));
                 }
                 catch (Exception Ex)
                 {

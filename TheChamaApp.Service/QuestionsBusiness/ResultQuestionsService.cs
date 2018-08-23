@@ -9,13 +9,25 @@ namespace TheChamaApp.Service.QuestionsBusiness
     public class ResultQuestionsService : Base.ServiceBase
     {
         #region # Propriedades
+
         private readonly IResultQuestionsApplication _IResultQuestionsApplication;
+        private readonly IAskApplication _IAskApplication;
+        private readonly IAnswerApplication _IAnswerApplication;
+        private readonly IQuestionsApplication _IQuestionsApplication;
+
         #endregion
 
         #region # Constructor
-        public ResultQuestionsService(IResultQuestionsApplication resultQuestionsApplication)
+        public ResultQuestionsService(IResultQuestionsApplication resultQuestionsApplication
+            , IAskApplication askApplication
+            , IAnswerApplication answerApplication
+            , IQuestionsApplication questionsApplication)
         {
             _IResultQuestionsApplication = resultQuestionsApplication;
+            _IAskApplication = askApplication;
+            _IAnswerApplication = answerApplication;
+            _IQuestionsApplication = questionsApplication;
+
         }
         #endregion
 
@@ -102,6 +114,21 @@ namespace TheChamaApp.Service.QuestionsBusiness
         public IEnumerable<Domain.Entities.ResultQuestions> ObterTodos()
         {
             return _IResultQuestionsApplication.GetAll();
+        }
+
+        /// <summary>
+        /// Obtem um questionario
+        /// </summary>
+        /// <param name="ResultQuestionsId"></param>
+        /// <returns></returns>
+        public Domain.Entities.ResultQuestions Obter(int ResultQuestionsId)
+        {
+            var Entity = _IResultQuestionsApplication.GetAll().Where(m => m.ResultQuestionsId == ResultQuestionsId).Single();
+            Entity.Answer = _IAnswerApplication.GetAll().Where(m => m.AnswerId == Entity.AnswerId).Single();
+            Entity.Ask = _IAskApplication.GetAll().Where(m => m.AskId == Entity.AskId).Single();
+            Entity.Questions = _IQuestionsApplication.GetAll().Where(m => m.QuestionsId == Entity.QuestionsId).Single();
+
+            return Entity;
         }
 
         #endregion
