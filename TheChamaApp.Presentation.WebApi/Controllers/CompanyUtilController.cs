@@ -26,6 +26,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly IStateApplication _IStateApplication;
         private readonly ICompanyTypeApplication _ICompanyTypeApplication;
         private readonly ICompanyImageApplication _ICompanyImageApplication;
+        private readonly IEvaluatedApplication _IEvaluatedApplication;
 
         #endregion
 
@@ -37,7 +38,8 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             , ICompanyUnityApplication companyUnityApplication
             , IStateApplication stateApplication
             , ICompanyTypeApplication companyTypeApplication
-            , ICompanyImageApplication companyImageApplication)
+            , ICompanyImageApplication companyImageApplication
+            , IEvaluatedApplication evaluatedApplication)
         {
             _ICompanyApplication = companyApplication;
             _ICompanyAddressApplication = companyAddressApplication;
@@ -46,6 +48,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             _IStateApplication = stateApplication;
             _ICompanyTypeApplication = companyTypeApplication;
             _ICompanyImageApplication = companyImageApplication;
+            _IEvaluatedApplication = evaluatedApplication;
         }
 
         #endregion
@@ -62,7 +65,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         public IEnumerable<Domain.Entities.Company> Get([FromQuery]PagingParameterModel pagingparametermodel)
         {
 
-            using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication, _ICompanyTypeApplication, _ICompanyImageApplication))
+            using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication, _ICompanyTypeApplication, _ICompanyImageApplication, _IEvaluatedApplication))
             {
                 var source = CompanyBO.ObterTodas().AsQueryable();
 

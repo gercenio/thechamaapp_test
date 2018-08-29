@@ -4,10 +4,6 @@ using System.Text;
 
 namespace TheChamaApp.Domain.Util
 {
-    public class Util
-    {
-    }
-
     /// <summary>
     /// Tipos de usuarios do sistema
     /// SYSTEM = API QUE ACESSA E SOLICITA TOKEN
@@ -22,5 +18,18 @@ namespace TheChamaApp.Domain.Util
         Owner,
         Company,
         People
+    }
+
+    /// <summary>
+    /// Status do questionario
+    /// INDEFINIDO = 0 (Quando e criado)
+    /// IN PROGRESS = 1 (Quando as perguntas e resposta ainda estão sendo atribuidas)
+    /// VALID = 2 (Quando já contém todas as perguntas e resposta definidas e esta liberado para uso)
+    /// </summary>
+    public enum QuestionsStatus
+    {
+        Indefine,
+        InProgress,
+        Valid
     }
 }

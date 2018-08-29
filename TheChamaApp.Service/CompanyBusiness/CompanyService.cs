@@ -17,6 +17,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         private readonly IStateApplication _IStateApplication;
         private readonly ICompanyTypeApplication _ICompanyTypeApplication;
         private readonly ICompanyImageApplication _ICompanyImageApplication;
+        private readonly IEvaluatedApplication _IEvaluatedApplication;
 
         #endregion
 
@@ -28,7 +29,8 @@ namespace TheChamaApp.Service.CompanyBusiness
             , ICompanyUnityApplication companyUnityApplication
             , IStateApplication stateApplication
             , ICompanyTypeApplication companyTypeApplication
-            , ICompanyImageApplication companyImageApplication)
+            , ICompanyImageApplication companyImageApplication
+            , IEvaluatedApplication evaluatedApplication)
         {
             _ICompanyApplication = company;
             _ICompanyAddressApplication = companyAddress;
@@ -37,6 +39,7 @@ namespace TheChamaApp.Service.CompanyBusiness
             _IStateApplication = stateApplication;
             _ICompanyTypeApplication = companyTypeApplication;
             _ICompanyImageApplication = companyImageApplication;
+            _IEvaluatedApplication = evaluatedApplication;
         }
 
         #endregion
@@ -171,7 +174,13 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// <returns></returns>
         public Domain.Entities.CompanyUnity ObterUnidades(int CompanyUnityId)
         {
-            return _ICompanyUnityApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId).Single();
+            var Entity = _ICompanyUnityApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId).Single();
+            //Obtendo a lista de avaliados
+            foreach (var Avaliado in _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == Entity.CompanyUnityId))
+            {
+                Entity.ListEvaluated.Add(Avaliado);
+            }
+            return Entity;
         }
 
         /// <summary>

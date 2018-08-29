@@ -280,6 +280,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController">
+            <summary>
+            Realiza o cadastro de um questionario
+            </summary>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Post(TheChamaApp.Domain.Entities.Questions)">
             <summary>
             Realiza o cadastro de uma pergunta
@@ -305,6 +310,14 @@
             Obtem uma pergunta
             </summary>
             <param name="QuestionsId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuestionsController.Put(System.Int32,TheChamaApp.Domain.Entities.Questions)">
+            <summary>
+            Realiza a alteração de um questionario
+            </summary>
+            <param name="QuestionsId"></param>
+            <param name="Entity"></param>
             <returns></returns>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipAskToAnswerController.Post(TheChamaApp.Domain.Entities.RellationshipAskToAnswer)">

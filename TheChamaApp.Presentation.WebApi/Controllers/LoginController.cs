@@ -30,6 +30,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         #region # Actions
 
+        /*
         [AllowAnonymous]
         [HttpPost]
         public object Post(
@@ -91,7 +92,8 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                     message = "Falha ao autenticar"
                 };
             }
-        }
+        }*/
+
         #endregion
     }
 }

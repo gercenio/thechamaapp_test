@@ -79,6 +79,34 @@ namespace TheChamaApp.Service.QuestionsBusiness
             return _IQuestionsApplication.GetAll().Where(m => m.QuestionsId == QuestionId).Single();
         }
 
+        /// <summary>
+        /// Realiza a alteração de uma questionario
+        /// </summary>
+        /// <param name="QuestionsId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public Domain.Entities.Questions Alterar(int QuestionsId, Domain.Entities.Questions Entity, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var OrginalList = _IQuestionsApplication.GetAll().Where(m => m.QuestionsId == QuestionsId).ToList();
+                if (OrginalList.Count > 0)
+                {
+                    Entity.QuestionsId = OrginalList[0].QuestionsId;
+                    _IQuestionsApplication.Update(Entity);
+                    Mensagem = "Done";
+                }
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+            return Entity;
+        }
+
+
         #endregion
     }
 }

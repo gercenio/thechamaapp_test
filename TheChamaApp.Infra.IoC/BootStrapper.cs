@@ -87,6 +87,8 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IRellationshipCompanyUnityToQuestionsApplication, RellationshipCompanyUnityToQuestionsApplication>(Lifestyle.Scoped);
             container.Register<IRellationshipCompanyUnityToQuestionsService, RellationshipCompanyUnityToQuestionsService>(Lifestyle.Scoped);
             container.Register<IRellationshipCompanyUnityToQuestionsRepository, RellationshipCompanyUnityToQuestionsRepository>(Lifestyle.Scoped);
+            // AuthMessageSender
+            //container.Register<IEmailSender, AuthMessageSenderApplication>(Lifestyle.Scoped);
 
 
 

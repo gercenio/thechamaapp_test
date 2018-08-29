@@ -43,6 +43,8 @@ namespace TheChamaApp.Service.AskBusiness
                     _IAskApplication.Update(Entity);
                 }
                 else {
+                    
+                    
                     _IAskApplication.Add(Entity);
                 }
             }

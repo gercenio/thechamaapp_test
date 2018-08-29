@@ -10,7 +10,9 @@ using TheChamaApp.Application.IApplication;
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
     
-    
+    /// <summary>
+    /// Realiza o cadastro de um questionario
+    /// </summary>
     [Route("api/[controller]")]
     public class QuestionsController : BaseController
     {
@@ -102,6 +104,34 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             using (TheChamaApp.Service.QuestionsBusiness.QuestionsService QuestionsBO = new Service.QuestionsBusiness.QuestionsService(_IQuestionApplication))
             {
                 return Ok(QuestionsBO.Obter(QuestionsId));
+            }
+        }
+
+        /// <summary>
+        /// Realiza a alteração de um questionario
+        /// </summary>
+        /// <param name="QuestionsId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{QuestionsId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int QuestionsId, [FromBody]Domain.Entities.Questions Entity)
+        {
+            using (TheChamaApp.Service.QuestionsBusiness.QuestionsService QuestionsBO = new Service.QuestionsBusiness.QuestionsService(_IQuestionApplication))
+            {
+                try
+                {
+                    if (ModelState.IsValid)
+                    {
+                        QuestionsBO.Alterar(QuestionsId, Entity, out Mensagem);
+                    }
+                        
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+                return Ok(Mensagem);
             }
         }
 

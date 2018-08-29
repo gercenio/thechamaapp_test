@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -85,6 +87,8 @@ namespace TheChamaApp.Presentation.WebApi
                     .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
                     .RequireAuthenticatedUser().Build());
             });
+
+            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
 
             //services.AddMvc();
             services.AddMvc(config =>

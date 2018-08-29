@@ -52,7 +52,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{CompanyId}")]
         [Authorize("Bearer")]
         public IActionResult Get(int CompanyId)
         {
@@ -75,7 +75,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <param name="CompanyImageId"></param>
         /// <param name="Entity"></param>
         /// <returns></returns>
-        [HttpPut]
+        [HttpPut("{CompanyImageId}")]
         [Authorize("Bearer")]
         public IActionResult Put(int CompanyImageId, [FromBody]Domain.Entities.CompanyImage Entity)
         {

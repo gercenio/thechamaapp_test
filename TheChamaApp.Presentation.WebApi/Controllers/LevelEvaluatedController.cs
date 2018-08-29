@@ -65,7 +65,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <param name="LevelEvaluatedId"></param>
         /// <param name="Entity"></param>
         /// <returns></returns>
-        [HttpPut]
+        [HttpPut("{LevelEvaluatedId}")]
         [Authorize("Bearer")]
         public IActionResult Put(int LevelEvaluatedId, [FromBody]Domain.Entities.LevelEvaluated Entity)
         {
@@ -96,7 +96,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// Exclui um registro
         /// </summary>
         /// <param name="LevelEvaluatedId"></param>
-        [HttpDelete]
+        [HttpDelete("{LevelEvaluatedId}")]
         [Authorize("Bearer")]
         public void Delete(int LevelEvaluatedId)
         {

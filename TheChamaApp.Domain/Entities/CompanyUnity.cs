@@ -8,6 +8,16 @@ namespace TheChamaApp.Domain.Entities
 {
     public class CompanyUnity
     {
+        #region # Constructor
+
+        public CompanyUnity() {
+            ListEvaluated = new HashSet<Evaluated>();
+        }
+
+        #endregion
+
+        #region # Fields
+
         [Key]
         public int CompanyUnityId { get; set; }
         public int CompanyId { get; set; }
@@ -28,12 +38,22 @@ namespace TheChamaApp.Domain.Entities
         public int? QuantyCollaborator { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
+        public string CodeMobilePhoneArea { get; set; }
+        public string MobilePhoneNumber { get; set; }
+
+        #endregion
+
+        #region # Propriedades
 
         [ForeignKey("CompanyId")]
         public virtual Company Company { get; set; }
 
         [ForeignKey("StateId")]
         public virtual State State { get; set; }
+
+        public ICollection<Evaluated> ListEvaluated { get; set; }
+
+        #endregion
 
     }
 }
