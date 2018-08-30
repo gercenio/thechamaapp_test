@@ -149,6 +149,13 @@
             <param name="Entity"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyImageController.Delete(System.Int32)">
+            <summary>
+            Realiza a exclusão de uma imagem
+            </summary>
+            <param name="CompanyImageId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyTypeController.Post(TheChamaApp.Domain.Entities.CompanyType)">
             <summary>
             Cadastra um novo tipo de empresa

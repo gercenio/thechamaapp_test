@@ -12,16 +12,21 @@ namespace TheChamaApp.Service.EvaluatedBusiness
     public class EvaluatedService : Base.ServiceBase
     {
         #region # Propriedades
+
         private readonly IEvaluatedApplication _IEvaluatedApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
+        private readonly ILevelEvaluatedApplication _ILevelEvaluatedApplication;
+
         #endregion
 
         #region # Constructor
         public EvaluatedService(IEvaluatedApplication evaluated
-            , ICompanyUnityApplication companyUnityApplication)
+            , ICompanyUnityApplication companyUnityApplication
+            , ILevelEvaluatedApplication levelEvaluatedApplication)
         {
             _IEvaluatedApplication = evaluated;
             _ICompanyUnityApplication = companyUnityApplication;
+            _ILevelEvaluatedApplication = levelEvaluatedApplication;
         }
         #endregion
 
@@ -107,7 +112,15 @@ namespace TheChamaApp.Service.EvaluatedBusiness
         /// <returns></returns>
         public Domain.Entities.Evaluated Obter(int EvaluatedId)
         {
-            return _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == EvaluatedId).Single();
+            var EvaluatedEntity = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == EvaluatedId).Single();
+            if (EvaluatedEntity != null)
+            {
+                if (EvaluatedEntity.LevelEvaluatedId > 0)
+                {
+                    EvaluatedEntity.Level = _ILevelEvaluatedApplication.GetAll().Where(m => m.LevelEvaluatedId == EvaluatedEntity.LevelEvaluatedId).Single();
+                }
+            }
+            return EvaluatedEntity;
         }
 
         /// <summary>
@@ -117,7 +130,12 @@ namespace TheChamaApp.Service.EvaluatedBusiness
         /// <returns></returns>
         public IEnumerable<Domain.Entities.Evaluated> ObterTodosPorUnidade(int CompanyUnityId)
         {
-            return _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId).ToList();
+            List<Domain.Entities.Evaluated> lista = new List<Domain.Entities.Evaluated>();
+            foreach (var Avaliado in _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId).ToList())
+            {
+                lista.Add(this.Obter(Avaliado.EvaluatedId));
+            }
+            return lista;
         }
 
         /// <summary>

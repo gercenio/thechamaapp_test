@@ -18,7 +18,7 @@ namespace TheChamaApp.Service.CompanyBusiness
         private readonly ICompanyTypeApplication _ICompanyTypeApplication;
         private readonly ICompanyImageApplication _ICompanyImageApplication;
         private readonly IEvaluatedApplication _IEvaluatedApplication;
-
+        
         #endregion
 
         #region # Constructor
@@ -178,6 +178,7 @@ namespace TheChamaApp.Service.CompanyBusiness
             //Obtendo a lista de avaliados
             foreach (var Avaliado in _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == Entity.CompanyUnityId))
             {
+                
                 Entity.ListEvaluated.Add(Avaliado);
             }
             return Entity;

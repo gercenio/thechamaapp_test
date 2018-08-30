@@ -15,16 +15,21 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     public class EvaluatedController : BaseController
     {
         #region # Propriedades
+
         private readonly IEvaluatedApplication _IEvaluatedApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
+        private readonly ILevelEvaluatedApplication _ILevelEvaluatedApplication;
+
         #endregion
 
         #region # Constructor
         public EvaluatedController(IEvaluatedApplication evaluatedApplication
-            , ICompanyUnityApplication companyUnityApplication)
+            , ICompanyUnityApplication companyUnityApplication
+            , ILevelEvaluatedApplication levelEvaluatedApplication)
         {
             _IEvaluatedApplication = evaluatedApplication;
             _ICompanyUnityApplication = companyUnityApplication;
+            _ILevelEvaluatedApplication = levelEvaluatedApplication;
         }
         #endregion
 
@@ -40,7 +45,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         public IActionResult Post([FromBody]Domain.Entities.Evaluated Entity)
         {
             
-            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
             {
                 try
                 {
@@ -71,7 +76,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get(int EvaluatedId)
         {
-            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
             {
                 try
                 {
@@ -94,7 +99,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Put(int EvaluatedId, [FromBody]Domain.Entities.Evaluated Entity)
         {
-            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
             {
                 try
                 {
@@ -116,7 +121,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public void Delete(int EvaluatedId)
         {
-            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
             {
                 EvaluetedBO.Excluir(EvaluatedId, out Mensagem);
             }
@@ -143,7 +148,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                 }
                 else
                 {
-                    using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+                    using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
                     {
                         List<Domain.Entities.Evaluated> data = value;
                         var t1 = Task.Run(() => EvaluetedBO.Importa(data,out Mensagem));
@@ -170,7 +175,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IQueryable<Domain.Entities.Evaluated> GetByDescription(string Description)
         {
-            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
             {
                 return EvaluetedBO.ObterByDescription(Description).AsQueryable();
             }

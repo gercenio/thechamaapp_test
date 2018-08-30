@@ -18,7 +18,6 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Release\netco
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Release\netcoreapp2.0\TheChamaApp.Infra.Data.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Release\netcoreapp2.0\TheChamaApp.Infra.Data.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Release\netcoreapp2.0\TheChamaApp.Domain.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.csprojResolveAssemblyReference.cache
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.csproj.CoreCompileInputs.cache
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.AssemblyInfoInputs.cache
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.AssemblyInfo.cs

@@ -84,6 +84,29 @@ namespace TheChamaApp.Service.CompanyBusiness
             return _ICompanyImageApplication.GetAll().Where(m => m.CompanyId == CompanyId).Single();
         }
 
+        /// <summary>
+        /// Realiza a exclusão de uma imagem de empresa do sistema
+        /// </summary>
+        /// <param name="CompanyImageId"></param>
+        /// <param name="Mensagem"></param>
+        public void Excluir(int CompanyImageId, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var CompanyImageEntity = _ICompanyImageApplication.GetAll().Where(m => m.CompanyImageId == CompanyImageId).Single();
+                if (CompanyImageEntity != null)
+                {
+                    _ICompanyImageApplication.Remove(CompanyImageEntity);
+                    Mensagem = "Done";
+                }
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+        }
+
         #endregion
     }
 }

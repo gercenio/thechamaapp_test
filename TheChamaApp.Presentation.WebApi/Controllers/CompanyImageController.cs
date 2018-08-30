@@ -93,6 +93,29 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Realiza a exclusão de uma imagem
+        /// </summary>
+        /// <param name="CompanyImageId"></param>
+        /// <returns></returns>
+        [HttpDelete("{CompanyImageId}")]
+        [Authorize("Bearer")]
+        public IActionResult Delete(int CompanyImageId)
+        {
+            try
+            {
+                using (TheChamaApp.Service.CompanyBusiness.CompanyImageService CompanyImageBO = new Service.CompanyBusiness.CompanyImageService(_ICompanyImageApplication))
+                {
+                    CompanyImageBO.Excluir(CompanyImageId, out Mensagem);
+                    return Ok(Mensagem);
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+        }
+
         #endregion
     }
 }
