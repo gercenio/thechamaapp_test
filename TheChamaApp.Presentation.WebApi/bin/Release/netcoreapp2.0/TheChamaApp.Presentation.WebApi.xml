@@ -416,6 +416,20 @@
             <param name="Entity"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipQuizToAskController.Post(TheChamaApp.Domain.Entities.RellationshipQuizToAsk)">
+            <summary>
+            Inclusão de novo relacionamento
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipQuizToAskController.Delete(System.Int32)">
+            <summary>
+            Realiza a exclusão de um relacionamento
+            </summary>
+            <param name="RellationshipQuizToAskId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.ResultQuestionsController.Post(TheChamaApp.Domain.Entities.ResultQuestions)">
             <summary>
             Grava um resultado de avaliação
