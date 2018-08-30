@@ -327,6 +327,40 @@
             <param name="Entity"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizController.Post(TheChamaApp.Domain.Entities.Quiz)">
+            <summary>
+            Realiza a inclusão de um questão
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizController.Put(System.Int32,TheChamaApp.Domain.Entities.Quiz)">
+            <summary>
+            Realiza a alteração
+            </summary>
+            <param name="QuizId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizController.Delete(System.Int32)">
+            <summary>
+            Realiza deleção de uma questão
+            </summary>
+            <param name="QuizId"></param>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizController.Get">
+            <summary>
+            Obtem uma lista de questões
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizController.Get(System.String)">
+            <summary>
+            Obtem uma lista por descrição
+            </summary>
+            <param name="Description"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipAskToAnswerController.Post(TheChamaApp.Domain.Entities.RellationshipAskToAnswer)">
             <summary>
             Realiza a inclusão de um relacionamento

@@ -87,10 +87,18 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IRellationshipCompanyUnityToQuestionsApplication, RellationshipCompanyUnityToQuestionsApplication>(Lifestyle.Scoped);
             container.Register<IRellationshipCompanyUnityToQuestionsService, RellationshipCompanyUnityToQuestionsService>(Lifestyle.Scoped);
             container.Register<IRellationshipCompanyUnityToQuestionsRepository, RellationshipCompanyUnityToQuestionsRepository>(Lifestyle.Scoped);
-            // AuthMessageSender
-            //container.Register<IEmailSender, AuthMessageSenderApplication>(Lifestyle.Scoped);
-
-
+            // quiz
+            container.Register<IQuizApplication, QuizApplication>(Lifestyle.Scoped);
+            container.Register<IQuizService, QuizService>(Lifestyle.Scoped);
+            container.Register<IQuizRepository, QuizRepository>(Lifestyle.Scoped);
+            // rellationship quiz
+            container.Register<IRellationshipQuizToAskApplication, RellationshipQuizToAskApplication>(Lifestyle.Scoped);
+            container.Register<IRellationshipQuizToAskService, RellationshipQuizToAskService>(Lifestyle.Scoped);
+            container.Register<IRellationshipQuizToAskRepository, RellationshipQuizToAskRepository>(Lifestyle.Scoped);
+            //rellationship companyUnity to quiz service
+            container.Register<IRellationshipCompanyUnityToQuizApplication, RellationshipCompanyUnityToQuizApplication>(Lifestyle.Scoped);
+            container.Register<IRellationshipCompanyUnityToQuizService, RellationshipCompanyUnityToQuizService>(Lifestyle.Scoped);
+            container.Register<IRellationshipCompanyUnityToQuizRepository, RellationshipCompanyUnityToQuizRepository>(Lifestyle.Scoped);
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);

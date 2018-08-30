@@ -32,4 +32,28 @@ namespace TheChamaApp.Domain.Util
         InProgress,
         Valid
     }
+
+    /// <summary>
+    /// Status do questionario
+    /// INDEFINIDO = 0 (Quando e criado)
+    /// IN PROGRESS = 1 (Quando as perguntas e resposta ainda estão sendo atribuidas)
+    /// VALID = 2 (Quando já contém todas as perguntas e resposta definidas e esta liberado para uso)
+    /// </summary>
+    public enum QuizStatus
+    {
+        Indefine,
+        InProgress,
+        Valid
+    }
+
+    /// <summary>
+    /// Tipos de questionarios
+    /// </summary>
+    public enum QuizType
+    {
+        SelfPerception,
+        PerceptionOfTheSuperior,
+        PerceptionOfSubordinates
+    }
+
 }
