@@ -88,7 +88,7 @@ namespace TheChamaApp.Presentation.WebApi
                     .RequireAuthenticatedUser().Build());
             });
 
-            services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
+            //services.Configure<EmailSettings>(Configuration.GetSection("EmailSettings"));
 
             //services.AddMvc();
             services.AddMvc(config =>

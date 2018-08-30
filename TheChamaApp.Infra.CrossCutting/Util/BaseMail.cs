@@ -11,9 +11,20 @@ namespace TheChamaApp.Infra.CrossCutting.Util
 {
     public class BaseMail
     {
-
+        #region # Static Members
         public static string Smtp { get; set; }
+        public static string From { get; set; }
+        public static string Subject { get; set; }
+        #endregion
 
+        #region # Methods
+
+        public static void Enviar(string[] Emails, string Body)
+        {
+
+        }
+
+        #endregion
 
         private static void send()
         {

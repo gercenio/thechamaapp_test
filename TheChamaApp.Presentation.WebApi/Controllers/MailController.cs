@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TheChamaApp.Application.IApplication;
@@ -10,20 +11,24 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 {
 
     [Route("api/[controller]")]
-    public class MailController : Controller
+    public class MailController : BaseController
     {
-        private readonly IEmailSender _emailSender;
-
-        public MailController(IEmailSender emailSender)
-        {
-            _emailSender = emailSender;
-        }
-
+        
         [HttpPost]
-        public async Task TestAction()
+        [Authorize("Bearer")]
+        public async Task<IActionResult>  Enviar([FromBody]TheChamaApp.Infra.CrossCutting.ViewModel.EmailViewModel Model)
         {
-            await _emailSender.SendEmailAsync("test@gmail.com", "subject",
-                         $"Enter email body here");
+            if (ModelState.IsValid)
+            {
+                using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(Model.EmailTo, Model.EmailSubject, Model.EmailBody))
+                {
+                    await EmailBO.EnviarAsync();   
+                }
+            }
+            return Ok(Mensagem);
+
         }
+
+       
     }
 }
