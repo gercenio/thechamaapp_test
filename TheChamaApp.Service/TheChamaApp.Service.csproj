@@ -14,4 +14,8 @@
     <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting\TheChamaApp.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="QuestionsBusiness\" />
+  </ItemGroup>
+
 </Project>

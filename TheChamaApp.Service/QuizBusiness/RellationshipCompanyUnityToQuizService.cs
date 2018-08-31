@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TheChamaApp.Application.IApplication;
+using System.Linq;
 
 namespace TheChamaApp.Service.QuizBusiness
 {
@@ -41,6 +42,25 @@ namespace TheChamaApp.Service.QuizBusiness
 
         }
 
+        /// <summary>
+        /// Realiza a exclusão de um registro
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuizId"></param>
+        /// <param name="Mensagem"></param>
+        public void Excluir(int RellationshipCompanyUnityToQuizId, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var Entity = _IRellationshipCompanyUnityToQuizApplication.GetAll().Where(m => m.RellationshipCompanyUnityToQuizId == RellationshipCompanyUnityToQuizId).Single();
+                _IRellationshipCompanyUnityToQuizApplication.Remove(Entity);
+                Mensagem = "Done";
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception(Ex.Message);
+            }
+        }
         
 
         #endregion

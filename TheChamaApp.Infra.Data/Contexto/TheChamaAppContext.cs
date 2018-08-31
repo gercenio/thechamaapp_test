@@ -63,26 +63,23 @@ namespace TheChamaApp.Infra.Data.Contexto
                 .HasForeignKey<CompanyAddress>(e => e.CompanyId);
             modelBuilder.Entity<Company>().ToTable("company", "hgm")
                 .Property(m => m.Name).HasMaxLength(255);
-            modelBuilder.Entity<Questions>().ToTable("questions", "hgm");
             modelBuilder.Entity<State>().ToTable("state", "hgm");
             modelBuilder.Entity<CompanyContact>().ToTable("companycontact", "hgm");
             modelBuilder.Entity<CompanyAddress>().ToTable("companyaddress", "hgm")
                 .Property(f => f.CompanyAddressId).ValueGeneratedOnAdd();
             modelBuilder.Entity<CompanyUnity>().ToTable("companyunity", "hgm");
             modelBuilder.Entity<Ask>().ToTable("ask", "hgm");
-            modelBuilder.Entity<RellationshipQuestionsToAsk>().ToTable("rellationshipquestionstoask", "hgm");
             modelBuilder.Entity<CompanyType>().ToTable("companytype", "hgm");
             modelBuilder.Entity<Answer>().ToTable("answer", "hgm");
             modelBuilder.Entity<RellationshipAskToAnswer>().ToTable("rellationshipasktoanswer", "hgm");
             modelBuilder.Entity<CompanyImage>().ToTable("companyimage", "hgm");
             modelBuilder.Entity<LevelEvaluated>().ToTable("levelevaluated", "hgm");
             modelBuilder.Entity<Login>().ToTable("login", "hgm");
-            modelBuilder.Entity<RellationshipCompanyUnityToQuestions>().ToTable("rellationshipcompanyUnitytoquestions", "hgm");
-            modelBuilder.Entity<ResultQuestions>().ToTable("resultquestions", "hgm");
             modelBuilder.Entity<Evaluated>().ToTable("evaluated", "hgm");
             modelBuilder.Entity<Quiz>().ToTable("quiz", "hgm");
             modelBuilder.Entity<RellationshipQuizToAsk>().ToTable("rellationshipquiztoask", "hgm");
             modelBuilder.Entity<QuizResult>().ToTable("quizresult", "hgm");
+            modelBuilder.Entity<RellationshipCompanyUnityToQuiz>().ToTable("rellationshipcompanyunitytoquiz", "hgm");
 
             base.OnModelCreating(modelBuilder);
         }
@@ -97,19 +94,17 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<CompanyAddress> CompanyAddress { get; set; }
         public DbSet<CompanyContact> CompanyContact { get; set; }
         public DbSet<CompanyUnity> CompanyUnity { get; set; }
-        public DbSet<Questions> Questions { get; set; }
         public DbSet<Ask> Ask { get; set; }
         public DbSet<Answer> Answer { get; set; }
         public DbSet<RellationshipAskToAnswer> RellationshipAskToAnswer { get; set; }
         public DbSet<CompanyImage> CompanyImage { get; set; }
         public DbSet<LevelEvaluated> LevelEvaluated { get; set; }
         public DbSet<Login> Login { get; set; }
-        public DbSet<RellationshipCompanyUnityToQuestions> RellationshipCompanyUnityToQuestions { get; set; }
-        public DbSet<ResultQuestions> ResultQuestions { get; set; }
         public DbSet<Evaluated> Evaluated { get; set; }
         public DbSet<Quiz> Quiz { get; set; }
         public DbSet<RellationshipQuizToAsk> RellationshipQuizToAsk { get; set; }
         public DbSet<QuizResult> QuizResult { get; set; }
+        public DbSet<RellationshipCompanyUnityToQuiz> RellationshipCompanyUnityToQuiz { get; set; }
 
         #endregion
     }
