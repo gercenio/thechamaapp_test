@@ -99,6 +99,10 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IRellationshipCompanyUnityToQuizApplication, RellationshipCompanyUnityToQuizApplication>(Lifestyle.Scoped);
             container.Register<IRellationshipCompanyUnityToQuizService, RellationshipCompanyUnityToQuizService>(Lifestyle.Scoped);
             container.Register<IRellationshipCompanyUnityToQuizRepository, RellationshipCompanyUnityToQuizRepository>(Lifestyle.Scoped);
+            // quiz result    
+            container.Register<IQuizResultApplication, QuizResultApplication>(Lifestyle.Scoped);
+            container.Register<IQuizResultService, QuizResultService>(Lifestyle.Scoped);
+            container.Register<IQuizResultRepository, QuizResultRepository>(Lifestyle.Scoped);
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);

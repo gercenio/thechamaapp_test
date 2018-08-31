@@ -361,6 +361,41 @@
             <param name="Description"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizResultController.Post(TheChamaApp.Domain.Entities.QuizResult)">
+            <summary>
+            Realiza a inclusão de uma pesquisa
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizResultController.Pust(System.Int32,TheChamaApp.Domain.Entities.QuizResult)">
+            <summary>
+            Realiza a atualização de uma resultado
+            </summary>
+            <param name="QuizResultId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizResultController.Delete(System.Int32)">
+            <summary>
+            Realiza a exclusão
+            </summary>
+            <param name="QuizResultId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizResultController.Get">
+            <summary>
+            Obtem uma lista de pesquisas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizResultController.Get(System.Int32)">
+            <summary>
+            Obtem uma pesquisa
+            </summary>
+            <param name="QuizResultId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipAskToAnswerController.Post(TheChamaApp.Domain.Entities.RellationshipAskToAnswer)">
             <summary>
             Realiza a inclusão de um relacionamento

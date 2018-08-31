@@ -82,6 +82,7 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<Evaluated>().ToTable("evaluated", "hgm");
             modelBuilder.Entity<Quiz>().ToTable("quiz", "hgm");
             modelBuilder.Entity<RellationshipQuizToAsk>().ToTable("rellationshipquiztoask", "hgm");
+            modelBuilder.Entity<QuizResult>().ToTable("quizresult", "hgm");
 
             base.OnModelCreating(modelBuilder);
         }
@@ -108,6 +109,7 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<Evaluated> Evaluated { get; set; }
         public DbSet<Quiz> Quiz { get; set; }
         public DbSet<RellationshipQuizToAsk> RellationshipQuizToAsk { get; set; }
+        public DbSet<QuizResult> QuizResult { get; set; }
 
         #endregion
     }

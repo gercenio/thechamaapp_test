@@ -9,6 +9,7 @@ namespace TheChamaApp.Domain.Entities
     public class Evaluated
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EvaluatedId { get; set; }
         public int CompanyUnityId { get; set; }
         public int LevelEvaluatedId { get; set; }
