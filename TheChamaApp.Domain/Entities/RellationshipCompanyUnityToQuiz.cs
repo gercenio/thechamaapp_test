@@ -16,5 +16,11 @@ namespace TheChamaApp.Domain.Entities
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 
+        [ForeignKey("QuizId")]
+        public virtual Quiz Quiz { get; set; }
+
+        [ForeignKey("CompanyUnityId")]
+        public virtual CompanyUnity CompanyUnity { get; set; }
+
     }
 }

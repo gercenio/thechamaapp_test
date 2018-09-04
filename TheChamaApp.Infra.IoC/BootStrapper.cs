@@ -39,11 +39,7 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IStateApplication, StateApplication>(Lifestyle.Scoped);
             container.Register<IStateService, StateService>(Lifestyle.Scoped);
             container.Register<IStateRepository, StateRepository>(Lifestyle.Scoped);
-            //questions
-            //container.Register<IQuestionsApplication, QuestionsApplication>(Lifestyle.Scoped);
-            //container.Register<IQuestionsService, QuestionsService>(Lifestyle.Scoped);
-            //container.Register<IQuestionsRepository, QuestionsRepository>(Lifestyle.Scoped);
-
+            
             //ask
             container.Register<IAskApplication, AskApplication>(Lifestyle.Scoped);
             container.Register<IAskService, AskService>(Lifestyle.Scoped);
@@ -78,15 +74,6 @@ namespace TheChamaApp.Infra.IoC
             container.Register<ILoginService, LoginService>(Lifestyle.Scoped);
             container.Register<ILoginRepository, LoginRepository>(Lifestyle.Scoped);
             
-            // resultQuestions
-            //container.Register<IResultQuestionsApplication, ResultQuestionsApplication>(Lifestyle.Scoped);
-            //container.Register<IResultQuestionsService, ResultQuestionsService>(Lifestyle.Scoped);
-            //container.Register<IResultQuestionsRepository, ResultQuestionsRepository>(Lifestyle.Scoped);
-            // rellationshipcompanyunitytoquestions
-            //container.Register<IRellationshipCompanyUnityToQuestionsApplication, RellationshipCompanyUnityToQuestionsApplication>(Lifestyle.Scoped);
-            //container.Register<IRellationshipCompanyUnityToQuestionsService, RellationshipCompanyUnityToQuestionsService>(Lifestyle.Scoped);
-            //container.Register<IRellationshipCompanyUnityToQuestionsRepository, RellationshipCompanyUnityToQuestionsRepository>(Lifestyle.Scoped);
-
             // quiz
             container.Register<IQuizApplication, QuizApplication>(Lifestyle.Scoped);
             container.Register<IQuizService, QuizService>(Lifestyle.Scoped);
