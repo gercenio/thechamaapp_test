@@ -37,3 +37,5 @@ D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Application
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.dll
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.csprojResolveAssemblyReference.cache
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb

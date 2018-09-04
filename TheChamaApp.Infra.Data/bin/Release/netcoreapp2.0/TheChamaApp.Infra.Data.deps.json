@@ -14,7 +14,8 @@
           "Microsoft.Extensions.Configuration": "2.1.1",
           "MySql.Data.EntityFrameworkCore": "8.0.11",
           "MySql.Data.EntityFrameworkCore.Design": "8.0.11",
-          "TheChamaApp.Domain": "1.0.0"
+          "TheChamaApp.Domain": "1.0.0",
+          "TheChamaApp.Infra.CrossCutting": "1.0.0"
         },
         "runtime": {
           "TheChamaApp.Infra.Data.dll": {}
@@ -999,6 +1000,11 @@
         "runtime": {
           "TheChamaApp.Domain.dll": {}
         }
+      },
+      "TheChamaApp.Infra.CrossCutting/1.0.0": {
+        "runtime": {
+          "TheChamaApp.Infra.CrossCutting.dll": {}
+        }
       }
     }
   },
@@ -1772,6 +1778,11 @@
       "hashPath": "system.threading.tasks.extensions.4.5.1.nupkg.sha512"
     },
     "TheChamaApp.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TheChamaApp.Infra.CrossCutting/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

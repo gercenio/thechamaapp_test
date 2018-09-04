@@ -1694,6 +1694,16 @@
         "runtime": {
           "bin/placeholder/TheChamaApp.Domain.dll": {}
         }
+      },
+      "TheChamaApp.Infra.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/TheChamaApp.Infra.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TheChamaApp.Infra.CrossCutting.dll": {}
+        }
       }
     }
   },
@@ -5150,6 +5160,11 @@
       "type": "project",
       "path": "../TheChamaApp.Domain/TheChamaApp.Domain.csproj",
       "msbuildProject": "../TheChamaApp.Domain/TheChamaApp.Domain.csproj"
+    },
+    "TheChamaApp.Infra.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../TheChamaApp.Infra.CrossCutting/TheChamaApp.Infra.CrossCutting.csproj",
+      "msbuildProject": "../TheChamaApp.Infra.CrossCutting/TheChamaApp.Infra.CrossCutting.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5161,7 +5176,8 @@
       "Microsoft.NETCore.App >= 2.0.0",
       "MySql.Data.EntityFrameworkCore >= 8.0.11",
       "MySql.Data.EntityFrameworkCore.Design >= 8.0.11",
-      "TheChamaApp.Domain >= 1.0.0"
+      "TheChamaApp.Domain >= 1.0.0",
+      "TheChamaApp.Infra.CrossCutting >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5199,6 +5215,9 @@
           "projectReferences": {
             "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj": {
               "projectPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj"
+            },
+            "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting\\TheChamaApp.Infra.CrossCutting.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting\\TheChamaApp.Infra.CrossCutting.csproj"
             }
           }
         }

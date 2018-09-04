@@ -9,13 +9,16 @@ namespace TheChamaApp.Domain.Entities
     public class Quiz
     {
         #region # Constructor
+
         public Quiz()
         {
             RellationshipQuizToAsk = new HashSet<RellationshipQuizToAsk>();
         }
+
         #endregion
 
         #region # Fields
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int QuizId { get; set; }
@@ -24,6 +27,9 @@ namespace TheChamaApp.Domain.Entities
         public Util.QuizType Type { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
+        public string Information { get; set; }
+        public string Directions { get; set; }
+
         #endregion
 
         #region # Atributs

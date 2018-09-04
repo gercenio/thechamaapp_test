@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheChamaApp.Domain\TheChamaApp.Domain.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting\TheChamaApp.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

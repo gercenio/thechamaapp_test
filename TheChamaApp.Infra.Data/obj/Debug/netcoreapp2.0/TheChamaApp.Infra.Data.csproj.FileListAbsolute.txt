@@ -42,3 +42,5 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.Data\obj\Debug\netcorea
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.Data\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.AssemblyInfo.cs
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.Data\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.Data\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb

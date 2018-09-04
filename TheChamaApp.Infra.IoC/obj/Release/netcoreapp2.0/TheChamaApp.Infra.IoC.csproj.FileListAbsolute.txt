@@ -43,3 +43,5 @@ D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Infra.IoC\o
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.AssemblyInfo.cs
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.dll
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
