@@ -45,3 +45,7 @@ D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Infra.IoC\o
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.xml

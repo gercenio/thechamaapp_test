@@ -50,3 +50,9 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Debug\netcore
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Debug\netcoreapp2.0\TheChamaApp.Application.AssemblyInfo.cs
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Debug\netcoreapp2.0\TheChamaApp.Application.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\obj\Debug\netcoreapp2.0\TheChamaApp.Application.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Application\bin\Debug\netcoreapp2.0\Microsoft.Extensions.Identity.Stores.xml

@@ -156,6 +156,28 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Obtem um questionario passando o ID
+        /// </summary>
+        /// <param name="QuizId"></param>
+        /// <returns></returns>
+        [HttpGet("{QuizId}")]
+        [Authorize("Bearer")]
+        public IActionResult Get(int QuizId)
+        {
+            try
+            {
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication))
+                {
+                    return Ok(QuizBO.Obter(QuizId));
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+        }
+
         #endregion
 
 

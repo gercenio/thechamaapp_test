@@ -88,6 +88,14 @@ namespace TheChamaApp.Presentation.WebApi
                     .RequireAuthenticatedUser().Build());
             });
 
+            // ===== Add our DbContext ========
+            services.AddDbContext<TheChamaApp.Infra.Data.Contexto.IdentityContext>();
+
+            // ===== Add Identity ========
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<TheChamaApp.Infra.Data.Contexto.IdentityContext>()
+                .AddDefaultTokenProviders();
+
             //services.AddMvc();
             services.AddMvc(config =>
             {
@@ -124,7 +132,7 @@ namespace TheChamaApp.Presentation.WebApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, TheChamaApp.Infra.Data.Contexto.IdentityContext dbContext)
         {
             if (env.IsDevelopment())
             {
@@ -138,6 +146,9 @@ namespace TheChamaApp.Presentation.WebApi
             .AllowCredentials());
 
             app.UseMvc();
+
+            // ===== Create tables ======
+            dbContext.Database.EnsureCreated();
 
             // initial config
             InitializeContainer(container);

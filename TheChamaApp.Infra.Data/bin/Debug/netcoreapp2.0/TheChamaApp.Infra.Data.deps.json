@@ -14,7 +14,10 @@
           "Microsoft.Extensions.Configuration": "2.1.1",
           "MySql.Data.EntityFrameworkCore": "8.0.11",
           "MySql.Data.EntityFrameworkCore.Design": "8.0.11",
-          "TheChamaApp.Domain": "1.0.0"
+          "TheChamaApp.Domain": "1.0.0",
+          "TheChamaApp.Infra.CrossCutting": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.1.0",
+          "Microsoft.Extensions.Identity.Stores": "2.0.1.0"
         },
         "runtime": {
           "TheChamaApp.Infra.Data.dll": {}
@@ -999,6 +1002,21 @@
         "runtime": {
           "TheChamaApp.Domain.dll": {}
         }
+      },
+      "TheChamaApp.Infra.CrossCutting/1.0.0": {
+        "runtime": {
+          "TheChamaApp.Infra.CrossCutting.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.1.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Identity.Stores/2.0.1.0": {
+        "runtime": {
+          "Microsoft.Extensions.Identity.Stores.dll": {}
+        }
       }
     }
   },
@@ -1773,6 +1791,21 @@
     },
     "TheChamaApp.Domain/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TheChamaApp.Infra.CrossCutting/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Identity.Stores/2.0.1.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -321,6 +321,13 @@
             <param name="Description"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizController.Get(System.Int32)">
+            <summary>
+            Obtem um questionario passando o ID
+            </summary>
+            <param name="QuizId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizResultController.Post(TheChamaApp.Domain.Entities.QuizResult)">
             <summary>
             Realiza a inclusão de uma pesquisa
