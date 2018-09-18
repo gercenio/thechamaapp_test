@@ -5,13 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="5.1.0" />
     <PackageReference Include="SimpleInjector" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TheChamaApp.Application\TheChamaApp.Application.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Domain.Core\TheChamaApp.Domain.Core.csproj" />
     <ProjectReference Include="..\TheChamaApp.Domain\TheChamaApp.Domain.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting.Bus\TheChamaApp.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting.Identity\TheChamaApp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\TheChamaApp.Infra.Data\TheChamaApp.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Authorization">
+      <HintPath>..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.authorization\2.0.1\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

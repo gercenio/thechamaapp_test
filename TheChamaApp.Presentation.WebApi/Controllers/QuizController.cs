@@ -15,19 +15,24 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     {
 
         #region # Propriedades
+
         private readonly IQuizApplication _IQuizApplication;
         private readonly IRellationshipQuizToAskApplication _IRellationshipQuizToAskApplication;
         private readonly IAskApplication _IAskApplication;
+        private readonly IRellationshipAskToAnswerApplication _IRellationshipAskToAnswerApplication;
+
         #endregion
 
         #region # Constructor
         public QuizController(IQuizApplication quizApplication
             , IRellationshipQuizToAskApplication rellationshipQuizToAskApplication
-            , IAskApplication askApplication)
+            , IAskApplication askApplication
+            , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication)
         {
             _IQuizApplication = quizApplication;
             _IRellationshipQuizToAskApplication = rellationshipQuizToAskApplication;
             _IAskApplication = askApplication;
+            _IRellationshipAskToAnswerApplication = rellationshipAskToAnswerApplication;
         }
         #endregion
 
@@ -46,7 +51,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication))
+                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication))
                     {
 
                         QuizBO.Incluir(Entity, out Mensagem);
@@ -75,7 +80,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication))
+                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication))
                     {
                         QuizBO.Alterar(QuizId, Entity, out Mensagem);
                     }
@@ -99,7 +104,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication))
                 {
                     QuizBO.Excluir(QuizId, out Mensagem);
                  
@@ -122,7 +127,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication))
                 {
                     return Ok(QuizBO.ObterTodos());
                 }
@@ -145,7 +150,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication))
                 {
                     return Ok(QuizBO.ObterByDescription(Description));
                 }
@@ -167,7 +172,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication))
                 {
                     return Ok(QuizBO.Obter(QuizId));
                 }

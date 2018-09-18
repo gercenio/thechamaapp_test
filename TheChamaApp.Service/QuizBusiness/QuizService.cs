@@ -12,17 +12,20 @@ namespace TheChamaApp.Service.QuizBusiness
         private readonly IQuizApplication _IQuizApplication;
         private readonly IRellationshipQuizToAskApplication _IRellationshipQuizToAskApplication;
         private readonly IAskApplication _IAskApplication;
+        private readonly IRellationshipAskToAnswerApplication _IRellationshipAskToAnswerApplication;
 
         #endregion
 
         #region # Constructor
         public QuizService(IQuizApplication quizApplication
             , IRellationshipQuizToAskApplication rellationshipQuizToAskApplication
-            , IAskApplication askApplication)
+            , IAskApplication askApplication
+            , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication)
         {
             _IQuizApplication = quizApplication;
             _IRellationshipQuizToAskApplication = rellationshipQuizToAskApplication;
             _IAskApplication = askApplication;
+            _IRellationshipAskToAnswerApplication = rellationshipAskToAnswerApplication;
         }
         #endregion
 
@@ -70,7 +73,7 @@ namespace TheChamaApp.Service.QuizBusiness
                 if (Original != null)
                 {
                     Entity.QuizId = QuizId;
-                    _IQuizApplication.Add(Entity);
+                    _IQuizApplication.Update(Entity);
                     Mensagem = "Done";
                 }
             }
@@ -118,6 +121,9 @@ namespace TheChamaApp.Service.QuizBusiness
                         if (item.AskId > 0)
                         {
                             item.Ask = _IAskApplication.GetAll().Where(m => m.AskId == item.AskId).Single();
+                            item.Ask.RellationshipAskToAnswer = _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.AskId == item.AskId).ToList();
+
+
                         }
                         Entity.RellationshipQuizToAsk.Add(item);
                     }

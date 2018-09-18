@@ -1,16 +1,27 @@
-﻿using SimpleInjector;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using TheChamaApp.Application.Application;
 using TheChamaApp.Application.IApplication;
+using TheChamaApp.Domain.Core.Bus;
+using TheChamaApp.Domain.Core.Events;
+using TheChamaApp.Domain.Interfaces.Authorization;
 using TheChamaApp.Domain.Interfaces.Repository;
 using TheChamaApp.Domain.Interfaces.Service;
 using TheChamaApp.Domain.Services;
+using TheChamaApp.Infra.CrossCutting.Bus;
+using TheChamaApp.Infra.CrossCutting.Identity.Authorization;
+using TheChamaApp.Infra.CrossCutting.Identity.Models;
 using TheChamaApp.Infra.Data.Contexto;
+using TheChamaApp.Infra.Data.EventSourcing;
 using TheChamaApp.Infra.Data.Interfaces;
 using TheChamaApp.Infra.Data.Interfaces.Contexto;
 using TheChamaApp.Infra.Data.Repository;
+using TheChamaApp.Infra.Data.Repository.EventSourcing;
+using MediatR;
 
 namespace TheChamaApp.Infra.IoC
 {
@@ -90,6 +101,26 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IQuizResultApplication, QuizResultApplication>(Lifestyle.Scoped);
             container.Register<IQuizResultService, QuizResultService>(Lifestyle.Scoped);
             container.Register<IQuizResultRepository, QuizResultRepository>(Lifestyle.Scoped);
+
+            /*
+            // ASP.NET HttpContext dependency
+            container.Register<IHttpContextAccessor, HttpContextAccessor>(Lifestyle.Scoped);
+
+            // repository
+            container.Register<IEventStoreRepository, EventStoreSQLRepository>(Lifestyle.Scoped);
+            container.Register<IEventStore, SqlEventStore>(Lifestyle.Scoped);
+
+
+            // Domain Bus (Mediator)
+            container.Register<IMediator, MediatR.Mediator>(Lifestyle.Scoped);
+            container.Register<IMediatorHandler, InMemoryBus>(Lifestyle.Scoped);
+
+            // Code Identity
+            container.Register<IUser, AspNetUser>(Lifestyle.Scoped);
+
+            // ASP.NET Authorization Polices
+            container.Register<IAuthorizationHandler, ClaimsRequirementHandler>(Lifestyle.Scoped);
+            */
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using TheChamaApp.Domain.Core.Events;
 using TheChamaApp.Domain.Entities;
 
 
@@ -108,6 +109,7 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<RellationshipQuizToAsk> RellationshipQuizToAsk { get; set; }
         public DbSet<QuizResult> QuizResult { get; set; }
         public DbSet<RellationshipCompanyUnityToQuiz> RellationshipCompanyUnityToQuiz { get; set; }
+        //public DbSet<StoredEvent> StoredEvent { get; set; }
 
         #endregion
 
