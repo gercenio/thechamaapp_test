@@ -109,6 +109,32 @@ namespace TheChamaApp.Service.AskBusiness
             return lista;
         }
 
+        /// <summary>
+        /// Realiza a alteração
+        /// </summary>
+        /// <param name="AskId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public Domain.Entities.Ask Alterar(int AskId, Domain.Entities.Ask Entity, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var OriginalList = _IAskApplication.GetAll().Where(m => m.AskId == AskId).ToList();
+                if (OriginalList.Count > 0)
+                {
+                    Entity.AskId = AskId;
+                    _IAskApplication.Update(Entity);
+                }
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+            return Entity;
+        }
+
         #endregion
     }
 }

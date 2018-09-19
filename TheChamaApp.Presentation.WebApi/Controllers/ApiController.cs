@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
-    public class ApiController : ControllerBase
+    public abstract class ApiController : ControllerBase
     {
         private readonly DomainNotificationHandler _notifications;
         private readonly IMediatorHandler _mediator;

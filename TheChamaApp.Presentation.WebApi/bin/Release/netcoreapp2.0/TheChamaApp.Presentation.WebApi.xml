@@ -65,6 +65,14 @@
             </summary>
             <param name="AskId"></param>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.AskController.Put(System.Int32,TheChamaApp.Domain.Entities.Ask)">
+            <summary>
+            Realiaza a alteração
+            </summary>
+            <param name="AskId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.CompanyContactController.Get(System.Int32)">
             <summary>
             Obtem uma lista de contatos

@@ -27,6 +27,9 @@ using System.Net.NetworkInformation;
 using System.IO;
 using System.Linq;
 using MediatR.Pipeline;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace TheChamaApp.Infra.IoC
 {
@@ -140,15 +143,14 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IMediatorHandler, InMemoryBus>(Lifestyle.Scoped);
 
             // Code Identity
-            container.Register<IUser, AspNetUser>(Lifestyle.Scoped);
+            container.Register<Domain.Interfaces.Authorization.IUser, AspNetUser>(Lifestyle.Scoped);
 
             // ASP.NET Authorization Polices
             container.Register<IAuthorizationHandler, ClaimsRequirementHandler>(Lifestyle.Scoped);
-            
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
-            container.Register<TheChamaApp.Infra.Data.Contexto.TheChamaAppContext>(Lifestyle.Scoped);
+            container.Register<TheChamaAppContext>(Lifestyle.Scoped);
 
         }
 

@@ -18,8 +18,8 @@ using TheChamaApp.Infra.CrossCutting.Identity.Models.AccountViewModels;
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
    
-    [Produces("application/json")]
-    [Route("api/Account")]
+    
+    [Route("api/[controller]")]
     public class AccountController : ApiController
     {
         private readonly Microsoft.AspNetCore.Identity.UserManager<ApplicationUser> _userManager;
@@ -40,8 +40,8 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [Route("account/register")]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        [Route("register")]
+        public async Task<IActionResult> Register([FromBody]RegisterViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -66,6 +66,26 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             AddIdentityErrors(result);
             return Response(model);
         }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("account")]
+        public async Task<IActionResult> Login([FromBody] LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                NotifyModelStateErrors();
+                return Response(model);
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, true);
+            if (!result.Succeeded)
+                NotifyError(result.ToString(), "Login failure");
+
+            _logger.LogInformation(1, "User logged in.");
+            return Response(model);
+        }
+
     }
-    
+
 }

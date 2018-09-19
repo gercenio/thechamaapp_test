@@ -120,6 +120,30 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Realiaza a alteração
+        /// </summary>
+        /// <param name="AskId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{AskId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int AskId, [FromBody]Domain.Entities.Ask Entity)
+        {
+            using (TheChamaApp.Service.AskBusiness.AskService AskBO = new Service.AskBusiness.AskService(_IAskApplication, _IRellationshipAskToAnswerApplication, _IAnswerApplication))
+            {
+                try
+                {
+                    AskBO.Alterar(AskId, Entity, out Mensagem);
+                    return Ok(Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+            }
+        }
+
         #endregion
 
     }

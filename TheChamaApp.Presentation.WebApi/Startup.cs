@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
@@ -25,8 +26,9 @@ using SimpleInjector.Lifestyles;
 using Swashbuckle.AspNetCore.Swagger;
 using TheChamaApp.Domain.Entities;
 using TheChamaApp.Infra.IoC;
-
-
+using MediatR;
+using TheChamaApp.Infra.CrossCutting.Identity.Models;
+using Microsoft.AspNet.Identity;
 
 namespace TheChamaApp.Presentation.WebApi
 {
@@ -96,11 +98,11 @@ namespace TheChamaApp.Presentation.WebApi
                .AddJsonFile("appsettings.json")
                .Build();
 
-            services.AddDbContext<TheChamaApp.Infra.Data.Contexto.IdentityContext>(options => options.UseMySQL(this.Decrypt(con.GetSection("ConnectionStrings:Connection").Value)));
+            services.AddDbContext<Infra.Data.Contexto.IdentityContext>(options => options.UseMySQL(this.Decrypt(con.GetSection("ConnectionStrings:Connection").Value)));
 
             // ===== Add Identity ========
             services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<TheChamaApp.Infra.Data.Contexto.IdentityContext>()
+                .AddEntityFrameworkStores<TheChamaApp.Infra.Data.Contexto.TheChamaAppContext>()
                 .AddDefaultTokenProviders();
 
             services.Configure<IdentityOptions>(options =>
@@ -119,6 +121,8 @@ namespace TheChamaApp.Presentation.WebApi
                 // User settings
                 options.User.RequireUniqueEmail = true;
             });
+
+            services.AddMediatR(typeof(Startup));
 
             services.AddMvc(config =>
             {
@@ -152,10 +156,13 @@ namespace TheChamaApp.Presentation.WebApi
                 c.IncludeXmlComments(caminhoXmlDoc);
             });
 
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, TheChamaApp.Infra.Data.Contexto.IdentityContext dbContext)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env
+            , ILoggerFactory loggerFactory
+            , IHttpContextAccessor accessor)
         {
             if (env.IsDevelopment())
             {
@@ -170,8 +177,10 @@ namespace TheChamaApp.Presentation.WebApi
 
             app.UseMvc();
 
+            loggerFactory.AddConsole();
+
             // ===== Create tables ======
-            dbContext.Database.EnsureCreated();
+            //dbContext.Database.EnsureCreated();
 
             // initial config
             InitializeContainer(container);
@@ -200,10 +209,12 @@ namespace TheChamaApp.Presentation.WebApi
 
             services.EnableSimpleInjectorCrossWiring(container);
             services.UseSimpleInjectorAspNetRequestScoping(container);
+
         }
 
         private static void InitializeContainer(Container container)
         {
+
             BootStrapper.Register(container);
         }
 

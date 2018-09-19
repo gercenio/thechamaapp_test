@@ -15,6 +15,9 @@ namespace TheChamaApp.Domain.Entities
         public int QuizId { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
+        public bool Enable { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime FinishDate { get; set; }
 
         [ForeignKey("QuizId")]
         public virtual Quiz Quiz { get; set; }
