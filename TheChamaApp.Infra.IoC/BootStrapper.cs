@@ -22,6 +22,11 @@ using TheChamaApp.Infra.Data.Interfaces.Contexto;
 using TheChamaApp.Infra.Data.Repository;
 using TheChamaApp.Infra.Data.Repository.EventSourcing;
 using MediatR;
+using System.Reflection;
+using System.Net.NetworkInformation;
+using System.IO;
+using System.Linq;
+using MediatR.Pipeline;
 
 namespace TheChamaApp.Infra.IoC
 {
@@ -102,7 +107,6 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IQuizResultService, QuizResultService>(Lifestyle.Scoped);
             container.Register<IQuizResultRepository, QuizResultRepository>(Lifestyle.Scoped);
 
-            /*
             // ASP.NET HttpContext dependency
             container.Register<IHttpContextAccessor, HttpContextAccessor>(Lifestyle.Scoped);
 
@@ -110,9 +114,29 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IEventStoreRepository, EventStoreSQLRepository>(Lifestyle.Scoped);
             container.Register<IEventStore, SqlEventStore>(Lifestyle.Scoped);
 
-
             // Domain Bus (Mediator)
-            container.Register<IMediator, MediatR.Mediator>(Lifestyle.Scoped);
+            var assemblies = GetAssemblies().ToArray();
+            container.RegisterSingleton<IMediator, Mediator>();
+            container.Register(typeof(IRequestHandler<,>), assemblies);
+
+            // we have to do this because by default, generic type definitions (such as the Constrained Notification Handler) won't be registered
+            var notificationHandlerTypes = container.GetTypesToRegister(typeof(INotificationHandler<>), assemblies, new TypesToRegisterOptions
+            {
+                IncludeGenericTypeDefinitions = true,
+                IncludeComposites = false,
+            });
+            container.Collection.Register(typeof(INotificationHandler<>), notificationHandlerTypes);
+
+            //Pipeline
+            container.Collection.Register(typeof(IPipelineBehavior<,>), new[]
+            {
+                typeof(RequestPreProcessorBehavior<,>),
+                typeof(RequestPostProcessorBehavior<,>)
+                
+            });
+
+            container.Register(() => new ServiceFactory(container.GetInstance), Lifestyle.Singleton);
+
             container.Register<IMediatorHandler, InMemoryBus>(Lifestyle.Scoped);
 
             // Code Identity
@@ -120,11 +144,18 @@ namespace TheChamaApp.Infra.IoC
 
             // ASP.NET Authorization Polices
             container.Register<IAuthorizationHandler, ClaimsRequirementHandler>(Lifestyle.Scoped);
-            */
+            
 
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
+            container.Register<TheChamaApp.Infra.Data.Contexto.TheChamaAppContext>(Lifestyle.Scoped);
 
+        }
+
+        private static IEnumerable<Assembly> GetAssemblies()
+        {
+            yield return typeof(IMediator).GetTypeInfo().Assembly;
+            yield return typeof(Ping).GetTypeInfo().Assembly;
         }
     }
 }

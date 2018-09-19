@@ -70,6 +70,34 @@ namespace TheChamaApp.Service.AskBusiness
             }
         }
 
+        /// <summary>
+        /// Realiza a alteração de um relacionamento
+        /// </summary>
+        /// <param name="RellationshipAskToAnswerId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public Domain.Entities.RellationshipAskToAnswer Alterar(int RellationshipAskToAnswerId, Domain.Entities.RellationshipAskToAnswer Entity,out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var OriginalList = _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.RellationshipAskToAnswerId == RellationshipAskToAnswerId).ToList();
+                if (OriginalList.Count > 0)
+                {
+                    Entity.RellationshipAskToAnswerId = RellationshipAskToAnswerId;
+                    _IRellationshipAskToAnswerApplication.Update(Entity);
+                    Mensagem = "Done";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+            return Entity;
+        }
+
         #endregion
 
     }

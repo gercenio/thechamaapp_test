@@ -12,10 +12,16 @@ namespace TheChamaApp.Infra.CrossCutting.Identity.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        #region # Constructor
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
+        #endregion
+
+        #region Override Methods
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,6 +32,8 @@ namespace TheChamaApp.Infra.CrossCutting.Identity.Data
 
             optionsBuilder.UseMySQL(this.Decrypt(config.GetSection("ConnectionStrings:Connection").Value));
         }
+
+        #endregion
 
         #region # Private Methods
 

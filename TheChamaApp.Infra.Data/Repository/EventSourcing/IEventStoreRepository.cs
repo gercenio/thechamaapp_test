@@ -5,7 +5,7 @@ using TheChamaApp.Domain.Core.Events;
 
 namespace TheChamaApp.Infra.Data.Repository.EventSourcing
 {
-    public interface IEventStoreRepository : IDisposable
+    public interface IEventStoreRepository 
     {
         void Store(StoredEvent theEvent);
         IList<StoredEvent> All(Guid aggregateId);

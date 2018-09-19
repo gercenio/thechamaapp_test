@@ -72,6 +72,30 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Realiza a alteração de um objeto
+        /// </summary>
+        /// <param name="RellationshipAskToAnswerId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{RellationshipAskToAnswerId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int RellationshipAskToAnswerId, [FromBody]Domain.Entities.RellationshipAskToAnswer Entity)
+        {
+            using (TheChamaApp.Service.AskBusiness.RellationshipAskToAnswerService RellationBO = new Service.AskBusiness.RellationshipAskToAnswerService(_IRellationshipAskToAnswerApplication))
+            {
+                try
+                {
+                    RellationBO.Alterar(RellationshipAskToAnswerId, Entity, out Mensagem);
+                    return Ok(Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+            }
+        }
+
         #endregion
     }
 }

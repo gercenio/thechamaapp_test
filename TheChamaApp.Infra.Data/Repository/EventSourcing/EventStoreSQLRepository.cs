@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace TheChamaApp.Infra.Data.Repository.EventSourcing
 {
-    /*
+    
     public class EventStoreSQLRepository : IEventStoreRepository
     {
         private readonly Contexto.TheChamaAppContext _DbContext;
@@ -33,5 +33,5 @@ namespace TheChamaApp.Infra.Data.Repository.EventSourcing
             _DbContext.Dispose();
         }
 
-    }*/
+    }
 }

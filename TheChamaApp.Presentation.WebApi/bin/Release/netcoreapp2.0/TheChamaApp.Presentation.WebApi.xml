@@ -375,6 +375,14 @@
             </summary>
             <param name="RellationshipAskToAnswerId"></param>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipAskToAnswerController.Put(System.Int32,TheChamaApp.Domain.Entities.RellationshipAskToAnswer)">
+            <summary>
+            Realiza a alteração de um objeto
+            </summary>
+            <param name="RellationshipAskToAnswerId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipCompanyUnityToQuizController.Post(TheChamaApp.Domain.Entities.RellationshipCompanyUnityToQuiz)">
             <summary>
             Realiza a inclusão de uma pergunta

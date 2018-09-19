@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace TheChamaApp.Domain.Core.Events
@@ -18,6 +20,10 @@ namespace TheChamaApp.Domain.Core.Events
         // EF Constructor
         protected StoredEvent() { }
 
+        [Key]
+        public int StoredEventId { get; set; }
+
+        [NotMapped]
         public Guid Id { get; private set; }
 
         public string Data { get; private set; }

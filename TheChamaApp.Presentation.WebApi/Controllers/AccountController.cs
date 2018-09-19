@@ -17,7 +17,7 @@ using TheChamaApp.Infra.CrossCutting.Identity.Models.AccountViewModels;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
-    /*
+   
     [Produces("application/json")]
     [Route("api/Account")]
     public class AccountController : ApiController
@@ -67,5 +67,5 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             return Response(model);
         }
     }
-    */
+    
 }
