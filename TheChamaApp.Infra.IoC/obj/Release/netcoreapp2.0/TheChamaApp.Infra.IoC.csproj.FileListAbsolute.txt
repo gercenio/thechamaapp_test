@@ -47,3 +47,11 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcore
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Authorization.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Domain.Core.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Bus.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Domain.Core.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Bus.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Authorization.xml

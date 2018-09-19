@@ -51,3 +51,5 @@ D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Service\obj
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Service\obj\Release\netcoreapp2.0\TheChamaApp.Service.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Release\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Release\netcoreapp2.0\TheChamaApp.Domain.Core.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Release\netcoreapp2.0\TheChamaApp.Domain.Core.pdb
