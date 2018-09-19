@@ -66,6 +66,34 @@ namespace TheChamaApp.Service.QuizBusiness
             }
         }
 
+        /// <summary>
+        /// Realiza a alteração de um relacionamento
+        /// </summary>
+        /// <param name="RellationshipQuizToAskId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public Domain.Entities.RellationshipQuizToAsk Alterar(int RellationshipQuizToAskId, Domain.Entities.RellationshipQuizToAsk Entity, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var OriginalList = _IRellationshipQuizToAskApplication.GetAll().Where(m => m.RellationshipQuizToAskId == RellationshipQuizToAskId).ToList();
+                if (OriginalList.Count > 0)
+                {
+                    Entity.RellationshipQuizToAskId = RellationshipQuizToAskId;
+                    _IRellationshipQuizToAskApplication.Add(Entity);
+                    Mensagem = "Done";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+            return Entity;
+        }
+
         #endregion
 
     }

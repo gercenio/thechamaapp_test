@@ -50,6 +50,30 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         }
 
         /// <summary>
+        /// Realiza a alteração de uma relacionamento
+        /// </summary>
+        /// <param name="RellationshipQuizToAskId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{RellationshipQuizToAskId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int RellationshipQuizToAskId, [FromBody]Domain.Entities.RellationshipQuizToAsk Entity)
+        {
+            try
+            {
+                using (TheChamaApp.Service.QuizBusiness.RellationshipQuizToAskService RellationBO = new Service.QuizBusiness.RellationshipQuizToAskService(_IRellationshipQuizToAskApplication))
+                {
+                    RellationBO.Alterar(RellationshipQuizToAskId, Entity, out Mensagem);
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+            return Ok(Mensagem);
+        }
+
+        /// <summary>
         /// Realiza a exclusão de um relacionamento
         /// </summary>
         /// <param name="RellationshipQuizToAskId"></param>

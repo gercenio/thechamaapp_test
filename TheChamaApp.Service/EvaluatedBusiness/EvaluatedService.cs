@@ -171,7 +171,5 @@ namespace TheChamaApp.Service.EvaluatedBusiness
 
         #endregion
 
-        
-
     }
 }

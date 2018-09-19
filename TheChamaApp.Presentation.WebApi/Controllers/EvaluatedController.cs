@@ -117,7 +117,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// Deleta um avaliado
         /// </summary>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpDelete("{EvaluatedId}")]
         [Authorize("Bearer")]
         public void Delete(int EvaluatedId)
         {
