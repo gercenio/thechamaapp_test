@@ -2169,7 +2169,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Xavier\\.nuget\\packages\\": {},
+    "C:\\Users\\gerce\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -2178,18 +2179,20 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj",
+      "projectUniqueName": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj",
       "projectName": "TheChamaApp.Domain.Core",
-      "projectPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj",
-      "packagesPath": "C:\\Users\\Xavier\\.nuget\\packages\\",
-      "outputPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain.Core\\obj\\",
+      "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj",
+      "packagesPath": "C:\\Users\\gerce\\.nuget\\packages\\",
+      "outputPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Xavier\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\gerce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

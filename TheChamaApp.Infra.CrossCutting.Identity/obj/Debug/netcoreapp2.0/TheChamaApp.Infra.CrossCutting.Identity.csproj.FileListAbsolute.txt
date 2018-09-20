@@ -13,3 +13,14 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\b
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Authorization.xml
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.csprojResolveAssemblyReference.cache
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.csproj.CoreCompileInputs.cache
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.AssemblyInfoInputs.cache
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.AssemblyInfo.cs
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.dll
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.pdb
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.deps.json
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.dll
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.pdb
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.dll
+C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting.Identity\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.pdb
