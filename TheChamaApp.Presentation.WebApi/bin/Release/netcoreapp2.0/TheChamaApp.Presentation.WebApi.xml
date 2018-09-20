@@ -268,6 +268,14 @@
             <param name="Description"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.Get(System.Int32,TheChamaApp.Infra.CrossCutting.Util.PagingParameterModel)">
+            <summary>
+            Realiza a busca paginada dos dados
+            </summary>
+            <param name="CompanyUnityId"></param>
+            <param name="pagingparametermodel"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Get">
             <summary>
             Obtem uma lista de todos os grupos

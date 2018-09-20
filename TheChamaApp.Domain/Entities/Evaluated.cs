@@ -17,6 +17,7 @@ namespace TheChamaApp.Domain.Entities
         public string KeyNumber { get; set; }
         public string Document { get; set; }
         public string Email { get; set; }
+        public int? Subordinate { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 
