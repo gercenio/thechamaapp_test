@@ -2188,8 +2188,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gerce\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Users\\Xavier\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -2198,20 +2197,18 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting.Bus\\TheChamaApp.Infra.CrossCutting.Bus.csproj",
+      "projectUniqueName": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting.Bus\\TheChamaApp.Infra.CrossCutting.Bus.csproj",
       "projectName": "TheChamaApp.Infra.CrossCutting.Bus",
-      "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting.Bus\\TheChamaApp.Infra.CrossCutting.Bus.csproj",
-      "packagesPath": "C:\\Users\\gerce\\.nuget\\packages\\",
-      "outputPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting.Bus\\obj\\",
+      "projectPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting.Bus\\TheChamaApp.Infra.CrossCutting.Bus.csproj",
+      "packagesPath": "C:\\Users\\Xavier\\.nuget\\packages\\",
+      "outputPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Infra.CrossCutting.Bus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gerce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Users\\Xavier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -2223,8 +2220,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj"
+            "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\thechamaapp_test\\TheChamaApp.Domain.Core\\TheChamaApp.Domain.Core.csproj"
             }
           }
         }

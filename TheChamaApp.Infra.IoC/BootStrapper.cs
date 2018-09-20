@@ -6,21 +6,14 @@ using System.Collections.Generic;
 using System.Text;
 using TheChamaApp.Application.Application;
 using TheChamaApp.Application.IApplication;
-using TheChamaApp.Domain.Core.Bus;
-using TheChamaApp.Domain.Core.Events;
 using TheChamaApp.Domain.Interfaces.Authorization;
 using TheChamaApp.Domain.Interfaces.Repository;
 using TheChamaApp.Domain.Interfaces.Service;
 using TheChamaApp.Domain.Services;
-using TheChamaApp.Infra.CrossCutting.Bus;
-using TheChamaApp.Infra.CrossCutting.Identity.Authorization;
-using TheChamaApp.Infra.CrossCutting.Identity.Models;
 using TheChamaApp.Infra.Data.Contexto;
-using TheChamaApp.Infra.Data.EventSourcing;
 using TheChamaApp.Infra.Data.Interfaces;
 using TheChamaApp.Infra.Data.Interfaces.Contexto;
 using TheChamaApp.Infra.Data.Repository;
-using TheChamaApp.Infra.Data.Repository.EventSourcing;
 using MediatR;
 using System.Reflection;
 using System.Net.NetworkInformation;
@@ -63,7 +56,12 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IAskApplication, AskApplication>(Lifestyle.Scoped);
             container.Register<IAskService, AskService>(Lifestyle.Scoped);
             container.Register<IAskRepository, AskRepository>(Lifestyle.Scoped);
-            
+
+            //group ask
+            container.Register<IGroupAskApplication, GroupAskApplication>(Lifestyle.Scoped);
+            container.Register<IGroupAskService, GroupAskService>(Lifestyle.Scoped);
+            container.Register<IGroupAskRepository, GroupAskRepository>(Lifestyle.Scoped);
+
             //company type
             container.Register<ICompanyTypeApplication, CompanyTypeApplication>(Lifestyle.Scoped);
             container.Register<ICompanyTypeService, CompanyTypeService>(Lifestyle.Scoped);
@@ -110,54 +108,14 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IQuizResultService, QuizResultService>(Lifestyle.Scoped);
             container.Register<IQuizResultRepository, QuizResultRepository>(Lifestyle.Scoped);
 
-            // ASP.NET HttpContext dependency
-            container.Register<IHttpContextAccessor, HttpContextAccessor>(Lifestyle.Scoped);
 
-            // repository
-            container.Register<IEventStoreRepository, EventStoreSQLRepository>(Lifestyle.Scoped);
-            container.Register<IEventStore, SqlEventStore>(Lifestyle.Scoped);
-
-            // Domain Bus (Mediator)
-            var assemblies = GetAssemblies().ToArray();
-            container.RegisterSingleton<IMediator, Mediator>();
-            container.Register(typeof(IRequestHandler<,>), assemblies);
-
-            // we have to do this because by default, generic type definitions (such as the Constrained Notification Handler) won't be registered
-            var notificationHandlerTypes = container.GetTypesToRegister(typeof(INotificationHandler<>), assemblies, new TypesToRegisterOptions
-            {
-                IncludeGenericTypeDefinitions = true,
-                IncludeComposites = false,
-            });
-            container.Collection.Register(typeof(INotificationHandler<>), notificationHandlerTypes);
-
-            //Pipeline
-            container.Collection.Register(typeof(IPipelineBehavior<,>), new[]
-            {
-                typeof(RequestPreProcessorBehavior<,>),
-                typeof(RequestPostProcessorBehavior<,>)
-                
-            });
-
-            container.Register(() => new ServiceFactory(container.GetInstance), Lifestyle.Singleton);
-
-            container.Register<IMediatorHandler, InMemoryBus>(Lifestyle.Scoped);
-
-            // Code Identity
-            container.Register<Domain.Interfaces.Authorization.IUser, AspNetUser>(Lifestyle.Scoped);
-
-            // ASP.NET Authorization Polices
-            container.Register<IAuthorizationHandler, ClaimsRequirementHandler>(Lifestyle.Scoped);
-
+            // Context
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
             container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
-            container.Register<TheChamaAppContext>(Lifestyle.Scoped);
+            
 
         }
 
-        private static IEnumerable<Assembly> GetAssemblies()
-        {
-            yield return typeof(IMediator).GetTypeInfo().Assembly;
-            yield return typeof(Ping).GetTypeInfo().Assembly;
-        }
+        
     }
 }

@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using TheChamaApp.Domain.Core.Events;
 using TheChamaApp.Domain.Entities;
 
 
@@ -86,8 +85,10 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<RellationshipCompanyUnityToQuiz>().ToTable("rellationshipcompanyunitytoquiz", "hgm");
             modelBuilder.Entity<GroupAsk>().ToTable("groupask", "hgm");
             modelBuilder.Entity<RellationshipEvaluatedToUpEvaluated>().ToTable("rellationshipevaluatedtoupevaluated", "hgm");
+            
 
             base.OnModelCreating(modelBuilder);
+
         }
 
         #endregion
@@ -111,7 +112,6 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<RellationshipQuizToAsk> RellationshipQuizToAsk { get; set; }
         public DbSet<QuizResult> QuizResult { get; set; }
         public DbSet<RellationshipCompanyUnityToQuiz> RellationshipCompanyUnityToQuiz { get; set; }
-        public DbSet<StoredEvent> StoredEvent { get; set; }
         public DbSet<GroupAsk> GroupAsk { get; set; }
 
         #endregion

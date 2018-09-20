@@ -59,17 +59,7 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Debug\netcoreap
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.IoC.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.IoC.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Authorization.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Bus.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Bus.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Authorization.xml
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.IoC.csprojResolveAssemblyReference.cache
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.IoC.csproj.CoreCompileInputs.cache
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.IoC.AssemblyInfoInputs.cache
@@ -93,3 +83,5 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\ne
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.IoC\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml

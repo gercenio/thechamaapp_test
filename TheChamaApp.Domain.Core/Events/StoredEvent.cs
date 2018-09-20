@@ -21,6 +21,7 @@ namespace TheChamaApp.Domain.Core.Events
         protected StoredEvent() { }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StoredEventId { get; set; }
 
         [NotMapped]

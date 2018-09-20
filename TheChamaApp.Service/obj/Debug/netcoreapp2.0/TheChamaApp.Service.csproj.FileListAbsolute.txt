@@ -66,10 +66,6 @@ C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.AssemblyInfo.cs
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.dll
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Service.deps.json
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Service.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Service.pdb
@@ -89,3 +85,5 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Debug\netc
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.AssemblyInfo.cs
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml

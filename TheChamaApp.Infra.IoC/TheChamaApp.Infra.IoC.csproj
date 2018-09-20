@@ -13,10 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TheChamaApp.Application\TheChamaApp.Application.csproj" />
-    <ProjectReference Include="..\TheChamaApp.Domain.Core\TheChamaApp.Domain.Core.csproj" />
     <ProjectReference Include="..\TheChamaApp.Domain\TheChamaApp.Domain.csproj" />
-    <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting.Bus\TheChamaApp.Infra.CrossCutting.Bus.csproj" />
-    <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting.Identity\TheChamaApp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\TheChamaApp.Infra.Data\TheChamaApp.Infra.Data.csproj" />
   </ItemGroup>
 

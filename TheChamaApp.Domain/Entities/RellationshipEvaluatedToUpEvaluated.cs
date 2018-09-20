@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+
 
 namespace TheChamaApp.Domain.Entities
 {
     public class RellationshipEvaluatedToUpEvaluated
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RellationshipEvaluatedToUpEvaluatedId { get; set; }
         public int EvaluatedId { get; set; }
         public int UpEvaluatedId { get; set; }

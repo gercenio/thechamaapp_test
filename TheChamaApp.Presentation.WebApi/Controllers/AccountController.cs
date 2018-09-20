@@ -10,15 +10,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using TheChamaApp.Domain.Core.Bus;
-using TheChamaApp.Domain.Core.Notifications;
-using TheChamaApp.Infra.CrossCutting.Identity.Models;
-using TheChamaApp.Infra.CrossCutting.Identity.Models.AccountViewModels;
+
+
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
    
-    
+    /*
     [Route("api/[controller]")]
     public class AccountController : ApiController
     {
@@ -86,6 +84,6 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             return Response(model);
         }
 
-    }
+    }*/
 
 }

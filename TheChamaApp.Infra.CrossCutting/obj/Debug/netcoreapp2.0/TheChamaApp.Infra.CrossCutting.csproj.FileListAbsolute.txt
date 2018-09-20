@@ -42,3 +42,4 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting\obj
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.AssemblyInfo.cs
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.CrossCutting\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
+C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.CrossCutting\obj\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.csprojResolveAssemblyReference.cache

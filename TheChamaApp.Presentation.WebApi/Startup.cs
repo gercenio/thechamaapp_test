@@ -27,7 +27,6 @@ using Swashbuckle.AspNetCore.Swagger;
 using TheChamaApp.Domain.Entities;
 using TheChamaApp.Infra.IoC;
 using MediatR;
-using TheChamaApp.Infra.CrossCutting.Identity.Models;
 using Microsoft.AspNet.Identity;
 
 namespace TheChamaApp.Presentation.WebApi
@@ -161,6 +160,7 @@ namespace TheChamaApp.Presentation.WebApi
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env
+            , Infra.Data.Contexto.TheChamaAppContext dbContext
             , ILoggerFactory loggerFactory
             , IHttpContextAccessor accessor)
         {
@@ -201,6 +201,8 @@ namespace TheChamaApp.Presentation.WebApi
             container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddDbContext<Infra.Data.Contexto.TheChamaAppContext>();
 
             services.AddSingleton<IControllerActivator>(
                 new SimpleInjectorControllerActivator(container));

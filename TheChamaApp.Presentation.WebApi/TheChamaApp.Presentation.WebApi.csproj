@@ -36,7 +36,6 @@
   <ItemGroup>
     <ProjectReference Include="..\TheChamaApp.Application\TheChamaApp.Application.csproj" />
     <ProjectReference Include="..\TheChamaApp.Domain\TheChamaApp.Domain.csproj" />
-    <ProjectReference Include="..\TheChamaApp.Infra.CrossCutting.Identity\TheChamaApp.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\TheChamaApp.Infra.IoC\TheChamaApp.Infra.IoC.csproj" />
     <ProjectReference Include="..\TheChamaApp.Service\TheChamaApp.Service.csproj" />
   </ItemGroup>
