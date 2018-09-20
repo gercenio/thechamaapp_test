@@ -167,8 +167,7 @@ namespace TheChamaApp.Service.EvaluatedBusiness
             return lista;
         }
 
-        
-
+       
         #endregion
 
     }

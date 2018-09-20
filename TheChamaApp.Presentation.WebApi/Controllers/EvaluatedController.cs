@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using TheChamaApp.Application.IApplication;
+using TheChamaApp.Infra.CrossCutting.Util;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
@@ -171,13 +173,69 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <param name="Description"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("Description /{Description}")]
+        [Route("Description/{Description}")]
         [Authorize("Bearer")]
         public IQueryable<Domain.Entities.Evaluated> GetByDescription(string Description)
         {
             using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
             {
                 return EvaluetedBO.ObterByDescription(Description).AsQueryable();
+            }
+        }
+
+        /// <summary>
+        /// Realiza a busca paginada dos dados
+        /// </summary>
+        /// <param name="CompanyUnityId"></param>
+        /// <param name="pagingparametermodel"></param>
+        /// <returns></returns>
+        [HttpGet("{CompanyUnityId}")]
+        [Authorize("Bearer")]
+        public IEnumerable<Domain.Entities.Evaluated> Get(int CompanyUnityId,[FromQuery]PagingParameterModel pagingparametermodel)
+        {
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
+            {
+                var source = EvaluetedBO.ObterTodosPorUnidade(CompanyUnityId).AsQueryable();
+
+                // Get's No of Rows Count   
+                int count = source.Count();
+
+                // Parameter is passed from Query string if it is null then it default Value will be pageNumber:1  
+                int CurrentPage = pagingparametermodel.pageNumber;
+
+                // Parameter is passed from Query string if it is null then it default Value will be pageSize:20  
+                int PageSize = pagingparametermodel.pageSize;
+
+                // Display TotalCount to Records to User  
+                int TotalCount = count;
+
+                // Calculating Totalpage by Dividing (No of Records / Pagesize)  
+                int TotalPages = (int)Math.Ceiling(count / (double)PageSize);
+
+                // Returns List of Customer after applying Paging   
+                var items = source.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+
+                // if CurrentPage is greater than 1 means it has previousPage  
+                var previousPage = CurrentPage > 1 ? "Yes" : "No";
+
+                // if TotalPages is greater than CurrentPage means it has nextPage  
+                var nextPage = CurrentPage < TotalPages ? "Yes" : "No";
+
+                // Object which we are going to send in header   
+                var paginationMetadata = new
+                {
+                    totalCount = TotalCount,
+                    pageSize = PageSize,
+                    currentPage = CurrentPage,
+                    totalPages = TotalPages,
+                    previousPage,
+                    nextPage
+                };
+
+                // Setting Header  
+                HttpContext.Response.Headers.Add("Paging-Headers", JsonConvert.SerializeObject(paginationMetadata));
+                // Returing List of Customers Collections  
+                return items;
             }
         }
 

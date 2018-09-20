@@ -9,7 +9,9 @@ using TheChamaApp.Application.IApplication;
 
 namespace TheChamaApp.Presentation.WebApi.Controllers
 {
-    
+    /// <summary>
+    /// Realiza o relacionamento entre os avaliados e seus superiores
+    /// </summary>
     [Route("api/[controller]")]
     public class RellationshipEvaluatedToUpEvaluatedController : BaseController
     {
@@ -91,6 +93,30 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                 try
                 {
                     RellationBO.Excluir(RellationshipEvaluatedToUpEvaluatedId, out Mensagem);
+                }
+                catch (Exception Ex)
+                {
+                    return BadRequest(Ex);
+                }
+                return Ok(Mensagem);
+            }
+        }
+
+        /// <summary>
+        /// Realiza as alterações dos dados
+        /// </summary>
+        /// <param name="RellationshipEvaluatedToUpEvaluatedId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{RellationshipEvaluatedToUpEvaluatedId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int RellationshipEvaluatedToUpEvaluatedId, [FromBody]Domain.Entities.RellationshipEvaluatedToUpEvaluated Entity)
+        {
+            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication))
+            {
+                try
+                {
+                    RellationBO.Alterar(RellationshipEvaluatedToUpEvaluatedId,Entity, out Mensagem);
                 }
                 catch (Exception Ex)
                 {

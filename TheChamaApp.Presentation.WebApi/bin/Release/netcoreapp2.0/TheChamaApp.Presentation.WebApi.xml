@@ -268,6 +268,19 @@
             <param name="Description"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Get">
+            <summary>
+            Obtem uma lista de todos os grupos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Get(System.Int32)">
+            <summary>
+            Obtem um passando o ID
+            </summary>
+            <param name="GroupAskId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.LevelEvaluatedController.Post(TheChamaApp.Domain.Entities.LevelEvaluated)">
             <summary>
             Realiza o cadastro de um tipo de avaliado(departamento/setor)
@@ -403,6 +416,40 @@
             Realiza a exclusão de um registro
             </summary>
             <param name="RellationshipCompanyUnityToQuizId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TheChamaApp.Presentation.WebApi.Controllers.RellationshipEvaluatedToUpEvaluatedController">
+            <summary>
+            Realiza o relacionamento entre os avaliados e seus superiores
+            </summary>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipEvaluatedToUpEvaluatedController.Post(TheChamaApp.Domain.Entities.RellationshipEvaluatedToUpEvaluated)">
+            <summary>
+            Realiza a inclusão dos dados
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipEvaluatedToUpEvaluatedController.Get(System.Int32)">
+            <summary>
+            Realiza a busca dos dados
+            </summary>
+            <param name="RellationshipEvaluatedToUpEvaluatedId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipEvaluatedToUpEvaluatedController.Delete(System.Int32)">
+            <summary>
+            Realiza a exclusão de dados
+            </summary>
+            <param name="RellationshipEvaluatedToUpEvaluatedId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipEvaluatedToUpEvaluatedController.Put(System.Int32,TheChamaApp.Domain.Entities.RellationshipEvaluatedToUpEvaluated)">
+            <summary>
+            Realiza as alterações dos dados
+            </summary>
+            <param name="RellationshipEvaluatedToUpEvaluatedId"></param>
+            <param name="Entity"></param>
             <returns></returns>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipQuizToAskController.Post(TheChamaApp.Domain.Entities.RellationshipQuizToAsk)">

@@ -69,9 +69,3 @@ D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Presentatio
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Presentation.WebApi\obj\Release\netcoreapp2.0\TheChamaApp.Presentation.WebApi.pdb
 D:\Developer\2018\HmgConsultores\Source\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Presentation.WebApi.xml
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Presentation.WebApi.xml
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Domain.Core.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Bus.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.dll
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Identity.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Domain.Core.pdb
-C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Presentation.WebApi\bin\Release\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.Bus.pdb
