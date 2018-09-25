@@ -13,7 +13,7 @@ namespace TheChamaApp.Domain.Entities
         public int RellationshipQuizToAskId { get; set; }
         public int QuizId { get; set; }
         public int AskId { get; set; }
-        public int GroupAskId { get; set; }
+        public int? GroupAskId { get; set; }
         public int Order { get; set; }
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }

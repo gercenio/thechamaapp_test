@@ -53,10 +53,8 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\obj\Debug\n
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.deps.json
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.pdb
-C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
-C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
 C:\Developer\2018\HGM\thechamaapp_test\TheChamaApp.Infra.Data\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

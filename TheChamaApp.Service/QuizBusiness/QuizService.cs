@@ -13,6 +13,7 @@ namespace TheChamaApp.Service.QuizBusiness
         private readonly IRellationshipQuizToAskApplication _IRellationshipQuizToAskApplication;
         private readonly IAskApplication _IAskApplication;
         private readonly IRellationshipAskToAnswerApplication _IRellationshipAskToAnswerApplication;
+        private readonly IGroupAskApplication _IGroupAskApplication;
 
         #endregion
 
@@ -20,12 +21,14 @@ namespace TheChamaApp.Service.QuizBusiness
         public QuizService(IQuizApplication quizApplication
             , IRellationshipQuizToAskApplication rellationshipQuizToAskApplication
             , IAskApplication askApplication
-            , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication)
+            , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication
+            , IGroupAskApplication groupAskApplication)
         {
             _IQuizApplication = quizApplication;
             _IRellationshipQuizToAskApplication = rellationshipQuizToAskApplication;
             _IAskApplication = askApplication;
             _IRellationshipAskToAnswerApplication = rellationshipAskToAnswerApplication;
+            _IGroupAskApplication = groupAskApplication;
         }
         #endregion
 
@@ -122,8 +125,10 @@ namespace TheChamaApp.Service.QuizBusiness
                         {
                             item.Ask = _IAskApplication.GetAll().Where(m => m.AskId == item.AskId).Single();
                             item.Ask.RellationshipAskToAnswer = _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.AskId == item.AskId).ToList();
-
-
+                            if (item.GroupAskId.HasValue && item.GroupAskId > 0)
+                            {
+                               item.GroupAsk = _IGroupAskApplication.GetAll().Where(m => m.GroupAskId == item.GroupAskId).Single();
+                            }
                         }
                         Entity.RellationshipQuizToAsk.Add(item);
                     }

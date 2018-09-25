@@ -97,8 +97,6 @@ namespace TheChamaApp.Presentation.WebApi
                .AddJsonFile("appsettings.json")
                .Build();
 
-            services.AddDbContext<Infra.Data.Contexto.IdentityContext>(options => options.UseMySQL(this.Decrypt(con.GetSection("ConnectionStrings:Connection").Value)));
-
             // ===== Add Identity ========
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<TheChamaApp.Infra.Data.Contexto.TheChamaAppContext>()

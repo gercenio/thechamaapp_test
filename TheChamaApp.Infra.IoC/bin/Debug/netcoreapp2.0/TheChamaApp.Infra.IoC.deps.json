@@ -14,8 +14,7 @@
           "SimpleInjector": "4.3.0",
           "TheChamaApp.Application": "1.0.0",
           "TheChamaApp.Domain": "1.0.0",
-          "TheChamaApp.Infra.Data": "1.0.0",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.1.0"
+          "TheChamaApp.Infra.Data": "1.0.0"
         },
         "runtime": {
           "TheChamaApp.Infra.IoC.dll": {}
@@ -1163,11 +1162,6 @@
         "runtime": {
           "TheChamaApp.Infra.Data.dll": {}
         }
-      },
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.1.0": {
-        "runtime": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {}
-        }
       }
     }
   },
@@ -2069,11 +2063,6 @@
     },
     "TheChamaApp.Infra.Data/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/2.0.1.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -70,7 +70,6 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netc
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Service.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Service.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Application.dll
-C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.dll
@@ -78,7 +77,6 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netc
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.CrossCutting.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Infra.Data.pdb
-C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\bin\Debug\netcoreapp2.0\TheChamaApp.Domain.Core.pdb
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.csprojResolveAssemblyReference.cache
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.csproj.CoreCompileInputs.cache
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Debug\netcoreapp2.0\TheChamaApp.Service.AssemblyInfoInputs.cache
