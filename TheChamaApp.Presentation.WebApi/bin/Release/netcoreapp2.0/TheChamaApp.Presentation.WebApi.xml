@@ -426,6 +426,13 @@
             <param name="RellationshipCompanyUnityToQuizId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipCompanyUnityToQuizController.Get(System.Int32)">
+            <summary>
+            Obtem uma lista de relacionamentos por unidade
+            </summary>
+            <param name="CompanyUnityId"></param>
+            <returns></returns>
+        </member>
         <member name="T:TheChamaApp.Presentation.WebApi.Controllers.RellationshipEvaluatedToUpEvaluatedController">
             <summary>
             Realiza o relacionamento entre os avaliados e seus superiores

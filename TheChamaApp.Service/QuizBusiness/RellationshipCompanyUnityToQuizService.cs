@@ -9,13 +9,18 @@ namespace TheChamaApp.Service.QuizBusiness
     public class RellationshipCompanyUnityToQuizService : Base.ServiceBase
     {
         #region # Propriedades
+
         private readonly IRellationshipCompanyUnityToQuizApplication _IRellationshipCompanyUnityToQuizApplication;
+        private readonly IQuizApplication _IQuizApplication;
+
         #endregion
 
         #region # Constructor
-        public RellationshipCompanyUnityToQuizService(IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication)
+        public RellationshipCompanyUnityToQuizService(IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication
+            , IQuizApplication quizApplication)
         {
             _IRellationshipCompanyUnityToQuizApplication = rellationshipCompanyUnityToQuizApplication;
+            _IQuizApplication = quizApplication;
         }
         #endregion
 
@@ -62,6 +67,46 @@ namespace TheChamaApp.Service.QuizBusiness
             }
         }
         
+        /// <summary>
+        /// Obtem um relacionamento
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuiz"></param>
+        /// <returns></returns>
+        public Domain.Entities.RellationshipCompanyUnityToQuiz Obter(int RellationshipCompanyUnityToQuizId)
+        {
+            var Original = new Domain.Entities.RellationshipCompanyUnityToQuiz();
+            try
+            {
+                Original = _IRellationshipCompanyUnityToQuizApplication.GetAll().Where(m => m.RellationshipCompanyUnityToQuizId == RellationshipCompanyUnityToQuizId).Single();
+                if (Original != null)
+                {
+                    if (Original.QuizId > 0)
+                    {
+                        Original.Quiz = _IQuizApplication.GetAll().Where(m => m.QuizId == Original.QuizId).Single();
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception(Ex.Message);
+            }
+            return Original;
+        }
+
+        /// <summary>
+        /// Obtem uma lista de relacionamentos
+        /// </summary>
+        /// <param name="CompanyUnityId"></param>
+        /// <returns></returns>
+        public IEnumerable<Domain.Entities.RellationshipCompanyUnityToQuiz> ObterByCompanyUnityId(int CompanyUnityId)
+        {
+            List<Domain.Entities.RellationshipCompanyUnityToQuiz> lista = new List<Domain.Entities.RellationshipCompanyUnityToQuiz>();
+            foreach (var item in _IRellationshipCompanyUnityToQuizApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId))
+            {
+                lista.Add(this.Obter(item.RellationshipCompanyUnityToQuizId));
+            }
+            return lista;
+        }
 
         #endregion
 

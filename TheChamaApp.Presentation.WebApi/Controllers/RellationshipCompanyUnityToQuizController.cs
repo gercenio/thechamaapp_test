@@ -14,13 +14,18 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     public class RellationshipCompanyUnityToQuizController : BaseController
     {
         #region # Propriedades
+
         private readonly IRellationshipCompanyUnityToQuizApplication _IRellationshipCompanyUnityToQuizApplication;
+        private readonly IQuizApplication _IQuizApplication;
+
         #endregion
 
         #region # Constructor
-        public RellationshipCompanyUnityToQuizController(IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication)
+        public RellationshipCompanyUnityToQuizController(IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication
+            , IQuizApplication quizApplication)
         {
             _IRellationshipCompanyUnityToQuizApplication = rellationshipCompanyUnityToQuizApplication;
+            _IQuizApplication = quizApplication;
         }
         #endregion
 
@@ -39,7 +44,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication))
+                    using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication,_IQuizApplication))
                     {
                         RellationBO.Incluir(Entity, out Mensagem);
                     }
@@ -63,7 +68,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication))
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication,_IQuizApplication))
                 {
                     RellationBO.Excluir(RellationshipCompanyUnityToQuizId,out Mensagem);
                 }
@@ -73,6 +78,28 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                 return BadRequest(Ex);
             }
             return Ok(Mensagem);
+        }
+
+        /// <summary>
+        /// Obtem uma lista de relacionamentos por unidade
+        /// </summary>
+        /// <param name="CompanyUnityId"></param>
+        /// <returns></returns>
+        [HttpGet("{CompanyUnityId}")]
+        [Authorize("Bearer")]
+        public IActionResult Get(int CompanyUnityId)
+        {
+            try
+            {
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication))
+                {
+                    return Ok(RellationBO.ObterByCompanyUnityId(CompanyUnityId));
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
         }
 
         #endregion

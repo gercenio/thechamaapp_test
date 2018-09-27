@@ -74,7 +74,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// </summary>
         /// <param name="EvaluatedId"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{EvaluatedId}")]
         [Authorize("Bearer")]
         public IActionResult Get(int EvaluatedId)
         {
