@@ -433,6 +433,14 @@
             <param name="CompanyUnityId"></param>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.RellationshipCompanyUnityToQuizController.Put(System.Int32,TheChamaApp.Domain.Entities.RellationshipCompanyUnityToQuiz)">
+            <summary>
+            Realiza a alteração
+            </summary>
+            <param name="RellationshipCompanyUnityToQuizId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
         <member name="T:TheChamaApp.Presentation.WebApi.Controllers.RellationshipEvaluatedToUpEvaluatedController">
             <summary>
             Realiza o relacionamento entre os avaliados e seus superiores

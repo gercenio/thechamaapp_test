@@ -189,7 +189,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <param name="CompanyUnityId"></param>
         /// <param name="pagingparametermodel"></param>
         /// <returns></returns>
-        [HttpGet("{CompanyUnityId}")]
+        [HttpGet("ByCompanyUnity/{CompanyUnityId}")]
         [Authorize("Bearer")]
         public IEnumerable<Domain.Entities.Evaluated> Get(int CompanyUnityId,[FromQuery]PagingParameterModel pagingparametermodel)
         {

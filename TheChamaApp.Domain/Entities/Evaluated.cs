@@ -26,5 +26,8 @@ namespace TheChamaApp.Domain.Entities
 
         [ForeignKey("LevelEvaluatedId")]
         public virtual LevelEvaluated Level { get; set; }
+
+        [ForeignKey("Subordinate")]
+        public virtual Entities.Evaluated SubordinateLeve { get; set; }
     }
 }

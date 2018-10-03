@@ -38,6 +38,7 @@ namespace TheChamaApp.Service.QuizBusiness
             try
             {
                 _IRellationshipCompanyUnityToQuizApplication.Add(Entity);
+                Mensagem = Entity.RellationshipCompanyUnityToQuizId.ToString();
             }
             catch (Exception Ex)
             {
@@ -106,6 +107,37 @@ namespace TheChamaApp.Service.QuizBusiness
                 lista.Add(this.Obter(item.RellationshipCompanyUnityToQuizId));
             }
             return lista;
+        }
+
+        /// <summary>
+        /// Realiza a alteração
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuizId"></param>
+        /// <param name="Entity"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public Domain.Entities.RellationshipCompanyUnityToQuiz Alterar(int RellationshipCompanyUnityToQuizId, Domain.Entities.RellationshipCompanyUnityToQuiz Entity, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            try
+            {
+                var OrginalList = _IRellationshipCompanyUnityToQuizApplication.GetAll().Where(m => m.RellationshipCompanyUnityToQuizId == RellationshipCompanyUnityToQuizId).ToList();
+                if (OrginalList.Count > 0)
+                {
+                    Entity.RellationshipCompanyUnityToQuizId = RellationshipCompanyUnityToQuizId;
+                    _IRellationshipCompanyUnityToQuizApplication.Update(Entity);
+                    Mensagem = "Done";
+                }
+                else
+                {
+                    Mensagem = "Data is valid!!";
+                }
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Error:{0}", Ex.Message);
+            }
+            return Entity;
         }
 
         #endregion

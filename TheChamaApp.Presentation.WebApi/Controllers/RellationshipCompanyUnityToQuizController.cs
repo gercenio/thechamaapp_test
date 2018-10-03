@@ -102,6 +102,28 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Realiza a alteração
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuizId"></param>
+        /// <param name="Entity"></param>
+        /// <returns></returns>
+        [HttpPut("{RellationshipCompanyUnityToQuizId}")]
+        [Authorize("Bearer")]
+        public IActionResult Put(int RellationshipCompanyUnityToQuizId, [FromBody]Domain.Entities.RellationshipCompanyUnityToQuiz Entity) {
+            try
+            {
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication))
+                {
+                    return Ok(RellationBO.Alterar(RellationshipCompanyUnityToQuizId,Entity,out Mensagem));
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+        }
+
         #endregion
     }
 }
