@@ -124,6 +124,28 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Obtem uma lista de relacionamento
+        /// </summary>
+        /// <param name="RellationshipCompanyUnityToQuizId"></param>
+        /// <returns></returns>
+        [HttpGet("{RellationshipCompanyUnityToQuizId}")]
+        [Authorize("Bearer")]
+        public IActionResult Get(string RellationshipCompanyUnityToQuizId)
+        {
+            try
+            {
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication))
+                {
+                    return Ok(RellationBO.Obter(Convert.ToInt32(RellationshipCompanyUnityToQuizId)));
+                }
+            }
+            catch (Exception Ex)
+            {
+                return BadRequest(Ex);
+            }
+        }
+
         #endregion
     }
 }

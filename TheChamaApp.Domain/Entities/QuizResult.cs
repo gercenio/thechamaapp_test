@@ -15,6 +15,7 @@ namespace TheChamaApp.Domain.Entities
         public int? EvaluatedId { get; set; }
         public int AskId { get; set; }
         public int AnswerId { get; set; }
+        
         public DateTime? UpdateAt { get; set; }
         public DateTime InsertAt { get; set; }
 

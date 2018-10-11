@@ -82,7 +82,7 @@ namespace TheChamaApp.Service.QuizBusiness
                 if (OriginalList.Count > 0)
                 {
                     Entity.RellationshipQuizToAskId = RellationshipQuizToAskId;
-                    _IRellationshipQuizToAskApplication.Add(Entity);
+                    _IRellationshipQuizToAskApplication.Update(Entity);
                     Mensagem = "Done";
                 }
 
