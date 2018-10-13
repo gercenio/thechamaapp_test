@@ -10,6 +10,15 @@ namespace TheChamaApp.Infra.CrossCutting.Util
     {
 
         #region Methods
+        /// <summary>
+        /// Convert DateTime To format Short Date
+        /// </summary>
+        /// <param name="datevalue"></param>
+        /// <returns></returns>
+        public static string GetDateFromDateTime(DateTime datevalue)
+        {
+            return datevalue.ToShortDateString();
+        }
 
         public static string Encrypt(string clearText)
         {

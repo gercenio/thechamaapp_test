@@ -65,13 +65,15 @@ namespace TheChamaApp.Service.EvaluatedBusiness
         /// </summary>
         /// <param name="Entity"></param>
         /// <param name="Mensagem"></param>
-        public void Alterar(Domain.Entities.Evaluated Entity, out string Mensagem)
+        public void Alterar(int EvaluatedId, Domain.Entities.Evaluated Entity, out string Mensagem)
         {
             Mensagem = string.Empty;
             try
             {
-                var OriginalList = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == Entity.EvaluatedId).ToList();
-                if (OriginalList.Count > 0) {
+                var OriginalList = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == EvaluatedId).ToList();
+                if (OriginalList.Count > 0)
+                {
+                    Entity.EvaluatedId = EvaluatedId;
                     _IEvaluatedApplication.Update(Entity);
                     Mensagem = "Done";
                 }
@@ -157,10 +159,10 @@ namespace TheChamaApp.Service.EvaluatedBusiness
         /// </summary>
         /// <param name="Description"></param>
         /// <returns></returns>
-        public IEnumerable<Domain.Entities.Evaluated> ObterByDescription(string Description)
+        public IEnumerable<Domain.Entities.Evaluated> ObterByDescription(int CompanyUnityId,string Description)
         {
             List<Domain.Entities.Evaluated> lista = new List<Domain.Entities.Evaluated>();
-            foreach (var Avaliado in _IEvaluatedApplication.GetAll().Where(m => m.Description.Contains(Description)).ToList())
+            foreach (var Avaliado in _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == CompanyUnityId && m.Description.Contains(Description)).ToList())
             {
                 lista.Add(this.Obter(Avaliado.EvaluatedId));
             }

@@ -105,7 +105,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 try
                 {
-                    EvaluetedBO.Alterar(Entity, out Mensagem);
+                    EvaluetedBO.Alterar(EvaluatedId, Entity, out Mensagem);
                     return Ok(Mensagem);
                 }
                 catch (Exception Ex)
@@ -168,18 +168,19 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         }
 
         /// <summary>
-        /// Localiza um Avaliado passando a descrição
+        /// Localiza um avaliado (colaborador), passando a unidade e a descrição do mesmo
         /// </summary>
+        /// <param name="CompanyUnityId"></param>
         /// <param name="Description"></param>
         /// <returns></returns>
         [HttpGet]
-        [Route("Description/{Description}")]
+        [Route("Description/{CompanyUnityId}/{Description}")]
         [Authorize("Bearer")]
-        public IQueryable<Domain.Entities.Evaluated> GetByDescription(string Description)
+        public IQueryable<Domain.Entities.Evaluated> GetByDescription(int CompanyUnityId,string Description)
         {
             using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication))
             {
-                return EvaluetedBO.ObterByDescription(Description).AsQueryable();
+                return EvaluetedBO.ObterByDescription(CompanyUnityId,Description).AsQueryable();
             }
         }
 

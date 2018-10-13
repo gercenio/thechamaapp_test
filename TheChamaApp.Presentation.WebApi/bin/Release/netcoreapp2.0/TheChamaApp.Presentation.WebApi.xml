@@ -261,10 +261,11 @@
             <param name="value"></param>
             <returns></returns>
         </member>
-        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.GetByDescription(System.String)">
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedController.GetByDescription(System.Int32,System.String)">
             <summary>
-            Localiza um Avaliado passando a descrição
+            Localiza um avaliado (colaborador), passando a unidade e a descrição do mesmo
             </summary>
+            <param name="CompanyUnityId"></param>
             <param name="Description"></param>
             <returns></returns>
         </member>
@@ -274,6 +275,18 @@
             </summary>
             <param name="CompanyUnityId"></param>
             <param name="pagingparametermodel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedUtilController">
+            <summary>
+            Obtem os graficos 
+            </summary>    
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.EvaluatedUtilController.Get(System.Int32)">
+            <summary>
+            Obtem o grafico individual
+            </summary>
+            <param name="EvaluatedId"></param>
             <returns></returns>
         </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Get">
