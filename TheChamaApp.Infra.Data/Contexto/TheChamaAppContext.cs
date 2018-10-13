@@ -113,6 +113,7 @@ namespace TheChamaApp.Infra.Data.Contexto
         public DbSet<QuizResult> QuizResult { get; set; }
         public DbSet<RellationshipCompanyUnityToQuiz> RellationshipCompanyUnityToQuiz { get; set; }
         public DbSet<GroupAsk> GroupAsk { get; set; }
+        public DbSet<RellationshipEvaluatedToUpEvaluated> RellationshipEvaluatedToUpEvaluated { get; set; }
 
         #endregion
 

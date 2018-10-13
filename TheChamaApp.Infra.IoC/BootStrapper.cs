@@ -106,6 +106,10 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IQuizResultApplication, QuizResultApplication>(Lifestyle.Scoped);
             container.Register<IQuizResultService, QuizResultService>(Lifestyle.Scoped);
             container.Register<IQuizResultRepository, QuizResultRepository>(Lifestyle.Scoped);
+            //IRellationshipEvaluatedToUpEvaluatedApplication
+            container.Register<IRellationshipEvaluatedToUpEvaluatedApplication, RellationshipEvaluatedToUpEvaluatedApplication>(Lifestyle.Scoped);
+            container.Register<IRellationshipEvaluatedToUpEvaluatedService, RellationshipEvaluatedToUpEvaluatedService>(Lifestyle.Scoped);
+            container.Register<IRellationshipEvaluatedToUpEvaluatedRepository, RellationshipEvaluatedToUpEvaluatedRepository>(Lifestyle.Scoped);
 
 
             // Context

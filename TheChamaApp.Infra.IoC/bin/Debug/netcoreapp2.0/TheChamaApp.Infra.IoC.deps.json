@@ -1144,6 +1144,9 @@
         }
       },
       "TheChamaApp.Infra.CrossCutting/1.0.0": {
+        "dependencies": {
+          "TheChamaApp.Domain": "1.0.0"
+        },
         "runtime": {
           "TheChamaApp.Infra.CrossCutting.dll": {}
         }
