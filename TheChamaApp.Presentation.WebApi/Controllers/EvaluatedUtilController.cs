@@ -20,6 +20,8 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly IQuizResultApplication _IQuizResultApplication;
         private readonly IAnswerApplication _IAnswerApplication;
         private readonly IAskApplication _IAskApplication;
+        private readonly IGroupAskApplication _IGroupAskApplication;
+        private readonly IRellationshipQuizToAskApplication _IRellationshipQuizToAskApplication;
         private readonly IRellationshipCompanyUnityToQuizApplication _IRellationshipCompanyUnityToQuizApplication;
         private readonly IRellationshipEvaluatedToUpEvaluatedApplication _IRellationshipEvaluatedToUpEvaluatedApplication;
         #endregion
@@ -29,6 +31,8 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             , IQuizResultApplication quizResultApplication
             , IAnswerApplication answerApplication
             , IAskApplication askApplication
+            , IGroupAskApplication groupAskApplication
+            , IRellationshipQuizToAskApplication rellationshipQuizToAskApplication
             , IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication
             , IRellationshipEvaluatedToUpEvaluatedApplication evaluatedToUpEvaluatedApplication)
         {
@@ -36,6 +40,8 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             _IQuizResultApplication = quizResultApplication;
             _IAnswerApplication = answerApplication;
             _IAskApplication = askApplication;
+            _IGroupAskApplication = groupAskApplication;
+            _IRellationshipQuizToAskApplication = rellationshipQuizToAskApplication;
             _IRellationshipCompanyUnityToQuizApplication = rellationshipCompanyUnityToQuizApplication;
             _IRellationshipEvaluatedToUpEvaluatedApplication = evaluatedToUpEvaluatedApplication;
         }
@@ -52,7 +58,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get(int EvaluatedId)
         {
-            using (TheChamaApp.Service.ChartBusiness.ChartBaseBusiness ChartBase = new Service.ChartBusiness.ChartBaseBusiness(_IEvaluatedApplication, _IQuizResultApplication, _IRellationshipCompanyUnityToQuizApplication, _IRellationshipEvaluatedToUpEvaluatedApplication, _IAskApplication, _IAnswerApplication))
+            using (TheChamaApp.Service.ChartBusiness.ChartBaseBusiness ChartBase = new Service.ChartBusiness.ChartBaseBusiness(_IEvaluatedApplication, _IQuizResultApplication, _IRellationshipCompanyUnityToQuizApplication, _IRellationshipEvaluatedToUpEvaluatedApplication, _IAskApplication, _IAnswerApplication,_IGroupAskApplication,_IRellationshipQuizToAskApplication))
             {
                 try
                 {

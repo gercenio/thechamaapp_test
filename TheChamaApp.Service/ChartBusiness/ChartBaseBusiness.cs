@@ -13,6 +13,8 @@ namespace TheChamaApp.Service.ChartBusiness
         private readonly IQuizResultApplication _IQuizResultApplication;
         private readonly IAnswerApplication _IAnswerApplication;
         private readonly IAskApplication _IAskApplication;
+        private readonly IGroupAskApplication _IGroupAskApplication;
+        private readonly IRellationshipQuizToAskApplication _IRellationshipQuizToAskApplication;
         private readonly IRellationshipCompanyUnityToQuizApplication _IRellationshipCompanyUnityToQuizApplication;
         private readonly IRellationshipEvaluatedToUpEvaluatedApplication _IRellationshipEvaluatedToUpEvaluatedApplication;
         #endregion
@@ -23,7 +25,9 @@ namespace TheChamaApp.Service.ChartBusiness
             , IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication
             , IRellationshipEvaluatedToUpEvaluatedApplication evaluatedToUpEvaluatedApplication
             , IAskApplication askApplication
-            , IAnswerApplication answerApplication)
+            , IAnswerApplication answerApplication
+            , IGroupAskApplication groupAskApplication
+            , IRellationshipQuizToAskApplication rellationshipQuizToAskApplication)
         {
             _IEvaluatedApplication = evaluatedApplication;
             _IQuizResultApplication = quizResultApplication;
@@ -31,6 +35,8 @@ namespace TheChamaApp.Service.ChartBusiness
             _IRellationshipEvaluatedToUpEvaluatedApplication = evaluatedToUpEvaluatedApplication;
             _IAnswerApplication = answerApplication;
             _IAskApplication = askApplication;
+            _IGroupAskApplication = groupAskApplication;
+            _IRellationshipQuizToAskApplication = rellationshipQuizToAskApplication;
         }
         #endregion
 
@@ -60,7 +66,12 @@ namespace TheChamaApp.Service.ChartBusiness
                             foreach (var item in _IQuizResultApplication.GetAll().Where(m => m.EvaluatedId == EvaluatedId && m.QuizId == relacionamento.QuizId))
                             {
                                 item.Answer = _IAnswerApplication.GetAll().Where(m => m.AnswerId == item.AnswerId).Single();
-                                item.Ask = _IAskApplication.GetAll().Where(m => m.AskId == item.AskId).Single();
+                                var Ask = _IAskApplication.GetAll().Where(m => m.AskId == item.AskId).Single();
+                                if (Ask != null) {
+                                    var RlAskToAnswer = _IRellationshipQuizToAskApplication.GetAll().Where(m => m.AskId == Ask.AskId).Single();
+                                    Ask.GroupAsk = _IGroupAskApplication.GetAll().Where(m => m.GroupAskId == RlAskToAnswer.GroupAskId).Single();
+                                    item.Ask = Ask;
+                                }
                                 listResultados.Add(item);
                             }
                         }
