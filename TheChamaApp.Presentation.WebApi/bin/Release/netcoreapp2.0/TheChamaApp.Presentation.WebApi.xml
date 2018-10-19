@@ -295,6 +295,28 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Post(TheChamaApp.Domain.Entities.GroupAsk)">
+            <summary>
+            Realiza inclusão de um group
+            </summary>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Put(System.Int32,TheChamaApp.Domain.Entities.GroupAsk)">
+            <summary>
+            Realiza uma alteração
+            </summary>
+            <param name="GroupAskId"></param>
+            <param name="Entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Delete(System.Int32)">
+            <summary>
+            Realiza a exclusão de um registro
+            </summary>
+            <param name="GroupAskId"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.GroupAskController.Get(System.Int32)">
             <summary>
             Obtem um passando o ID
