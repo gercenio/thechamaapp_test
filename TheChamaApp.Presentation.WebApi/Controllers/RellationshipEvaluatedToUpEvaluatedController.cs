@@ -18,14 +18,20 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         #region # Propriedades
 
         private readonly IRellationshipEvaluatedToUpEvaluatedApplication _RellationshipEvaluatedToUpEvaluatedApplication;
+        private readonly IEvaluatedApplication _IEvaluatedApplication;
+        private readonly ILevelEvaluatedApplication _ILevelEvaluatedApplication;
 
         #endregion
 
         #region # Constructor
 
-        public RellationshipEvaluatedToUpEvaluatedController(IRellationshipEvaluatedToUpEvaluatedApplication rellationshipEvaluatedToUpEvaluatedApplication)
+        public RellationshipEvaluatedToUpEvaluatedController(IRellationshipEvaluatedToUpEvaluatedApplication rellationshipEvaluatedToUpEvaluatedApplication
+            , IEvaluatedApplication evaluatedApplication
+            , ILevelEvaluatedApplication levelEvaluatedApplication)
         {
             _RellationshipEvaluatedToUpEvaluatedApplication = rellationshipEvaluatedToUpEvaluatedApplication;
+            _IEvaluatedApplication = evaluatedApplication;
+            _ILevelEvaluatedApplication = levelEvaluatedApplication;
         }
 
         #endregion
@@ -42,7 +48,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         public IActionResult Post([FromBody]Domain.Entities.RellationshipEvaluatedToUpEvaluated Entity)
         {
             
-            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication,_IEvaluatedApplication,_ILevelEvaluatedApplication))
             {
                 try
                 {
@@ -65,7 +71,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Get(int EvaluatedId)
         {
-            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication,_IEvaluatedApplication,_ILevelEvaluatedApplication))
             {
                 try
                 {
@@ -88,7 +94,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Delete(int RellationshipEvaluatedToUpEvaluatedId)
         {
-            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication,_IEvaluatedApplication,_ILevelEvaluatedApplication))
             {
                 try
                 {
@@ -112,7 +118,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         [Authorize("Bearer")]
         public IActionResult Put(int RellationshipEvaluatedToUpEvaluatedId, [FromBody]Domain.Entities.RellationshipEvaluatedToUpEvaluated Entity)
         {
-            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication))
+            using (TheChamaApp.Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService RellationBO = new Service.EvaluatedBusiness.RellationshipEvaluatedToUpEvaluatedService(_RellationshipEvaluatedToUpEvaluatedApplication,_IEvaluatedApplication,_ILevelEvaluatedApplication))
             {
                 try
                 {

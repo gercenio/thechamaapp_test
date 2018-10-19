@@ -97,7 +97,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <param name="EvaluatedId"></param>
         /// <param name="Entity"></param>
         /// <returns></returns>
-        [HttpPut]
+        [HttpPut("{EvaluatedId}")]
         [Authorize("Bearer")]
         public IActionResult Put(int EvaluatedId, [FromBody]Domain.Entities.Evaluated Entity)
         {

@@ -127,7 +127,11 @@ namespace TheChamaApp.Service.QuizBusiness
                             item.Ask.RellationshipAskToAnswer = _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.AskId == item.AskId).ToList();
                             if (item.GroupAskId.HasValue && item.GroupAskId > 0)
                             {
-                               item.GroupAsk = _IGroupAskApplication.GetAll().Where(m => m.GroupAskId == item.GroupAskId).Single();
+                                var GroupEntity = _IGroupAskApplication.GetAll().Where(m => m.GroupAskId == item.GroupAskId).ToList();
+                                if (GroupEntity.Count > 0) {
+                                    item.GroupAsk = GroupEntity[0];
+                                }
+                                 
                             }
                         }
                         Entity.RellationshipQuizToAsk.Add(item);

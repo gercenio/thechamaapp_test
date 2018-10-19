@@ -69,7 +69,7 @@ namespace TheChamaApp.Service.ChartBusiness
                                 var Ask = _IAskApplication.GetAll().Where(m => m.AskId == item.AskId).Single();
                                 if (Ask != null) {
                                     var RlAskToAnswer = _IRellationshipQuizToAskApplication.GetAll().Where(m => m.AskId == Ask.AskId).Single();
-                                    Ask.GroupAsk = _IGroupAskApplication.GetAll().Where(m => m.GroupAskId == RlAskToAnswer.GroupAskId).Single();
+                                    //Ask.GroupAsk = _IGroupAskApplication.GetAll().Where(m => m.GroupAskId == RlAskToAnswer.GroupAskId).Single();
                                     item.Ask = Ask;
                                 }
                                 listResultados.Add(item);
