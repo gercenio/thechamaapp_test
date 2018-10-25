@@ -27,7 +27,7 @@ namespace TheChamaApp.Service.EmailBusiness
         private readonly string _Sendgrid_Key;
         private readonly string _FromDescription;
 
-        private static string _To;
+        //private static string _To;
         private static string _Subject;
         private static string _Body;
         
@@ -38,18 +38,15 @@ namespace TheChamaApp.Service.EmailBusiness
         public EmailService(IConfigurationSettingsApplication configurationSettingsApplication
             ,ICompanyUnityApplication companyUnityApplication
             , IEvaluatedApplication evaluatedApplication 
-            , string To
-            ,string Subject
-            ,string Body)
+            )
         {
             _IConfigurationSettingsApplication = configurationSettingsApplication;
             _ICompanyUnityApplication = companyUnityApplication;
             _IEvaluatedApplication = evaluatedApplication;
             _From = this.GetEmailFrom();
             _FromDescription = this.GetEmailFromDescription();
-            _To = To;
-            _Subject = Subject;
-            _Body = Body;
+            _Subject = this.GetEmailFromDescription(); 
+            //_Body = Body;
             _Sendgrid_Key = this.GetApiKey();
         }
 
@@ -68,7 +65,8 @@ namespace TheChamaApp.Service.EmailBusiness
                 var client = new SendGridClient(_Sendgrid_Key);
                 var from = new EmailAddress(_From, _FromDescription);
                 var subject = _Subject;
-                var to = new EmailAddress(_To, "Example User");
+                //var to = new EmailAddress(_To, "Example User");
+                var to = new EmailAddress("gercenio@gmail.com", "Example User");
                 var plainTextContent = "and easy to do anywhere, even with C#";
                 var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
                 var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
@@ -79,6 +77,51 @@ namespace TheChamaApp.Service.EmailBusiness
             {
                 throw new Exception(Ex.Message);
             }    
+        }
+
+        /// <summary>
+        /// Enviar o link do formulario por e-mail
+        /// </summary>
+        /// <param name="Model"></param>
+        /// <param name="Mensagem"></param>
+        /// <returns></returns>
+        public async Task NotificaQuestionario(Infra.CrossCutting.ViewModel.NotificacaoVewModel Model)
+        {
+            
+            try
+            {
+                var Config = _IConfigurationSettingsApplication.GetAll().Where(m => m.Type == Domain.Util.ConfigurationType.Email).Single();
+                var EvaluatedList = _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == Model.CompanyUnityId).ToList();
+                if (EvaluatedList.Count > 0)
+                {
+                    foreach (var Colaborador in EvaluatedList)
+                    {
+                        if (!string.IsNullOrEmpty(Colaborador.Email))
+                        {
+                            if (TheChamaApp.Infra.CrossCutting.Util.Utilities.IsEmail(Colaborador.Email))
+                            {
+                                var client = new SendGridClient(_Sendgrid_Key);
+                                var from = new EmailAddress(_From, _FromDescription);
+                                var subject = _Subject;
+                                var to = new EmailAddress(Colaborador.Email, Colaborador.Description);
+                                var plainTextContent = string.Format("{0}/u/{1}/e/{2}", Config.Url, Colaborador.CompanyUnityId, Colaborador.EvaluatedId);
+                                var htmlContent = string.Format("{0}/u/{1}/e/{2}", Config.Url, Colaborador.CompanyUnityId, Colaborador.EvaluatedId);//"<strong>and easy to do anywhere, even with C#</strong>";
+                                var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+                                var response = await client.SendEmailAsync(msg);
+                                
+                            }
+                           
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+            catch (Exception Ex)
+            {
+                throw new Exception(Ex.Message);
+            }
         }
 
         #endregion

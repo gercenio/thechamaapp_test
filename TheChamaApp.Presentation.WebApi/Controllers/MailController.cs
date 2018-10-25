@@ -27,19 +27,38 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             _IEvaluatedApplication = evaluatedApplication;
         }
 
+        //[HttpPost]
+        //[Authorize("Bearer")]
+        //public async Task<IActionResult>  Enviar([FromBody]TheChamaApp.Infra.CrossCutting.ViewModel.EmailViewModel Model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(_IConfigurationSettingsApplication,_ICompanyUnityApplication,_IEvaluatedApplication,Model.EmailTo, Model.EmailSubject, Model.EmailBody))
+        //        {
+        //            await EmailBO.EnviarAsync();   
+        //        }
+        //    }
+        //    return Ok(Mensagem);
+
+        //}
+
+        /// <summary>
+        /// NOTIFICAÇÃO - Envia link do formulario de resposta
+        /// </summary>
+        /// <param name="Model"></param>
+        /// <returns></returns>
         [HttpPost]
         [Authorize("Bearer")]
-        public async Task<IActionResult>  Enviar([FromBody]TheChamaApp.Infra.CrossCutting.ViewModel.EmailViewModel Model)
+        public async Task<IActionResult> Post([FromBody]Infra.CrossCutting.ViewModel.NotificacaoVewModel Model)
         {
             if (ModelState.IsValid)
             {
-                using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(_IConfigurationSettingsApplication,_ICompanyUnityApplication,_IEvaluatedApplication,Model.EmailTo, Model.EmailSubject, Model.EmailBody))
+                using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(_IConfigurationSettingsApplication, _ICompanyUnityApplication, _IEvaluatedApplication))
                 {
-                    await EmailBO.EnviarAsync();   
+                    await EmailBO.NotificaQuestionario(Model);
                 }
             }
             return Ok(Mensagem);
-
         }
 
        
