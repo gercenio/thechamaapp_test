@@ -84,8 +84,10 @@ namespace TheChamaApp.Infra.Data.Contexto
             modelBuilder.Entity<QuizResult>().ToTable("quizresult", "hgm");
             modelBuilder.Entity<RellationshipCompanyUnityToQuiz>().ToTable("rellationshipcompanyunitytoquiz", "hgm");
             modelBuilder.Entity<GroupAsk>().ToTable("groupask", "hgm");
-            modelBuilder.Entity<RellationshipEvaluatedToUpEvaluated>().ToTable("rellationshipevaluatedtoupevaluated", "hgm");
-            
+            modelBuilder.Entity<RellationshipEvaluatedToUpEvaluated>()
+                .ToTable("rellationshipevaluatedtoupevaluated", "hgm");
+            modelBuilder.Entity<Domain.Entities.ConfigurationSettings>().ToTable("configurationsettings", "hgm");
+
 
             base.OnModelCreating(modelBuilder);
 

@@ -110,6 +110,10 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IRellationshipEvaluatedToUpEvaluatedApplication, RellationshipEvaluatedToUpEvaluatedApplication>(Lifestyle.Scoped);
             container.Register<IRellationshipEvaluatedToUpEvaluatedService, RellationshipEvaluatedToUpEvaluatedService>(Lifestyle.Scoped);
             container.Register<IRellationshipEvaluatedToUpEvaluatedRepository, RellationshipEvaluatedToUpEvaluatedRepository>(Lifestyle.Scoped);
+            //ConfigurationSettings
+            container.Register<IConfigurationSettingsApplication, ConfigurationSettingsApplication>(Lifestyle.Scoped);
+            container.Register<IConfigurationSettingsService, ConfigurationSettingsService>(Lifestyle.Scoped);
+            container.Register<IConfigurationSettingsRepository, ConfigurationSettingsRepository>(Lifestyle.Scoped);
 
 
             // Context

@@ -90,10 +90,16 @@ namespace TheChamaApp.Service.EvaluatedBusiness
             List<Domain.Entities.RellationshipEvaluatedToUpEvaluated> list = new List<RellationshipEvaluatedToUpEvaluated>();
             foreach (var item in _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == EvaluatedId).ToList())
             {
-                item.UpEvaluated = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == item.UpEvaluatedId).Single();
-                item.UpEvaluated.Level = _ILevelEvaluatedApplication.GetAll().Where(m => m.LevelEvaluatedId == item.UpEvaluated.LevelEvaluatedId).Single();
-                item.Evaluated = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == item.EvaluatedId).Single();
-                item.Evaluated.Level = _ILevelEvaluatedApplication.GetAll().Where(m => m.LevelEvaluatedId == item.Evaluated.LevelEvaluatedId).Single();
+                if (item.UpEvaluatedId > 0) {
+                    item.UpEvaluated = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == item.UpEvaluatedId).Single();
+                    item.UpEvaluated.Level = _ILevelEvaluatedApplication.GetAll().Where(m => m.LevelEvaluatedId == item.UpEvaluated.LevelEvaluatedId).Single();
+                }
+                if (item.EvaluatedId > 0) {
+                    item.Evaluated = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == item.EvaluatedId).Single();
+                    item.Evaluated.Level = _ILevelEvaluatedApplication.GetAll().Where(m => m.LevelEvaluatedId == item.Evaluated.LevelEvaluatedId).Single();
+                }
+                list.Add(item);
+                
             }
             return list;
         }

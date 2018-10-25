@@ -13,14 +13,21 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     [Route("api/[controller]")]
     public class MailController : BaseController
     {
-        
+
+        private readonly IConfigurationSettingsApplication _IConfigurationSettingsApplication;
+
+        public MailController(IConfigurationSettingsApplication configurationSettingsApplication)
+        {
+            _IConfigurationSettingsApplication = configurationSettingsApplication;
+        }
+
         [HttpPost]
         [Authorize("Bearer")]
         public async Task<IActionResult>  Enviar([FromBody]TheChamaApp.Infra.CrossCutting.ViewModel.EmailViewModel Model)
         {
             if (ModelState.IsValid)
             {
-                using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(Model.EmailTo, Model.EmailSubject, Model.EmailBody))
+                using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(_IConfigurationSettingsApplication,Model.EmailTo, Model.EmailSubject, Model.EmailBody))
                 {
                     await EmailBO.EnviarAsync();   
                 }

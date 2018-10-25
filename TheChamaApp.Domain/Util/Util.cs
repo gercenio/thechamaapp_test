@@ -4,6 +4,16 @@ using System.Text;
 
 namespace TheChamaApp.Domain.Util
 {
+
+    /// <summary>
+    /// Lista de tipos de configuração
+    /// </summary>
+    public enum ConfigurationType
+    {
+        Indefine,
+        Email
+    }
+
     /// <summary>
     /// Tipos de usuarios do sistema
     /// SYSTEM = API QUE ACESSA E SOLICITA TOKEN

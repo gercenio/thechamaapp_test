@@ -16,17 +16,20 @@ namespace TheChamaApp.Service.EvaluatedBusiness
         private readonly IEvaluatedApplication _IEvaluatedApplication;
         private readonly ICompanyUnityApplication _ICompanyUnityApplication;
         private readonly ILevelEvaluatedApplication _ILevelEvaluatedApplication;
+        private readonly IRellationshipEvaluatedToUpEvaluatedApplication _IRellationshipEvaluatedToUpEvaluatedApplication;
 
         #endregion
 
         #region # Constructor
         public EvaluatedService(IEvaluatedApplication evaluated
             , ICompanyUnityApplication companyUnityApplication
-            , ILevelEvaluatedApplication levelEvaluatedApplication)
+            , ILevelEvaluatedApplication levelEvaluatedApplication
+            , IRellationshipEvaluatedToUpEvaluatedApplication rellationshipEvaluatedToUpEvaluatedApplication)
         {
             _IEvaluatedApplication = evaluated;
             _ICompanyUnityApplication = companyUnityApplication;
             _ILevelEvaluatedApplication = levelEvaluatedApplication;
+            _IRellationshipEvaluatedToUpEvaluatedApplication = rellationshipEvaluatedToUpEvaluatedApplication;
         }
         #endregion
 
@@ -95,9 +98,28 @@ namespace TheChamaApp.Service.EvaluatedBusiness
             try
             {
                 var Orginal = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == EvaluatedId).Single();
-                if (Orginal != null) {
+                if (Orginal != null)
+                {
+                    var chkRellationS = _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == EvaluatedId).ToList();
+                    var chkRellationC = _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.UpEvaluatedId == EvaluatedId).ToList();
+                    if (chkRellationS.Count > 0)
+                    {
+                        foreach (var Relacionamento in chkRellationS)
+                        {
+                            _IRellationshipEvaluatedToUpEvaluatedApplication.Remove(Relacionamento);
+                        }
+                        
+                    }
+                    if (chkRellationC.Count > 0)
+                    {
+                        foreach (var Relacionamento in chkRellationC)
+                        {
+                            _IRellationshipEvaluatedToUpEvaluatedApplication.Remove(Relacionamento);
+                        }
+                    }
                     _IEvaluatedApplication.Remove(Orginal);
                     Mensagem = "Done";
+                    
                 }
                 
             }

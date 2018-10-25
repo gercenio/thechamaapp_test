@@ -21,6 +21,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         private readonly IAskApplication _IAskApplication;
         private readonly IRellationshipAskToAnswerApplication _IRellationshipAskToAnswerApplication;
         private readonly IGroupAskApplication _IGroupAskApplication;
+        private readonly IAnswerApplication _IAnswerApplication;
 
         #endregion
 
@@ -29,13 +30,15 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             , IRellationshipQuizToAskApplication rellationshipQuizToAskApplication
             , IAskApplication askApplication
             , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication
-            , IGroupAskApplication groupAskApplication)
+            , IGroupAskApplication groupAskApplication
+            , IAnswerApplication answerApplication)
         {
             _IQuizApplication = quizApplication;
             _IRellationshipQuizToAskApplication = rellationshipQuizToAskApplication;
             _IAskApplication = askApplication;
             _IRellationshipAskToAnswerApplication = rellationshipAskToAnswerApplication;
             _IGroupAskApplication = groupAskApplication;
+            _IAnswerApplication = answerApplication;
         }
         #endregion
 
@@ -54,7 +57,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication))
+                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication,_IAnswerApplication))
                     {
 
                         QuizBO.Incluir(Entity, out Mensagem);
@@ -83,7 +86,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication))
+                    using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication,_IAnswerApplication))
                     {
                         QuizBO.Alterar(QuizId, Entity, out Mensagem);
                     }
@@ -107,7 +110,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication,_IAnswerApplication))
                 {
                     QuizBO.Excluir(QuizId, out Mensagem);
                  
@@ -130,7 +133,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication,_IAnswerApplication))
                 {
                     return Ok(QuizBO.ObterTodos());
                 }
@@ -153,7 +156,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication,_IAnswerApplication))
                 {
                     return Ok(QuizBO.ObterByDescription(Description));
                 }
@@ -175,7 +178,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication))
+                using (TheChamaApp.Service.QuizBusiness.QuizService QuizBO = new Service.QuizBusiness.QuizService(_IQuizApplication, _IRellationshipQuizToAskApplication, _IAskApplication, _IRellationshipAskToAnswerApplication,_IGroupAskApplication,_IAnswerApplication))
                 {
                     return Ok(QuizBO.Obter(QuizId));
                 }

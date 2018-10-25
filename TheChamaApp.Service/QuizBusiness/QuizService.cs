@@ -14,6 +14,7 @@ namespace TheChamaApp.Service.QuizBusiness
         private readonly IAskApplication _IAskApplication;
         private readonly IRellationshipAskToAnswerApplication _IRellationshipAskToAnswerApplication;
         private readonly IGroupAskApplication _IGroupAskApplication;
+        private readonly IAnswerApplication _IAnswerApplication;
 
         #endregion
 
@@ -22,13 +23,15 @@ namespace TheChamaApp.Service.QuizBusiness
             , IRellationshipQuizToAskApplication rellationshipQuizToAskApplication
             , IAskApplication askApplication
             , IRellationshipAskToAnswerApplication rellationshipAskToAnswerApplication
-            , IGroupAskApplication groupAskApplication)
+            , IGroupAskApplication groupAskApplication
+            , IAnswerApplication answerApplication)
         {
             _IQuizApplication = quizApplication;
             _IRellationshipQuizToAskApplication = rellationshipQuizToAskApplication;
             _IAskApplication = askApplication;
             _IRellationshipAskToAnswerApplication = rellationshipAskToAnswerApplication;
             _IGroupAskApplication = groupAskApplication;
+            _IAnswerApplication = answerApplication;
         }
         #endregion
 
@@ -124,7 +127,18 @@ namespace TheChamaApp.Service.QuizBusiness
                         if (item.AskId > 0)
                         {
                             item.Ask = _IAskApplication.GetAll().Where(m => m.AskId == item.AskId).Single();
-                            item.Ask.RellationshipAskToAnswer = _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.AskId == item.AskId).ToList();
+                            var listarespostas = _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.AskId == item.AskId).ToList();
+                            if(listarespostas.Count > 0)
+                            {
+                                foreach (var relacionamento in listarespostas)
+                                {
+                                    if (relacionamento.AnswerId > 0) {
+                                        relacionamento.Answer = _IAnswerApplication.GetAll().Where(m => m.AnswerId == relacionamento.AnswerId).First();
+                                    }
+                                    item.Ask.RellationshipAskToAnswer.Add(relacionamento);
+                                }
+                            }
+                            //item.Ask.RellationshipAskToAnswer = _IRellationshipAskToAnswerApplication.GetAll().Where(m => m.AskId == item.AskId).ToList();
                             if (item.GroupAskId.HasValue && item.GroupAskId > 0)
                             {
                                 var GroupEntity = _IGroupAskApplication.GetAll().Where(m => m.GroupAskId == item.GroupAskId).ToList();
@@ -133,6 +147,7 @@ namespace TheChamaApp.Service.QuizBusiness
                                 }
                                  
                             }
+                            
                         }
                         Entity.RellationshipQuizToAsk.Add(item);
                     }

@@ -7,11 +7,15 @@ using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using System.Linq;
 
 namespace TheChamaApp.Service.EmailBusiness
 {
     public class EmailService : Base.ServiceBase
     {
+        private readonly IConfigurationSettingsApplication _IConfigurationSettingsApplication;
+
+
         #region # Propriedades
 
         private readonly string _From;
@@ -26,8 +30,9 @@ namespace TheChamaApp.Service.EmailBusiness
 
         #region # Constructor
 
-        public EmailService(string To,string Subject,string Body)
+        public EmailService(IConfigurationSettingsApplication configurationSettingsApplication, string To,string Subject,string Body)
         {
+            _IConfigurationSettingsApplication = configurationSettingsApplication;
             _From = this.GetEmailFrom();
             _FromDescription = this.GetEmailFromDescription();
             _To = To;
@@ -74,11 +79,7 @@ namespace TheChamaApp.Service.EmailBusiness
         /// <returns></returns>
         private string GetApiKey()
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-            var apiKey = (config.GetSection("AppSettings:SENDGRID_KEY").Value);
+            var apiKey = _IConfigurationSettingsApplication.GetAll().Where(m => m.Type == Domain.Util.ConfigurationType.Email).Single().Token.ToString();
             return apiKey;
         }
 
@@ -88,11 +89,7 @@ namespace TheChamaApp.Service.EmailBusiness
         /// <returns></returns>
         private string GetEmailFrom()
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-            var apiKey = (config.GetSection("AppSettings:EMAIL_FROM").Value);
+            var apiKey = _IConfigurationSettingsApplication.GetAll().Where(m => m.Type == Domain.Util.ConfigurationType.Email).Single().UserName.ToString();
             return apiKey;
         }
 
