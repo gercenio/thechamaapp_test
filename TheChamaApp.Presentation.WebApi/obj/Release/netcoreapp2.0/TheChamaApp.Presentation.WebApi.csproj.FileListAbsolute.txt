@@ -93,3 +93,4 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Presentation.WebApi\ob
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Presentation.WebApi\obj\Release\netcoreapp2.0\TheChamaApp.Presentation.WebApi.AssemblyInfo.cs
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Presentation.WebApi\obj\Release\netcoreapp2.0\TheChamaApp.Presentation.WebApi.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Presentation.WebApi\obj\Release\netcoreapp2.0\TheChamaApp.Presentation.WebApi.pdb
+C:\Developer\2018\HGM\source\thechamaapp_test\TheChamaApp.Presentation.WebApi\obj\Release\netcoreapp2.0\TheChamaApp.Presentation.WebApi.csproj.CopyComplete

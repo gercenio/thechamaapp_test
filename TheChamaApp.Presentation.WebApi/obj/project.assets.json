@@ -5657,7 +5657,7 @@
       ]
     },
     "Microsoft.AspNet.Identity.Core/2.2.2": {
-      "sha512": "bWth+6XxppUzJzLiVh/0r85SWKFR4dCHse4RgJfM30BR6of5euR5Y6U+URdouFYWyaiTaU2ySTPhvvN07cn/oQ==",
+      "sha512": "DJNnLn/eElAudZqNUsQ8qQy3LlKnlQ/kBjl+Zi6Xvur/InJ6DZYCuTLV5mtNtDZ0egvpl/e/Q8MLlh+3te7tYw==",
       "type": "package",
       "path": "microsoft.aspnet.identity.core/2.2.2",
       "files": [
@@ -5669,7 +5669,7 @@
       ]
     },
     "Microsoft.AspNet.Identity.Owin/2.2.2": {
-      "sha512": "WnnEaF0CA/wlyJeKT6cABfkJgAGUcCI2Htw+1/uswd5zCAc4jP43DyuB6MV/pqwrydxf5OV2KyXjeOuME656bg==",
+      "sha512": "3hRTfCtU0PTkqFSMpBLVHj2AiPiljzLcLxZLn9QdCInf+0mIuB+w2roSp8KvLeL/CG9kuS9qvm/5+1k5crcazA==",
       "type": "package",
       "path": "microsoft.aspnet.identity.owin/2.2.2",
       "files": [
@@ -6232,10 +6232,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc/2.0.2": {
-      "sha512": "SMbHiQZ/nYoaR+kR74dyot5wh4nuian+l9G7Q+zXkFJpI69ALr96Fc3ie1n/Zr1WTBVgB8cwK2ce8VKJxw2RWw==",
+      "sha512": "LdlFwcM4d5HRK46pS0OvCPCJTuqNcjg3GFFM9zw2HVbkQxwpkDZSy55jBX7ACuB8vSJ0mQKSd7sdTFv5eZgOXQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.xml",
         "microsoft.aspnetcore.mvc.2.0.2.nupkg.sha512",
@@ -6243,10 +6244,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.Abstractions/2.0.2": {
-      "sha512": "V3KadHB5zoDr4hWII666BnfzGlGy2wou1K3/gh7p//xG6CV5/oFWLdzFllFjmoIvnIy1xqdt7cfqo45sgVpwXw==",
+      "sha512": "i6TdbIEkn7DeKl8Mbo4AR6JqY8AMJb4VMNEhuoFNFBtmerprco5eR0MiCZeaUxPa+pMNElxIcVO0Fsl5Eugmew==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.abstractions/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Abstractions.xml",
         "microsoft.aspnetcore.mvc.abstractions.2.0.2.nupkg.sha512",
@@ -6254,10 +6256,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.ApiExplorer/2.0.2": {
-      "sha512": "d9+IL6Uo46B5sWvbwFQaSJSyq+1F+ncXwSP9Eenv06D2MO7MUmfTnGc96SPY5CAm+z2qYDfrz+OQ5v8679pRAw==",
+      "sha512": "Yl4hlz7DWsJRFJjv+BWfXe26kv644UsY6mkOFimxhoEEZXkvQRj7Ld8lbfXV8LH1JaooIYud2yia9GRjR1+X6A==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.apiexplorer/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.ApiExplorer.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.ApiExplorer.xml",
         "microsoft.aspnetcore.mvc.apiexplorer.2.0.2.nupkg.sha512",
@@ -6265,10 +6268,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.Core/2.0.2": {
-      "sha512": "fFBZgOS9eImndyzpTnSUI4xCvFnqMm0MKAKNIop1LJ8wMKxbWMhyfxt1ZfMHQ8JmkSSSThiqSDOiEwgyx5+k8Q==",
+      "sha512": "ZanM+JGkdo2J65Sf5QaWwbfxSI4sptcmGNQGPkB7yJzO9Bn89sxCvfOe0H4NhUhhE2iVv9bU+7GO/Rt3sRfFww==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.core/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Core.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Core.xml",
         "microsoft.aspnetcore.mvc.core.2.0.2.nupkg.sha512",
@@ -6276,10 +6280,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.Cors/2.0.2": {
-      "sha512": "PDHskgYjMhb0aJjLrqAirtTBe8BI4vfPBBcUYBlVm49sgBzbhrPnLIaB6W4yTck47oUDnQu0po7ttf3NqzMEvg==",
+      "sha512": "uQQvlSyL+4AlIu5BfO6y78588KUb21o8Yp0nXxv8H3T5RO5YYUulMrpzrFNGB5qxSLDi6irYm7r5EKezjYlB+w==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.cors/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Cors.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Cors.xml",
         "microsoft.aspnetcore.mvc.cors.2.0.2.nupkg.sha512",
@@ -6287,10 +6292,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.DataAnnotations/2.0.2": {
-      "sha512": "YXEgI6RBIMKtW8rIgh9LATSw4yf06Ij6EhMiNks0XOAjjz7EkmzvdKQNBLNXS5lHAOv9173Q4/ss6BksxBcSZQ==",
+      "sha512": "qQOe34eVt2mLGweHRNTQvn23HUFQtNV9gs34nyVL6WUgkXg/viAOAWASGWcYoPsw8+8w22au+NMm7EyPYPMARg==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.dataannotations/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.DataAnnotations.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.DataAnnotations.xml",
         "microsoft.aspnetcore.mvc.dataannotations.2.0.2.nupkg.sha512",
@@ -6298,10 +6304,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.Formatters.Json/2.0.2": {
-      "sha512": "ROE9OaxgPSID4LcX1v85c75deLw0WEmFjGeugEMBIpSakGtOmMQwMZcJTQBJ7kVUSxJ+aTnLYqZcyL3qgREQIQ==",
+      "sha512": "nfyD0PV3nzIzcZ1NzdfmnYc3mKWtMlh8WnQawWaO70+QjKn4DSiKcOOZ+a6HKGN90h9W3LOI7+ueJCTZBxWliQ==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.formatters.json/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Json.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Json.xml",
         "microsoft.aspnetcore.mvc.formatters.json.2.0.2.nupkg.sha512",
@@ -6320,10 +6327,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.Localization/2.0.2": {
-      "sha512": "0q94OvzH3DjQVRB0U2qGRqbXr8UPNugXw2Mz4OXAUOxiF1cRE1/onb6dahCaNvYJbZ2Xs/F4BBIY3MJ/LGRLdw==",
+      "sha512": "br4eXo13eH9taDlrfqsKUvdaf6eur789Z30KvLifBjDnMUirlS6LJpz5/Yo5XNondLJYFiTMYlJkIyptvLiUYg==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.localization/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Localization.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Localization.xml",
         "microsoft.aspnetcore.mvc.localization.2.0.2.nupkg.sha512",
@@ -6331,10 +6339,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.Razor/2.0.2": {
-      "sha512": "E3yG6bAiOGq5+A6zjcJ1JYnhcRF7lbFhLCgYy/Z7cKmL8q5QRmomZm/EsjVaCbfTG0yHKOsoLEKMDKMBf8f3ng==",
+      "sha512": "CjGXd7+xPNfpnG9Pw007ecAqTbAzFcgmjDYcEHdSoeafSsyf7sYLzQC3nUjSILCbRUWGDcVCCHSWsxfgxsdAxA==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.razor/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.xml",
         "microsoft.aspnetcore.mvc.razor.2.0.2.nupkg.sha512",
@@ -6380,10 +6389,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.TagHelpers/2.0.2": {
-      "sha512": "WjZZRn446ryGnC7CsTJ9QSov+NE9qa/aqtAolLTcs90/gTDb93B952Js9U5IpCr/OlzyTIk8qoqgvpA138h/mg==",
+      "sha512": "a9A6O1TQGqwAvGh8IJoPNhVZkEYcr2/fEU6BMgRUXeBfu55FMDoJ+lKjEbHJVt29Avs+62JZhOI6d1P+Nupc1A==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.taghelpers/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.TagHelpers.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.TagHelpers.xml",
         "microsoft.aspnetcore.mvc.taghelpers.2.0.2.nupkg.sha512",
@@ -6391,10 +6401,11 @@
       ]
     },
     "Microsoft.AspNetCore.Mvc.ViewFeatures/2.0.2": {
-      "sha512": "KANH2/5vbTI/jfwJcItbzSuPLAex6HfG9sqKus2dJc0TgWHc6Buc4BFT1qDKl6MW2JAZcQQ7/r5iNd50jtCHeg==",
+      "sha512": "3bzNLFZVC9adPKlrK3z5oznJ20XmsrgMw0hUhy3K7HVHsCFuOC1FrP4B19jPYnSr9WoW0u7S+ajyiGNFj4xZVg==",
       "type": "package",
       "path": "microsoft.aspnetcore.mvc.viewfeatures/2.0.2",
       "files": [
+        ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.ViewFeatures.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.ViewFeatures.xml",
         "microsoft.aspnetcore.mvc.viewfeatures.2.0.2.nupkg.sha512",
@@ -7605,7 +7616,7 @@
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.1.0": {
-      "sha512": "H6ZsQzxYw/6k2DfEQRXdC+vQ6obd6Uba3uGJrnJ2vG4PRXjQZ7seB13JdCfE72abp8E6Fk3gGgDzfJiLZi5ZpQ==",
+      "sha512": "UMlN++q5qqzQ2HH+uOrKxN5fmBXMQDhrYkSaPJxhmyzfJaFPirrVr1raim/Ocq1psAZoB9+7JSAf0GDAX35wUg==",
       "type": "package",
       "path": "microsoft.extensions.platformabstractions/1.1.0",
       "files": [
@@ -8314,10 +8325,11 @@
       ]
     },
     "Microsoft.Owin.Security.OAuth/3.0.1": {
-      "sha512": "wttlhNSijhsrF7iwxYzxhTr8AYxXI6qoiw3b6dhVhqXOYCDp8OQ5yhHFtWlst+65l7VHduXassspZ974rtLMaw==",
+      "sha512": "s3eN1DJvCcByOvN3ppPtj0JHi0DZtwpua7jCkWFpjdeHmbs1tSROhaIWwOmq7eBkbbkQaPZMWtdVngfG1HOmYw==",
       "type": "package",
       "path": "microsoft.owin.security.oauth/3.0.1",
       "files": [
+        ".signature.p7s",
         "lib/net45/Microsoft.Owin.Security.OAuth.XML",
         "lib/net45/Microsoft.Owin.Security.OAuth.dll",
         "microsoft.owin.security.oauth.3.0.1.nupkg.sha512",
@@ -11865,10 +11877,11 @@
       ]
     },
     "System.Reflection.TypeExtensions/4.4.0": {
-      "sha512": "dkmh/ySlwnXJp/1qYP9uyKkCK1CXR/REFzl7abHcArxBcV91mY2CgrrzSRA5Z/X4MevJWwXsklGRdR3A7K9zbg==",
+      "sha512": "JRxOAH6by+wn1gNnZc9jf2HbO/szhMJuLY2w44nEW77354WntXlFzWSVkx6280Uvcl3URZ/At+444vjX0/X1Aw==",
       "type": "package",
       "path": "system.reflection.typeextensions/4.4.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -14169,28 +14182,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gerce\\.nuget\\packages\\": {},
+    "C:\\Users\\gxsilva\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Presentation.WebApi\\TheChamaApp.Presentation.WebApi.csproj",
+      "projectUniqueName": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Presentation.WebApi\\TheChamaApp.Presentation.WebApi.csproj",
       "projectName": "TheChamaApp.Presentation.WebApi",
-      "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Presentation.WebApi\\TheChamaApp.Presentation.WebApi.csproj",
-      "packagesPath": "C:\\Users\\gerce\\.nuget\\packages\\",
-      "outputPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Presentation.WebApi\\obj\\",
+      "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Presentation.WebApi\\TheChamaApp.Presentation.WebApi.csproj",
+      "packagesPath": "C:\\Users\\gxsilva\\.nuget\\packages\\",
+      "outputPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Presentation.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gerce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gxsilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -14204,17 +14214,17 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Service\\TheChamaApp.Service.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Service\\TheChamaApp.Service.csproj"
+            "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj"
             },
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj"
+            "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj"
             },
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj"
+            "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj"
             },
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj"
+            "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Service\\TheChamaApp.Service.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Service\\TheChamaApp.Service.csproj"
             }
           }
         }
@@ -14303,7 +14313,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'DapperExtensions 1.6.3' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'DapperExtensions 1.6.3' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "DapperExtensions",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -14313,7 +14323,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Identity.Core 2.2.2' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.Identity.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -14323,7 +14333,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Identity.Owin 2.2.2' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.AspNet.Identity.Owin 2.2.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.Identity.Owin",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -14333,7 +14343,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -14343,7 +14353,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin.Security 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin.Security 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin.Security",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -14353,7 +14363,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin.Security.Cookies 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin.Security.Cookies 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin.Security.Cookies",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -14363,7 +14373,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin.Security.OAuth 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin.Security.OAuth 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin.Security.OAuth",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -14373,7 +14383,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Owin 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Owin",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"

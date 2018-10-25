@@ -15,10 +15,16 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
     {
 
         private readonly IConfigurationSettingsApplication _IConfigurationSettingsApplication;
+        private readonly ICompanyUnityApplication _ICompanyUnityApplication;
+        private readonly IEvaluatedApplication _IEvaluatedApplication;
 
-        public MailController(IConfigurationSettingsApplication configurationSettingsApplication)
+        public MailController(IConfigurationSettingsApplication configurationSettingsApplication
+            , ICompanyUnityApplication companyUnityApplication
+            , IEvaluatedApplication evaluatedApplication)
         {
             _IConfigurationSettingsApplication = configurationSettingsApplication;
+            _ICompanyUnityApplication = companyUnityApplication;
+            _IEvaluatedApplication = evaluatedApplication;
         }
 
         [HttpPost]
@@ -27,7 +33,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(_IConfigurationSettingsApplication,Model.EmailTo, Model.EmailSubject, Model.EmailBody))
+                using (TheChamaApp.Service.EmailBusiness.EmailService EmailBO = new Service.EmailBusiness.EmailService(_IConfigurationSettingsApplication,_ICompanyUnityApplication,_IEvaluatedApplication,Model.EmailTo, Model.EmailSubject, Model.EmailBody))
                 {
                     await EmailBO.EnviarAsync();   
                 }

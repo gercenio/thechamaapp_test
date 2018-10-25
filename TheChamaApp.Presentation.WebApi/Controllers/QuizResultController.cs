@@ -45,7 +45,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <returns></returns>
         [HttpPost]
         [Authorize("Bearer")]
-        public IActionResult Post([FromBody]Domain.Entities.QuizResult Entity)
+        public async Task<IActionResult> Post([FromBody]List<Domain.Entities.QuizResult> Entity)
         {
             try
             {
@@ -53,7 +53,9 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                 {
                     using (TheChamaApp.Service.QuizBusiness.QuizResultService QuizResultBO = new Service.QuizBusiness.QuizResultService(_IQuizResultApplication, _IAskApplication, _IAnswerApplication, _IEvaluatedApplication, _IQuizApplication))
                     {
-                        QuizResultBO.Incluir(Entity, out Mensagem);
+
+                        var t1 = Task.Run(() => QuizResultBO.IncluirTodos(Entity, out Mensagem));
+                        await Task.WhenAll(t1);
                     }
                 }
             }

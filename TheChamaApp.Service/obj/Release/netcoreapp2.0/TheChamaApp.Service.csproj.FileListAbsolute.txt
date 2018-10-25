@@ -68,3 +68,4 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Release\ne
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Release\netcoreapp2.0\TheChamaApp.Service.AssemblyInfo.cs
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Release\netcoreapp2.0\TheChamaApp.Service.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Service\obj\Release\netcoreapp2.0\TheChamaApp.Service.pdb
+C:\Developer\2018\HGM\source\thechamaapp_test\TheChamaApp.Service\obj\Release\netcoreapp2.0\TheChamaApp.Service.csproj.CopyComplete

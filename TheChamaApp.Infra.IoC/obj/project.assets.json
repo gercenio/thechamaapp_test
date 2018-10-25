@@ -2000,7 +2000,7 @@
       ]
     },
     "Microsoft.AspNet.Identity.Core/2.2.2": {
-      "sha512": "bWth+6XxppUzJzLiVh/0r85SWKFR4dCHse4RgJfM30BR6of5euR5Y6U+URdouFYWyaiTaU2ySTPhvvN07cn/oQ==",
+      "sha512": "DJNnLn/eElAudZqNUsQ8qQy3LlKnlQ/kBjl+Zi6Xvur/InJ6DZYCuTLV5mtNtDZ0egvpl/e/Q8MLlh+3te7tYw==",
       "type": "package",
       "path": "microsoft.aspnet.identity.core/2.2.2",
       "files": [
@@ -2012,7 +2012,7 @@
       ]
     },
     "Microsoft.AspNet.Identity.Owin/2.2.2": {
-      "sha512": "WnnEaF0CA/wlyJeKT6cABfkJgAGUcCI2Htw+1/uswd5zCAc4jP43DyuB6MV/pqwrydxf5OV2KyXjeOuME656bg==",
+      "sha512": "3hRTfCtU0PTkqFSMpBLVHj2AiPiljzLcLxZLn9QdCInf+0mIuB+w2roSp8KvLeL/CG9kuS9qvm/5+1k5crcazA==",
       "type": "package",
       "path": "microsoft.aspnet.identity.owin/2.2.2",
       "files": [
@@ -3182,10 +3182,11 @@
       ]
     },
     "Microsoft.Owin.Security.OAuth/3.0.1": {
-      "sha512": "wttlhNSijhsrF7iwxYzxhTr8AYxXI6qoiw3b6dhVhqXOYCDp8OQ5yhHFtWlst+65l7VHduXassspZ974rtLMaw==",
+      "sha512": "s3eN1DJvCcByOvN3ppPtj0JHi0DZtwpua7jCkWFpjdeHmbs1tSROhaIWwOmq7eBkbbkQaPZMWtdVngfG1HOmYw==",
       "type": "package",
       "path": "microsoft.owin.security.oauth/3.0.1",
       "files": [
+        ".signature.p7s",
         "lib/net45/Microsoft.Owin.Security.OAuth.XML",
         "lib/net45/Microsoft.Owin.Security.OAuth.dll",
         "microsoft.owin.security.oauth.3.0.1.nupkg.sha512",
@@ -4824,10 +4825,11 @@
       ]
     },
     "System.Reflection.TypeExtensions/4.4.0": {
-      "sha512": "dkmh/ySlwnXJp/1qYP9uyKkCK1CXR/REFzl7abHcArxBcV91mY2CgrrzSRA5Z/X4MevJWwXsklGRdR3A7K9zbg==",
+      "sha512": "JRxOAH6by+wn1gNnZc9jf2HbO/szhMJuLY2w44nEW77354WntXlFzWSVkx6280Uvcl3URZ/At+444vjX0/X1Aw==",
       "type": "package",
       "path": "system.reflection.typeextensions/4.4.0",
       "files": [
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -5669,28 +5671,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gerce\\.nuget\\packages\\": {},
+    "C:\\Users\\gxsilva\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj",
+      "projectUniqueName": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj",
       "projectName": "TheChamaApp.Infra.IoC",
-      "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj",
-      "packagesPath": "C:\\Users\\gerce\\.nuget\\packages\\",
-      "outputPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\obj\\",
+      "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\TheChamaApp.Infra.IoC.csproj",
+      "packagesPath": "C:\\Users\\gxsilva\\.nuget\\packages\\",
+      "outputPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Infra.IoC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gerce\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gxsilva\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -5704,14 +5703,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj"
+            "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj"
             },
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj"
+            "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Domain\\TheChamaApp.Domain.csproj"
             },
-            "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj": {
-              "projectPath": "C:\\Developer\\2018\\HGM\\Source\\thechamaapp_test\\TheChamaApp.Application\\TheChamaApp.Application.csproj"
+            "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj": {
+              "projectPath": "C:\\Developer\\2018\\HGM\\source\\thechamaapp_test\\TheChamaApp.Infra.Data\\TheChamaApp.Infra.Data.csproj"
             }
           }
         }
@@ -5761,7 +5760,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'DapperExtensions 1.6.3' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'DapperExtensions 1.6.3' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "DapperExtensions",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -5771,7 +5770,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Identity.Core 2.2.2' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.Identity.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -5781,7 +5780,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.AspNet.Identity.Owin 2.2.2' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.AspNet.Identity.Owin 2.2.2' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.Identity.Owin",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -5791,7 +5790,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -5801,7 +5800,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin.Security 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin.Security 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin.Security",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -5811,7 +5810,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin.Security.Cookies 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin.Security.Cookies 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin.Security.Cookies",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -5821,7 +5820,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Microsoft.Owin.Security.OAuth 3.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Microsoft.Owin.Security.OAuth 3.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Owin.Security.OAuth",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
@@ -5831,7 +5830,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "O pacote 'Owin 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "message": "Package 'Owin 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Owin",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"

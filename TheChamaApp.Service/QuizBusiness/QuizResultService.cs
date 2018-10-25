@@ -153,6 +153,20 @@ namespace TheChamaApp.Service.QuizBusiness
             return lista;
         }
 
+        /// <summary>
+        /// Realiza a inclusão em massa
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <param name="Mensagem"></param>
+        public void IncluirTodos(List<Domain.Entities.QuizResult> lista, out string Mensagem)
+        {
+            Mensagem = string.Empty;
+            foreach (var item in lista)
+            {
+                this.Incluir(item,out Mensagem);
+            }
+        }
+
         #endregion
     }
 }

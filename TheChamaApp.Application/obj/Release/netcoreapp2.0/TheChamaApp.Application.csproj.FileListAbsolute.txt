@@ -56,3 +56,4 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Application\obj\Releas
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.AssemblyInfo.cs
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.pdb
+C:\Developer\2018\HGM\source\thechamaapp_test\TheChamaApp.Application\obj\Release\netcoreapp2.0\TheChamaApp.Application.csproj.CopyComplete

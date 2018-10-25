@@ -16,7 +16,10 @@
       },
       "Microsoft.AspNet.Identity.Core/2.2.2": {
         "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "Microsoft.AspNet.Identity.Owin/2.2.2": {
@@ -27,12 +30,18 @@
           "Microsoft.Owin.Security.OAuth": "3.0.1"
         },
         "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/2.1.1": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {}
+          "lib/netstandard2.0/Microsoft.AspNetCore.Cryptography.Internal.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.KeyDerivation/2.1.1": {
@@ -40,7 +49,10 @@
           "Microsoft.AspNetCore.Cryptography.Internal": "2.1.1"
         },
         "runtime": {
-          "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {}
+          "lib/netcoreapp2.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.Configuration/2.1.1": {
@@ -48,7 +60,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": "2.1.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.Abstractions/2.1.1": {
@@ -56,7 +71,10 @@
           "Microsoft.Extensions.Primitives": "2.1.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.Configuration.Binder/2.1.1": {
@@ -64,12 +82,18 @@
           "Microsoft.Extensions.Configuration": "2.1.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.1": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.Identity.Core/2.1.3": {
@@ -80,7 +104,10 @@
           "System.ComponentModel.Annotations": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Identity.Core.dll": {
+            "assemblyVersion": "2.1.3.0",
+            "fileVersion": "2.1.3.18207"
+          }
         }
       },
       "Microsoft.Extensions.Identity.Stores/2.1.3": {
@@ -90,7 +117,10 @@
           "System.ComponentModel.Annotations": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Identity.Stores.dll": {
+            "assemblyVersion": "2.1.3.0",
+            "fileVersion": "2.1.3.18207"
+          }
         }
       },
       "Microsoft.Extensions.Logging/2.1.1": {
@@ -101,12 +131,18 @@
           "Microsoft.Extensions.Options": "2.1.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.Logging.Abstractions/2.1.1": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.Options/2.1.1": {
@@ -115,7 +151,10 @@
           "Microsoft.Extensions.Primitives": "2.1.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Extensions.Primitives/2.1.1": {
@@ -124,7 +163,10 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.18157"
+          }
         }
       },
       "Microsoft.Owin/3.0.1": {
@@ -132,7 +174,10 @@
           "Owin": "1.0.0"
         },
         "runtime": {
-          "lib/net45/Microsoft.Owin.dll": {}
+          "lib/net45/Microsoft.Owin.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.40213.64"
+          }
         }
       },
       "Microsoft.Owin.Security/3.0.1": {
@@ -141,7 +186,10 @@
           "Owin": "1.0.0"
         },
         "runtime": {
-          "lib/net45/Microsoft.Owin.Security.dll": {}
+          "lib/net45/Microsoft.Owin.Security.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.40213.64"
+          }
         }
       },
       "Microsoft.Owin.Security.Cookies/3.0.1": {
@@ -151,7 +199,10 @@
           "Owin": "1.0.0"
         },
         "runtime": {
-          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
+          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.40213.64"
+          }
         }
       },
       "Microsoft.Owin.Security.OAuth/3.0.1": {
@@ -162,17 +213,26 @@
           "Owin": "1.0.0"
         },
         "runtime": {
-          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.40213.64"
+          }
         }
       },
       "Newtonsoft.Json/6.0.4": {
         "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.4.17603"
+          }
         }
       },
       "Owin/1.0.0": {
         "runtime": {
-          "lib/net40/Owin.dll": {}
+          "lib/net40/Owin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "System.ComponentModel.Annotations/4.5.0": {},
@@ -181,12 +241,18 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.1"
         },
         "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
+          "lib/netstandard2.0/System.Memory.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.6.26606.5"
+          }
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.5.1": {
         "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.4.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "TheChamaApp.Domain/1.0.0": {
@@ -211,14 +277,14 @@
     "Microsoft.AspNet.Identity.Core/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bWth+6XxppUzJzLiVh/0r85SWKFR4dCHse4RgJfM30BR6of5euR5Y6U+URdouFYWyaiTaU2ySTPhvvN07cn/oQ==",
+      "sha512": "sha512-DJNnLn/eElAudZqNUsQ8qQy3LlKnlQ/kBjl+Zi6Xvur/InJ6DZYCuTLV5mtNtDZ0egvpl/e/Q8MLlh+3te7tYw==",
       "path": "microsoft.aspnet.identity.core/2.2.2",
       "hashPath": "microsoft.aspnet.identity.core.2.2.2.nupkg.sha512"
     },
     "Microsoft.AspNet.Identity.Owin/2.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WnnEaF0CA/wlyJeKT6cABfkJgAGUcCI2Htw+1/uswd5zCAc4jP43DyuB6MV/pqwrydxf5OV2KyXjeOuME656bg==",
+      "sha512": "sha512-3hRTfCtU0PTkqFSMpBLVHj2AiPiljzLcLxZLn9QdCInf+0mIuB+w2roSp8KvLeL/CG9kuS9qvm/5+1k5crcazA==",
       "path": "microsoft.aspnet.identity.owin/2.2.2",
       "hashPath": "microsoft.aspnet.identity.owin.2.2.2.nupkg.sha512"
     },
@@ -330,7 +396,7 @@
     "Microsoft.Owin.Security.OAuth/3.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wttlhNSijhsrF7iwxYzxhTr8AYxXI6qoiw3b6dhVhqXOYCDp8OQ5yhHFtWlst+65l7VHduXassspZ974rtLMaw==",
+      "sha512": "sha512-s3eN1DJvCcByOvN3ppPtj0JHi0DZtwpua7jCkWFpjdeHmbs1tSROhaIWwOmq7eBkbbkQaPZMWtdVngfG1HOmYw==",
       "path": "microsoft.owin.security.oauth/3.0.1",
       "hashPath": "microsoft.owin.security.oauth.3.0.1.nupkg.sha512"
     },

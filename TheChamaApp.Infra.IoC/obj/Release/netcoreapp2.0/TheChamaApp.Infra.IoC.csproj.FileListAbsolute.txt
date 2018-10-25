@@ -64,3 +64,4 @@ C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.AssemblyInfo.cs
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.dll
 C:\Developer\2018\HGM\Source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.pdb
+C:\Developer\2018\HGM\source\thechamaapp_test\TheChamaApp.Infra.IoC\obj\Release\netcoreapp2.0\TheChamaApp.Infra.IoC.csproj.CopyComplete

@@ -13,10 +13,15 @@ namespace TheChamaApp.Service.EmailBusiness
 {
     public class EmailService : Base.ServiceBase
     {
-        private readonly IConfigurationSettingsApplication _IConfigurationSettingsApplication;
-
-
         #region # Propriedades
+
+        private readonly IConfigurationSettingsApplication _IConfigurationSettingsApplication;
+        private readonly ICompanyUnityApplication _ICompanyUnityApplication;
+        private readonly IEvaluatedApplication _IEvaluatedApplication;
+
+        #endregion
+
+        #region # Private Propriedades
 
         private readonly string _From;
         private readonly string _Sendgrid_Key;
@@ -30,9 +35,16 @@ namespace TheChamaApp.Service.EmailBusiness
 
         #region # Constructor
 
-        public EmailService(IConfigurationSettingsApplication configurationSettingsApplication, string To,string Subject,string Body)
+        public EmailService(IConfigurationSettingsApplication configurationSettingsApplication
+            ,ICompanyUnityApplication companyUnityApplication
+            , IEvaluatedApplication evaluatedApplication 
+            , string To
+            ,string Subject
+            ,string Body)
         {
             _IConfigurationSettingsApplication = configurationSettingsApplication;
+            _ICompanyUnityApplication = companyUnityApplication;
+            _IEvaluatedApplication = evaluatedApplication;
             _From = this.GetEmailFrom();
             _FromDescription = this.GetEmailFromDescription();
             _To = To;
