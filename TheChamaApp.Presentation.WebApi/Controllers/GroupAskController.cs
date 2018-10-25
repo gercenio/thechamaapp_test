@@ -59,7 +59,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <returns></returns>
         [HttpPost]
         [Authorize("Bearer")]
-        public IActionResult Post(Domain.Entities.GroupAsk Entity)
+        public IActionResult Post([FromBody]Domain.Entities.GroupAsk Entity)
         {
 
             try
@@ -83,7 +83,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <returns></returns>
         [HttpPut("{GroupAskId}")]
         [Authorize("Bearer")]
-        public IActionResult Put(int GroupAskId, Domain.Entities.GroupAsk Entity)
+        public IActionResult Put(int GroupAskId, [FromBody]Domain.Entities.GroupAsk Entity)
         {
             try
             {
