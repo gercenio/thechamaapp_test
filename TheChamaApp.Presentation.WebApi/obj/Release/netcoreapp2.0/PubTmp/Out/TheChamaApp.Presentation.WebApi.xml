@@ -351,6 +351,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:TheChamaApp.Presentation.WebApi.Controllers.MailController.Post(TheChamaApp.Infra.CrossCutting.ViewModel.NotificacaoVewModel)">
+            <summary>
+            NOTIFICAÇÃO - Envia link do formulario de resposta
+            </summary>
+            <param name="Model"></param>
+            <returns></returns>
+        </member>
         <member name="M:TheChamaApp.Presentation.WebApi.Controllers.QuizController.Post(TheChamaApp.Domain.Entities.Quiz)">
             <summary>
             Realiza a inclusão de um questão
