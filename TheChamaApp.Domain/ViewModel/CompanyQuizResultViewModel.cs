@@ -10,8 +10,8 @@ namespace TheChamaApp.Domain.ViewModel
         public string CompanyUnityDescription { get; set; }
         public int EvaluatedId { get; set; }
         public string EvaluatedDescription { get; set; }
-        public string Autopercepcao { get; set; }
-        public string Superior { get; set; }
-        public string Subordinado { get; set; }
+        public int? Autopercepcao { get; set; }
+        public int? Superior { get; set; }
+        public int? Subordinado { get; set; }
     }
 }
