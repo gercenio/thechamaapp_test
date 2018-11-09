@@ -17,15 +17,24 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
 
         private readonly IRellationshipCompanyUnityToQuizApplication _IRellationshipCompanyUnityToQuizApplication;
         private readonly IQuizApplication _IQuizApplication;
+        private readonly IRellationshipQuizToEvaluatedApplication _IRellationshipQuizToEvaluatedApplication;
+        private readonly IRellationshipEvaluatedToUpEvaluatedApplication _IRellationshipEvaluatedToUpEvaluatedApplication;
+        private readonly IEvaluatedApplication _IEvaluatedApplication;
 
         #endregion
 
         #region # Constructor
         public RellationshipCompanyUnityToQuizController(IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication
-            , IQuizApplication quizApplication)
+            , IQuizApplication quizApplication
+            , IRellationshipQuizToEvaluatedApplication rellationshipQuizToEvaluated
+            , IRellationshipEvaluatedToUpEvaluatedApplication rellationshipEvaluatedToUpEvaluatedApplication
+            , IEvaluatedApplication evaluatedApplication)
         {
             _IRellationshipCompanyUnityToQuizApplication = rellationshipCompanyUnityToQuizApplication;
             _IQuizApplication = quizApplication;
+            _IRellationshipCompanyUnityToQuizApplication = rellationshipCompanyUnityToQuizApplication;
+            _IRellationshipEvaluatedToUpEvaluatedApplication = rellationshipEvaluatedToUpEvaluatedApplication;
+            _IEvaluatedApplication = evaluatedApplication;
         }
         #endregion
 
@@ -44,7 +53,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication,_IQuizApplication))
+                    using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication,_IQuizApplication, _IRellationshipQuizToEvaluatedApplication,_IRellationshipEvaluatedToUpEvaluatedApplication,_IEvaluatedApplication))
                     {
                         RellationBO.Incluir(Entity, out Mensagem);
                     }
@@ -68,7 +77,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication,_IQuizApplication))
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication, _IRellationshipQuizToEvaluatedApplication, _IRellationshipEvaluatedToUpEvaluatedApplication, _IEvaluatedApplication))
                 {
                     RellationBO.Excluir(RellationshipCompanyUnityToQuizId,out Mensagem);
                 }
@@ -91,7 +100,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication))
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication, _IRellationshipQuizToEvaluatedApplication, _IRellationshipEvaluatedToUpEvaluatedApplication, _IEvaluatedApplication))
                 {
                     return Ok(RellationBO.ObterByCompanyUnityId(CompanyUnityId));
                 }
@@ -113,7 +122,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         public IActionResult Put(int RellationshipCompanyUnityToQuizId, [FromBody]Domain.Entities.RellationshipCompanyUnityToQuiz Entity) {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication))
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication, _IRellationshipQuizToEvaluatedApplication, _IRellationshipEvaluatedToUpEvaluatedApplication, _IEvaluatedApplication))
                 {
                     return Ok(RellationBO.Alterar(RellationshipCompanyUnityToQuizId,Entity,out Mensagem));
                 }
@@ -135,7 +144,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         {
             try
             {
-                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication))
+                using (TheChamaApp.Service.QuizBusiness.RellationshipCompanyUnityToQuizService RellationBO = new Service.QuizBusiness.RellationshipCompanyUnityToQuizService(_IRellationshipCompanyUnityToQuizApplication, _IQuizApplication, _IRellationshipQuizToEvaluatedApplication, _IRellationshipEvaluatedToUpEvaluatedApplication, _IEvaluatedApplication))
                 {
                     return Ok(RellationBO.Obter(Convert.ToInt32(RellationshipCompanyUnityToQuizId)));
                 }

@@ -14,6 +14,7 @@ namespace TheChamaApp.Domain.Entities
         public int QuizId { get; set; }
         public int EvaluatedId { get; set; }
         public int? SubordinatedId { get; set; }
+        public int? UpEvaluatedId { get; set; }
         public bool? Answered { get; set; }
         public DateTime InsertAt { get; set; }
         public DateTime UpdateAt { get; set; }
@@ -23,5 +24,8 @@ namespace TheChamaApp.Domain.Entities
 
         [ForeignKey("SubordinatedId")]
         public virtual Evaluated Subordinated { get; set; }
+
+        [ForeignKey("UpEvaluatedId")]
+        public virtual Evaluated UpEvaluated { get; set; }
     }
 }

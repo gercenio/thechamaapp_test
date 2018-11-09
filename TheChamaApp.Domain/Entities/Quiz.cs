@@ -29,6 +29,8 @@ namespace TheChamaApp.Domain.Entities
         public DateTime InsertAt { get; set; }
         public string Information { get; set; }
         public string Directions { get; set; }
+        public bool? AddToSubordinate { get; set; }
+        public bool? AddToUpEvaluated { get; set; }
 
         #endregion
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TheChamaApp.Application.IApplication;
 using System.Linq;
+using TheChamaApp.Service.EvaluatedBusiness;
 
 namespace TheChamaApp.Service.QuizBusiness
 {
@@ -12,15 +13,24 @@ namespace TheChamaApp.Service.QuizBusiness
 
         private readonly IRellationshipCompanyUnityToQuizApplication _IRellationshipCompanyUnityToQuizApplication;
         private readonly IQuizApplication _IQuizApplication;
+        private readonly IRellationshipQuizToEvaluatedApplication _IRellationshipQuizToEvaluatedApplication;
+        private readonly IRellationshipEvaluatedToUpEvaluatedApplication _IRellationshipEvaluatedToUpEvaluatedApplication;
+        private readonly IEvaluatedApplication _IEvaluatedApplication;
 
         #endregion
 
         #region # Constructor
         public RellationshipCompanyUnityToQuizService(IRellationshipCompanyUnityToQuizApplication rellationshipCompanyUnityToQuizApplication
-            , IQuizApplication quizApplication)
+            , IQuizApplication quizApplication
+            , IRellationshipQuizToEvaluatedApplication rellationshipQuizToEvaluatedApplication
+            , IRellationshipEvaluatedToUpEvaluatedApplication rellationshipEvaluatedToUpEvaluatedApplication
+            , IEvaluatedApplication evaluatedApplication)
         {
             _IRellationshipCompanyUnityToQuizApplication = rellationshipCompanyUnityToQuizApplication;
             _IQuizApplication = quizApplication;
+            _IRellationshipQuizToEvaluatedApplication = rellationshipQuizToEvaluatedApplication;
+            _IRellationshipEvaluatedToUpEvaluatedApplication = rellationshipEvaluatedToUpEvaluatedApplication;
+            _IEvaluatedApplication = evaluatedApplication;
         }
         #endregion
 
@@ -38,6 +48,12 @@ namespace TheChamaApp.Service.QuizBusiness
             try
             {
                 _IRellationshipCompanyUnityToQuizApplication.Add(Entity);
+                //adicionando relacionamentos
+                if (Entity.RellationshipCompanyUnityToQuizId > 0) {
+                    using (var RelacionamentoServiceBO = new RellationshipQuizToEvaluatedService(_IRellationshipQuizToEvaluatedApplication, _IRellationshipEvaluatedToUpEvaluatedApplication, _IEvaluatedApplication, _IQuizApplication)) {
+                        RelacionamentoServiceBO.IncluirByRellationshipCompanyUnityToQuiz(Entity, out Mensagem);
+                    }
+                }
                 Mensagem = Entity.RellationshipCompanyUnityToQuizId.ToString();
             }
             catch (Exception Ex)

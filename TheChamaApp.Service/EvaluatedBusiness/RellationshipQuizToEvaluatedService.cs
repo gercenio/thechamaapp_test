@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TheChamaApp.Application.IApplication;
+using TheChamaApp.Domain.Entities;
 
 namespace TheChamaApp.Service.EvaluatedBusiness
 {
@@ -32,9 +33,69 @@ namespace TheChamaApp.Service.EvaluatedBusiness
 
         #region # Methods
 
-        public void Incluir(int CompanyUnityId)
+        /// <summary>
+        /// Adiciona o relacionamento entre formulario e avaliado
+        /// </summary>
+        /// <param name="Relacionamento"></param>
+        /// <param name="Mensagem"></param>
+        public void IncluirByRellationshipCompanyUnityToQuiz(RellationshipCompanyUnityToQuiz Relacionamento, out string Mensagem)
         {
-
+            Mensagem = string.Empty;
+            try
+            {
+                var QuizEntity = _IQuizApplication.GetAll().Where(m => m.QuizId == Relacionamento.QuizId).Single();
+                foreach (var Colaborador in _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == Relacionamento.CompanyUnityId).ToList())
+                {
+                    if ((bool)QuizEntity.AddToSubordinate)
+                    {
+                        foreach (var RelSubordinados in _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.UpEvaluatedId == Colaborador.EvaluatedId))
+                        {
+                            var rellationEntity = new RellationshipQuizToEvaluated()
+                            {
+                                EvaluatedId = Colaborador.EvaluatedId,
+                                QuizId = QuizEntity.QuizId,
+                                SubordinatedId = RelSubordinados.EvaluatedId,
+                            };
+                            var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.SubordinatedId == RelSubordinados.EvaluatedId && m.EvaluatedId == Colaborador.EvaluatedId).ToList();
+                            if (CheckVal.Count == 0) {
+                                _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
+                            }
+                            
+                        }
+                    }
+                    else if ((bool)QuizEntity.AddToUpEvaluated) {
+                        foreach (var RelSuperior in _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == Colaborador.EvaluatedId))
+                        {
+                            var rellationEntity = new RellationshipQuizToEvaluated()
+                            {
+                                EvaluatedId = Colaborador.EvaluatedId,
+                                QuizId = QuizEntity.QuizId,
+                                UpEvaluatedId = RelSuperior.UpEvaluatedId
+                            };
+                            var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.UpEvaluatedId == RelSuperior.UpEvaluatedId && m.EvaluatedId == Colaborador.EvaluatedId).ToList();
+                            if (CheckVal.Count == 0) {
+                                _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
+                            }
+                        }
+                    }
+                    else {
+                        var rellationEntity = new RellationshipQuizToEvaluated()
+                        {
+                            EvaluatedId = Colaborador.EvaluatedId,
+                            QuizId = QuizEntity.QuizId,                           
+                        };
+                        var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == Colaborador.EvaluatedId && m.QuizId == QuizEntity.QuizId).ToList();
+                        if (CheckVal.Count == 0) {
+                            _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
+                        }
+                        
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                Mensagem = string.Format("Erro:{0}", Ex.Message);
+            }
         }
 
         /// <summary>
@@ -54,6 +115,9 @@ namespace TheChamaApp.Service.EvaluatedBusiness
                     }
                     if (item.SubordinatedId > 0) {
                         item.Subordinated = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == item.SubordinatedId).Single();
+                    }
+                    if (item.UpEvaluatedId > 0) {
+                        item.UpEvaluated = _IEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == item.UpEvaluatedId).Single();
                     }
                     lista.Add(item);
                 }
