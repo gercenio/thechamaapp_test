@@ -196,6 +196,22 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
                 
         }
 
+        /// <summary>
+        /// Obtem um resumo de pesquisas
+        /// </summary>
+        /// <param name="CompanyId"></param>
+        /// <returns></returns>
+        [Route("ResumeResultQuiz/{CompanyId}")]
+        [HttpGet]
+        [Authorize("Bearer")]
+        public IQueryable<Domain.ViewModel.CompanyQuizResultViewModel> GetResumeResultQuiz(int CompanyId)
+        {
+            using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication, _ICompanyTypeApplication, _ICompanyImageApplication, _IEvaluatedApplication))
+            {
+                return CompanyBO.GetResumeQuiz(CompanyId).AsQueryable();
+            }
+        }
+
         #endregion
 
     }

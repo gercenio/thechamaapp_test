@@ -415,6 +415,16 @@ namespace TheChamaApp.Service.CompanyBusiness
             }
             return lista.AsQueryable();
         }
+        
+        /// <summary>
+        /// Obtem o resumo de pesquisas
+        /// </summary>
+        /// <param name="CompanyId"></param>
+        /// <returns></returns>
+        public IEnumerable<Domain.ViewModel.CompanyQuizResultViewModel> GetResumeQuiz(int CompanyId)
+        {
+            return _ICompanyApplication.GetAllQuizResult(CompanyId);
+        }
 
         #endregion
     }

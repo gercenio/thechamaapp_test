@@ -22,6 +22,8 @@ using System.Linq;
 using MediatR.Pipeline;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
+using TheChamaApp.Infra.Data.Dapper;
+using TheChamaApp.Domain.Interfaces.Dapper;
 
 namespace TheChamaApp.Infra.IoC
 {
@@ -114,7 +116,12 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IConfigurationSettingsApplication, ConfigurationSettingsApplication>(Lifestyle.Scoped);
             container.Register<IConfigurationSettingsService, ConfigurationSettingsService>(Lifestyle.Scoped);
             container.Register<IConfigurationSettingsRepository, ConfigurationSettingsRepository>(Lifestyle.Scoped);
-
+            //RellationshipQuizToEvaluated
+            container.Register<IRellationshipQuizToEvaluatedApplication, RellationshipQuizToEvaluatedApplication>(Lifestyle.Scoped);
+            container.Register<IRellationshipQuizToEvaluatedService, RellationshipQuizToEvaluatedService>(Lifestyle.Scoped);
+            container.Register<IRellationshipQuizToEvaluatedRepository, RellationshipQuizToEvaluatedRepository>(Lifestyle.Scoped);
+            //Dapper
+            container.Register<ICompanyDapperRepository, CompanyDapperRepository>(Lifestyle.Scoped);
 
             // Context
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
