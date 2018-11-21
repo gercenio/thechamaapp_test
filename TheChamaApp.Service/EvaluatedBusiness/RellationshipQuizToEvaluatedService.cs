@@ -46,50 +46,72 @@ namespace TheChamaApp.Service.EvaluatedBusiness
                 var QuizEntity = _IQuizApplication.GetAll().Where(m => m.QuizId == Relacionamento.QuizId).Single();
                 foreach (var Colaborador in _IEvaluatedApplication.GetAll().Where(m => m.CompanyUnityId == Relacionamento.CompanyUnityId).ToList())
                 {
-                    if ((bool)QuizEntity.AddToSubordinate)
+                    if (!QuizEntity.AddToSubordinate.HasValue || !QuizEntity.AddToUpEvaluated.HasValue)
                     {
-                        foreach (var RelSubordinados in _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.UpEvaluatedId == Colaborador.EvaluatedId))
-                        {
-                            var rellationEntity = new RellationshipQuizToEvaluated()
-                            {
-                                EvaluatedId = Colaborador.EvaluatedId,
-                                QuizId = QuizEntity.QuizId,
-                                SubordinatedId = RelSubordinados.EvaluatedId,
-                            };
-                            var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.SubordinatedId == RelSubordinados.EvaluatedId && m.EvaluatedId == Colaborador.EvaluatedId).ToList();
-                            if (CheckVal.Count == 0) {
-                                _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
-                            }
-                            
-                        }
-                    }
-                    else if ((bool)QuizEntity.AddToUpEvaluated) {
-                        foreach (var RelSuperior in _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == Colaborador.EvaluatedId))
-                        {
-                            var rellationEntity = new RellationshipQuizToEvaluated()
-                            {
-                                EvaluatedId = Colaborador.EvaluatedId,
-                                QuizId = QuizEntity.QuizId,
-                                UpEvaluatedId = RelSuperior.UpEvaluatedId
-                            };
-                            var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.UpEvaluatedId == RelSuperior.UpEvaluatedId && m.EvaluatedId == Colaborador.EvaluatedId).ToList();
-                            if (CheckVal.Count == 0) {
-                                _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
-                            }
-                        }
-                    }
-                    else {
                         var rellationEntity = new RellationshipQuizToEvaluated()
                         {
                             EvaluatedId = Colaborador.EvaluatedId,
-                            QuizId = QuizEntity.QuizId,                           
+                            QuizId = QuizEntity.QuizId,
                         };
                         var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == Colaborador.EvaluatedId && m.QuizId == QuizEntity.QuizId).ToList();
-                        if (CheckVal.Count == 0) {
+                        if (CheckVal.Count == 0)
+                        {
                             _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
                         }
-                        
                     }
+                    else
+                    {
+                        if ((bool)QuizEntity.AddToSubordinate)
+                        {
+                            foreach (var RelSubordinados in _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.UpEvaluatedId == Colaborador.EvaluatedId))
+                            {
+                                var rellationEntity = new RellationshipQuizToEvaluated()
+                                {
+                                    EvaluatedId = Colaborador.EvaluatedId,
+                                    QuizId = QuizEntity.QuizId,
+                                    SubordinatedId = RelSubordinados.EvaluatedId,
+                                };
+                                var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.SubordinatedId == RelSubordinados.EvaluatedId && m.EvaluatedId == Colaborador.EvaluatedId).ToList();
+                                if (CheckVal.Count == 0)
+                                {
+                                    _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
+                                }
+
+                            }
+                        }
+                        else if ((bool)QuizEntity.AddToUpEvaluated)
+                        {
+                            foreach (var RelSuperior in _IRellationshipEvaluatedToUpEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == Colaborador.EvaluatedId))
+                            {
+                                var rellationEntity = new RellationshipQuizToEvaluated()
+                                {
+                                    EvaluatedId = Colaborador.EvaluatedId,
+                                    QuizId = QuizEntity.QuizId,
+                                    UpEvaluatedId = RelSuperior.UpEvaluatedId
+                                };
+                                var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.UpEvaluatedId == RelSuperior.UpEvaluatedId && m.EvaluatedId == Colaborador.EvaluatedId).ToList();
+                                if (CheckVal.Count == 0)
+                                {
+                                    _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var rellationEntity = new RellationshipQuizToEvaluated()
+                            {
+                                EvaluatedId = Colaborador.EvaluatedId,
+                                QuizId = QuizEntity.QuizId,
+                            };
+                            var CheckVal = _IRellationshipQuizToEvaluatedApplication.GetAll().Where(m => m.EvaluatedId == Colaborador.EvaluatedId && m.QuizId == QuizEntity.QuizId).ToList();
+                            if (CheckVal.Count == 0)
+                            {
+                                _IRellationshipQuizToEvaluatedApplication.Add(rellationEntity);
+                            }
+
+                        }
+                    }
+                    
                 }
             }
             catch (Exception Ex)

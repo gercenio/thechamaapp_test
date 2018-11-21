@@ -35,6 +35,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             _IRellationshipCompanyUnityToQuizApplication = rellationshipCompanyUnityToQuizApplication;
             _IRellationshipEvaluatedToUpEvaluatedApplication = rellationshipEvaluatedToUpEvaluatedApplication;
             _IEvaluatedApplication = evaluatedApplication;
+            _IRellationshipQuizToEvaluatedApplication = rellationshipQuizToEvaluated;
         }
         #endregion
 
