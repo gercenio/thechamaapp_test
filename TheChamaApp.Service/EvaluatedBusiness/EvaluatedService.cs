@@ -191,7 +191,15 @@ namespace TheChamaApp.Service.EvaluatedBusiness
             return lista;
         }
 
-       
+        /// <summary>
+        /// Obtem um grafico individual
+        /// </summary>
+        /// <param name="EvaluatedId"></param>
+        /// <returns></returns>
+        public Domain.ViewModel.IndividualGraficEvaluatedHeader ObterGraficoIndividual(int EvaluatedId)
+        {
+            return _IEvaluatedApplication.GetIndividualGrafic(EvaluatedId);
+        }
         #endregion
 
     }

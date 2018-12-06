@@ -243,6 +243,17 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
             }
         }
 
+
+        [HttpGet("IndividualGrafic/{EvaluatedId}")]
+        [Authorize("Bearer")]
+        public IActionResult GetIndividualGrafic(int EvaluatedId)
+        {
+            using (TheChamaApp.Service.EvaluatedBusiness.EvaluatedService EvaluetedBO = new Service.EvaluatedBusiness.EvaluatedService(_IEvaluatedApplication, _ICompanyUnityApplication, _ILevelEvaluatedApplication, _IRellationshipEvaluatedToUpEvaluatedApplication))
+            {
+                return Ok(EvaluetedBO.ObterGraficoIndividual(EvaluatedId));
+            }
+        }
+
         #endregion
 
     }

@@ -28,8 +28,6 @@ namespace TheChamaApp.Domain.Entities
 
         public virtual ICollection<RellationshipAskToAnswer> RellationshipAskToAnswer { get; set; }
 
-        //Bpublic virtual GroupAsk GroupAsk { get; set; }
-
         #endregion
     }
 }

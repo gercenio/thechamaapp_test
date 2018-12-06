@@ -122,6 +122,7 @@ namespace TheChamaApp.Infra.IoC
             container.Register<IRellationshipQuizToEvaluatedRepository, RellationshipQuizToEvaluatedRepository>(Lifestyle.Scoped);
             //Dapper
             container.Register<ICompanyDapperRepository, CompanyDapperRepository>(Lifestyle.Scoped);
+            container.Register<IEvaluatedDapperRepository, EvaluatedDapperRepository>(Lifestyle.Scoped);
 
             // Context
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);
