@@ -16,9 +16,9 @@ namespace TheChamaApp.Application.Application
             _Service = company;
         }
 
-        public IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId)
+        public IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId, int CompanyUnityId, int LevelEvaluatedId)
         {
-            return _Service.GetAllQuizResult(CompanyId);
+            return _Service.GetAllQuizResult(CompanyId,CompanyUnityId,LevelEvaluatedId);
         }
     }
 }

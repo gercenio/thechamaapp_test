@@ -201,14 +201,14 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        [Route("ResumeResultQuiz/{CompanyId}")]
+        [Route("ResumeResultQuiz/{CompanyId}/{CompanyUnityId}/{LevelEvaluatedId}")]
         [HttpGet]
         [Authorize("Bearer")]
-        public IQueryable<Domain.ViewModel.CompanyQuizResultViewModel> GetResumeResultQuiz(int CompanyId)
+        public IQueryable<Domain.ViewModel.CompanyQuizResultViewModel> GetResumeResultQuiz(int CompanyId, int CompanyUnityId, int LevelEvaluatedId)
         {
             using (TheChamaApp.Service.CompanyBusiness.CompanyService CompanyBO = new Service.CompanyBusiness.CompanyService(_ICompanyApplication, _ICompanyAddressApplication, _ICompanyContactApplication, _ICompanyUnityApplication, _IStateApplication, _ICompanyTypeApplication, _ICompanyImageApplication, _IEvaluatedApplication))
             {
-                return CompanyBO.GetResumeQuiz(CompanyId).AsQueryable();
+                return CompanyBO.GetResumeQuiz(CompanyId, CompanyUnityId,LevelEvaluatedId).AsQueryable();
             }
         }
 

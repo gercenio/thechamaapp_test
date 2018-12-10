@@ -8,6 +8,6 @@ namespace TheChamaApp.Domain.Interfaces.Service
 {
     public interface ICompanyService : Base.IService<Company>
     {
-        IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId);
+        IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId, int CompanyUnityId, int LevelEvaluatedId);
     }
 }

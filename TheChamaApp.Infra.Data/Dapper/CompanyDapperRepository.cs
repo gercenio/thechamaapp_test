@@ -14,9 +14,9 @@ namespace TheChamaApp.Infra.Data.Dapper
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        public IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId)
+        public IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId, int CompanyUnityId ,int LevelEvaluatedId)
         {
-            return ExecuteSelect<CompanyQuizResultViewModel>("sp_getallresultquiztocompanyunity", new { CompanyId = CompanyId });
+            return ExecuteSelect<CompanyQuizResultViewModel>("sp_getallresultquiztocompanyunity", new { CompanyId = CompanyId, CompanyUnityId = CompanyUnityId, LevelEvaluatedId = LevelEvaluatedId });
         }
     }
 }

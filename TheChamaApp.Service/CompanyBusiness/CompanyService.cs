@@ -421,9 +421,9 @@ namespace TheChamaApp.Service.CompanyBusiness
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        public IEnumerable<Domain.ViewModel.CompanyQuizResultViewModel> GetResumeQuiz(int CompanyId)
+        public IEnumerable<Domain.ViewModel.CompanyQuizResultViewModel> GetResumeQuiz(int CompanyId, int CompanyUnityId, int LevelEvaluatedId)
         {
-            return _ICompanyApplication.GetAllQuizResult(CompanyId);
+            return _ICompanyApplication.GetAllQuizResult(CompanyId, CompanyUnityId, LevelEvaluatedId);
         }
 
         #endregion

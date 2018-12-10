@@ -123,6 +123,14 @@ namespace TheChamaApp.Infra.IoC
             //Dapper
             container.Register<ICompanyDapperRepository, CompanyDapperRepository>(Lifestyle.Scoped);
             container.Register<IEvaluatedDapperRepository, EvaluatedDapperRepository>(Lifestyle.Scoped);
+            //Identity - Provider
+            //container.Register<ApplicationDbContext>(Lifestyle.Scoped);
+            //container.RegisterPerWebRequest<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            //container.RegisterPerWebRequest<IRoleStore<IdentityRole, string>>(() => new RoleStore<IdentityRole>());
+
+            //container.Register<TheChamaApp.Infra.CrossCutting.Identity.Model. ApplicationRoleManager>(Lifestyle.Scoped);
+            //container.Register<ApplicationUserManager>(Lifestyle.Scoped);
+            //container.Register<ApplicationSignInManager>(Lifestyle.Scoped);
 
             // Context
             container.Register<IDapperContexto, DapperContexto>(Lifestyle.Scoped);

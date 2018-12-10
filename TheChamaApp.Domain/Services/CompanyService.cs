@@ -33,9 +33,9 @@ namespace TheChamaApp.Domain.Services
         /// </summary>
         /// <param name="CompanyId"></param>
         /// <returns></returns>
-        public IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId) {
+        public IEnumerable<CompanyQuizResultViewModel> GetAllQuizResult(int CompanyId, int CompanyUnityId, int LevelEvaluatedId) {
 
-            return _ICompanyDapperRepository.GetAllQuizResult(CompanyId);
+            return _ICompanyDapperRepository.GetAllQuizResult(CompanyId,CompanyUnityId,LevelEvaluatedId);
         }
         #endregion
     }
