@@ -74,7 +74,7 @@ namespace TheChamaApp.Presentation.WebApi.Controllers
         /// <returns></returns>
         [HttpPut("{QuizResultId}")]
         [Authorize("Bearer")]
-        public IActionResult Pust(int QuizResultId, [FromBody]Domain.Entities.QuizResult Entity)
+        public IActionResult Put(int QuizResultId, [FromBody]Domain.Entities.QuizResult Entity)
         {
             try
             {
